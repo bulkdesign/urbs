@@ -40,7 +40,7 @@ function child_theme_allowed_blocks() {
         'cookies-disclaimer',
         'faq-accordion',
         'footer-one',
-        'header-simple',
+        'header-divided',
         'latest-news',
         'logos-carousel',
         'logos-grid',
