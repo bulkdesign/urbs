@@ -48,6 +48,7 @@ function child_theme_allowed_blocks() {
         'page-hero-carousel',
         'posts-archive-with-filter',
         'section-background',
+        'search',
         'services',
         'single-post-content',
         'template-content',
