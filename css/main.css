@@ -3,37 +3,30 @@
         /* COLORS */
         --color-white: #FFFFFF;
         --color-light-grey: #ececec;
-        --color-grey: #586768;
+        --color-grey: #586877;
         --color-black: #000000;
-        --color-light-blue: #00ACEE;
-        --color-medium-blue: #106FC6;
-        --color-dark-blue: #0D579C;
+        --color-red: #ef4637;
+        --color-yellow: #e19f2f;
 
-        --link-color: var(--color-dark-blue);
-        --hover-link-color: var(--color-light-blue);
+        --link-color: var(--color-yellow);
+        --hover-link-color: var(--color-red);
 
         /* BACKGROUND */
-        --light-blue-color: var(--color-light-blue);
-        --light-blue-shadow-color: #0073A1;
-
-        --medium-blue-color: var(--color-medium-blue);
-        --medium-blue-shadow-color: var(--color-dark-blue);
-
-        --dark-blue-color: var(--color-dark-blue);
+        --grey-color: var(--color-grey);
+        --red-color: var(--color-red);
+        --yellow-color: var(--color-yellow);
 
         /* COLOR SCHEMES */
-        [data-color-scheme|="light-blue"] {
-            --background-color: var(--light-blue-color);
-            --background-shadow: var(--light-blue-shadow-color);
+        [data-color-scheme|="grey"] {
+            --background-color: var(--grey-color);
         }
 
-        [data-color-scheme|="medium-blue"] {
-            --background-color: var(--medium-blue-color);
-            --background-shadow: var(--medium-blue-shadow-color);
+        [data-color-scheme|="red"] {
+            --background-color: var(--red-color);
         }
 
-        [data-color-scheme|="dark-blue"] {
-            --background-color: var(--dark-blue-color);
+        [data-color-scheme|="yellow"] {
+            --background-color: var(--yellow-color);
         }
 
         /* TEXT */
@@ -61,37 +54,37 @@
 
             :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button) {
                 color: var(--color-white);
-                background-color: var(--color-medium-blue);
-                border-color: var(--color-medium-blue);
+                background-color: var(--color-grey);
+                border-color: var(--color-grey);
                 text-align: center;
             }
 
             :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button):is(:active, :hover, :focus) {
-                background-color: var(--color-dark-blue);
-                border-color: var(--color-dark-blue);
+                background-color: var(--color-red);
+                border-color: var(--color-red);
             }
 
             /* LIGHT BACKGROUND COLORS */
-            :is([data-color-scheme="light"]) :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button) {
+            :is([data-color-scheme="light"], [data-color-scheme="yellow"]) :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button) {
                 color: var(--color-white);
-                background-color: var(--color-medium-blue);
-                border-color: var(--color-medium-blue);
+                background-color: var(--color-grey);
+                border-color: var(--color-grey);
             }
 
-            :is([data-color-scheme="light"]) :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button):is(:active, :hover, :focus) {
-                background-color: var(--color-dark-blue);
-                border-color: var(--color-dark-blue);
+            :is([data-color-scheme="light"], [data-color-scheme="yellow"]) :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button):is(:active, :hover, :focus) {
+                background-color: var(--color-grey);
+                border-color: var(--color-grey);
             }
 
-            /* DARK AND SHADES OF BLUES */
-            :is([data-color-scheme="dark"], [data-color-scheme="light-blue"], [data-color-scheme="medium-blue"], [data-color-scheme="dark-blue"]) :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button) {
+            /* DARK */
+            :is([data-color-scheme="dark"], [data-color-scheme="grey"], [data-color-scheme="red"]) :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button) {
                 color: var(--color-white);
-                background-color: var(--color-medium-blue);
+                background-color: var(--color-grey);
                 border-color: transparent;
             }
 
-            :is([data-color-scheme="dark"], [data-color-scheme="light-blue"], [data-color-scheme="medium-blue"], [data-color-scheme="dark-blue"]) :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button):is(:active, :hover, :focus) {
-                background-color: var(--color-dark-blue);
+            :is([data-color-scheme="dark"], [data-color-scheme="grey"], [data-color-scheme="red"]) :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button):is(:active, :hover, :focus) {
+                background-color: var(--color-red);
                 border-color: transparent;
             }
 
@@ -99,25 +92,25 @@
             /* STYLE */
 
             /* LIGHT BACKGROUND COLORS */
-            :is([data-color-scheme="light"]) :is(.secondary-button, .wp-block-button:is(.is-style-outline) > .wp-element-button) {
-                color: var(--color-medium-blue);
-                border-color: var(--color-medium-blue);
+            :is([data-color-scheme="light"], [data-color-scheme="yellow"]) :is(.secondary-button, .wp-block-button:is(.is-style-outline) > .wp-element-button) {
+                color: var(--color-grey);
+                border-color: var(--color-grey);
             }
 
-            :is([data-color-scheme="light"]) :is(.secondary-button, .wp-block-button:is(.is-style-outline) > .wp-element-button):is(:active, :hover, :focus) {
-                background-color: var(--color-dark-blue);
+            :is([data-color-scheme="light"], [data-color-scheme="yellow"]) :is(.secondary-button, .wp-block-button:is(.is-style-outline) > .wp-element-button):is(:active, :hover, :focus) {
+                background-color: var(--color-grey);
                 color: var(--color-white);
-                border-color: var(--color-dark-blue);
+                border-color: var(--color-grey);
             }
 
-            /* DARK AND SHADES OF BLUE */
-            :is([data-color-scheme="dark"], [data-color-scheme="light-blue"], [data-color-scheme="medium-blue"], [data-color-scheme="dark-blue"]) :is(.secondary-button, .wp-block-button:is(.is-style-outline) > .wp-element-button) {
+            /* DARK */
+            :is([data-color-scheme="dark"], [data-color-scheme="grey"], [data-color-scheme="red"]) :is(.secondary-button, .wp-block-button:is(.is-style-outline) > .wp-element-button) {
                 color: var(--color-white);
                 border-color: var(--color-white);
             }
 
-            :is([data-color-scheme="dark"], [data-color-scheme="light-blue"], [data-color-scheme="medium-blue"], [data-color-scheme="dark-blue"]) :is(.secondary-button, .wp-block-button:is(.is-style-outline) > .wp-element-button):is(:active, :hover, :focus) {
-                background-color: var(--color-dark-blue);
+            :is([data-color-scheme="dark"], [data-color-scheme="grey"], [data-color-scheme="red"]) :is(.secondary-button, .wp-block-button:is(.is-style-outline) > .wp-element-button):is(:active, :hover, :focus) {
+                background-color: var(--color-grey);
                 color: var(--color-white);
                 border-color: var(--color-white);
             }
@@ -145,8 +138,4 @@
 .blocks-container > .alignfull {
     max-width: 100%;
     -webkit-transform: translate3d(0,0,0);
-}
-
-.home main {
-    margin-top: -9rem;
 }
