@@ -19,6 +19,7 @@
 @media (min-width: 768px) {
     .top-bar-inner {
         grid-template-columns: 1fr 20rem;
+        max-width: var(--full-width);
     }
 
     .top-bar-social-media {
@@ -45,5 +46,11 @@
         width: 2rem;
         height: 2rem;
         margin: 0 0.5rem;
+    }
+}
+
+@media (min-width: 991px) {
+    .top-bar-inner {
+        max-width: var(--wide-width);
     }
 }
