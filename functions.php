@@ -34,6 +34,7 @@ add_action( 'wp_enqueue_scripts', 'child_theme_enqueue_scripts', 30 );
  */
 function child_theme_allowed_blocks() {
 	return array(
+        'announcements-carousel',
         'columns-with-content',
         'content-in-columns',
         'content-with-media',
