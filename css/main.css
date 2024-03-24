@@ -4,9 +4,12 @@
         --color-white: #FFFFFF;
         --color-light-grey: #ececec;
         --color-grey: #586877;
+        --color-darker-grey: #3e4953;
         --color-black: #000000;
         --color-red: #ef4637;
+        --color-darker-red: #a73127;
         --color-yellow: #e19f2f;
+        --color-darker-yellow: #9e6f21;
 
         --link-color: var(--color-yellow);
         --hover-link-color: var(--color-red);
@@ -19,14 +22,17 @@
         /* COLOR SCHEMES */
         [data-color-scheme|="grey"] {
             --background-color: var(--grey-color);
+            --background-shadow: var(--color-darker-grey);
         }
 
         [data-color-scheme|="red"] {
             --background-color: var(--red-color);
+            --background-shadow: var(--color-darker-red);
         }
 
         [data-color-scheme|="yellow"] {
             --background-color: var(--yellow-color);
+            --background-shadow: var(--color-darker-yellow);
         }
 
         /* TEXT */
