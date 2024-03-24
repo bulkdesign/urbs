@@ -4,12 +4,12 @@
         --color-white: #FFFFFF;
         --color-light-grey: #ececec;
         --color-grey: #586877;
-        --color-darker-grey: #3e4953;
+        --color-darker-grey: #46535f;
         --color-black: #000000;
-        --color-red: #ef4637;
-        --color-darker-red: #a73127;
+        --color-red: #d73f32;
+        --color-darker-red: #bf382c;
         --color-yellow: #e19f2f;
-        --color-darker-yellow: #9e6f21;
+        --color-darker-yellow: #b47f26;
 
         --link-color: var(--color-yellow);
         --hover-link-color: var(--color-red);
