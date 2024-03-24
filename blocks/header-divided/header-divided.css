@@ -89,7 +89,7 @@ header:is(.menu-open) .header-divided-inner {
 }
 
 .header-divided nav ul:is(.featured-menu) li:last-child a:is(:hover, :focus, :active) {
-    background: var(--color-black);
+    background: var(--color-darker-grey);
     text-decoration: none;
 }
 
