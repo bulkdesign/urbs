@@ -1,0 +1,67 @@
+.blocks-container>.search-block {
+    margin: var(--block-margin) auto var(--block-margin);
+}
+
+.search-block {
+    align-items: center;
+    background-color: var(--color-grey);
+    border-radius: var(--element-border-radius);
+    padding: 1rem 0;
+}
+
+.search-block .search-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    margin: 0 1rem;
+    column-gap: 1rem;
+}
+
+.search-block .search-wrapper svg {
+    width: 6rem;
+}
+
+.search-block .search-wrapper svg rect {
+    fill: transparent;
+}
+
+.search-block .search-wrapper svg path {
+    fill: var(--color-purple);
+}
+
+.search-block .search-wrapper h2 {
+    font: var(--font-headline-7);
+    color: var(--color-grey);
+    margin: 0;
+    text-align: center;
+}
+
+.search-block .search-wrapper form {
+    display: grid;
+    grid-template-columns: 1fr 15rem;
+}
+
+.search-block .search-wrapper form input[type="text"] {
+    background: var(--color-white);
+    border-radius: 1.25rem 0rem 0rem 1.25rem;
+    border-color: var(--color-white);
+}
+
+.search-block :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button) {
+    background-color: var(--color-light-grey);
+    border: none;
+    border-radius: 0rem 1.25rem 1.25rem 0rem;
+    color: var(--color-grey);
+}
+
+.search-block :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button):is(:active, :focus, :hover) {
+    background-color: var(--color-dark-purple);
+}
+
+@media (min-width: 992px) {
+
+    .search-block {
+        display: grid;
+    }
+
+}
