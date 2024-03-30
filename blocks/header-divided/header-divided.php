@@ -80,8 +80,8 @@
         </div>
     </div>
 </header>
-<div class="header-divided-separator">
-    <span class="header-divided-separator-yellow"></span>
-    <span class="header-divided-separator-red"></span>
-    <span class="header-divided-separator-grey"></span>
+<div class="urbs-separator">
+    <span class="urbs-separator-yellow"></span>
+    <span class="urbs-separator-red"></span>
+    <span class="urbs-separator-grey"></span>
 </div>
