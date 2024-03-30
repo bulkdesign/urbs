@@ -132,6 +132,40 @@
 
 }
 
+.urbs-separator {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.urbs-separator-yellow,
+.urbs-separator-red,
+.urbs-separator-grey {
+    width: 100%;
+    max-width: 100%;
+    grid-column: 1;
+    height: 0.8rem;
+}
+
+.urbs-separator-yellow {
+    background: var(--color-yellow);
+    grid-row: 1;
+}
+
+.urbs-separator-red {
+    background: var(--color-red);
+    grid-row: 2;
+}
+
+.urbs-separator-grey {
+    background: var(--color-grey);
+    grid-row: 3;
+}
+
+body .cls-1 {
+    fill: currentColor;
+}
+
 .blocks-container {
     margin: 0 auto;
     -webkit-transform: translate3d(0,0,0);
