@@ -42,6 +42,10 @@ header:is(.menu-open) .header-divided-inner {
     transition: 0.3s ease all;
 }
 
+.header-divided .logo svg * {
+    fill: var(--color-grey);
+}
+
 .header-divided .logo :is(img, svg):is(:active, :hover, :focus) {
     opacity: 0.7;
 }
@@ -161,36 +165,6 @@ header:is(.menu-open) .header-divided-inner {
     padding-left: 2.4rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-}
-
-.header-divided-separator {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-}
-
-.header-divided-separator-yellow,
-.header-divided-separator-red,
-.header-divided-separator-grey {
-    width: 100%;
-    max-width: 100%;
-    grid-column: 1;
-    height: 0.8rem;
-}
-
-.header-divided-separator-yellow {
-    background: var(--color-yellow);
-    grid-row: 1;
-}
-
-.header-divided-separator-red {
-    background: var(--color-red);
-    grid-row: 2;
-}
-
-.header-divided-separator-grey {
-    background: var(--color-grey);
-    grid-row: 3;
 }
 
 @media (max-width: 767px) {
