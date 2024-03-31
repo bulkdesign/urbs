@@ -1,5 +1,5 @@
 .blocks-container>.search-block {
-    margin: var(--block-margin) auto var(--block-margin);
+    margin: var(--row-gap) auto;
 }
 
 .search-block {
@@ -44,7 +44,12 @@
 .search-block .search-wrapper form input[type="text"] {
     background: var(--color-white);
     border-radius: 1.25rem 0rem 0rem 1.25rem;
-    border-color: var(--color-white);
+    border: 0;
+    outline: 0;
+}
+
+.search-block .search-wrapper form input[type="text"]:is(:active, :hover, :focus) {
+    border: 0;
 }
 
 .search-block :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button) {
@@ -55,7 +60,8 @@
 }
 
 .search-block :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button):is(:active, :focus, :hover) {
-    background-color: var(--color-dark-purple);
+    color: var(--color-white);
+    background-color: var(--color-darker-grey);
 }
 
 @media (min-width: 992px) {
