@@ -51,6 +51,7 @@ function child_theme_allowed_blocks() {
         'section-background',
         'search',
         'services',
+        'columns-of-services',
         'single-post-content',
         'template-content',
         'title-and-content',
