@@ -57,6 +57,7 @@ function child_theme_allowed_blocks() {
         'title-and-content',
         'photos-carousel',
         'top-bar',
+        'service-cards',
     );
 }
 add_filter( 'theme_allowed_blocks', 'child_theme_allowed_blocks', 10, 0);
