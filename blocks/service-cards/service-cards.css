@@ -1,0 +1,71 @@
+.service-cards h2 {
+    font: var(--font-headline-6);
+    color: var(--color-grey);
+    text-transform: uppercase;
+}
+
+.service-cards ul {
+    display: grid;
+    padding: var(--page-padding) 0;
+    position: relative;
+    z-index: 1;
+    column-gap: var(--item-column-gap);
+    row-gap: var(--item-row-gap);
+}
+
+.service-cards ul li {
+    list-style: none;
+    background: var(--background-color);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    text-align: center;
+    min-height: 18rem;
+    transition: 0.3s all ease;
+}
+
+.service-cards ul li:is(:hover, :active, :focus) {
+    background: var(--background-shadow);
+}
+
+.service-cards ul a {
+    text-decoration: none;
+}
+
+.service-cards .service-icon {
+    grid-column: 1;
+    grid-row: 1;
+    margin: auto auto 0;
+}
+
+.service-cards ul li :is(img, svg) {
+    width: 8rem;
+}
+
+.service-cards .service-title {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 1rem;
+    margin-bottom: auto;
+}
+
+.service-cards ul li h3 {
+    font: var(--font-body);
+    color: var(--color-white);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+
+    .service-cards ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .service-cards ul li {
+        min-height: 20rem;
+    }
+
+}
