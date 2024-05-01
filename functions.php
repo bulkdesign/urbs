@@ -42,7 +42,7 @@ function child_theme_allowed_blocks() {
         'faq-accordion',
         'footer-urbs',
         'header-divided',
-        'latest-news',
+        'latest-news-urbs',
         'logos-carousel',
         'logos-grid',
         'page-hero',
