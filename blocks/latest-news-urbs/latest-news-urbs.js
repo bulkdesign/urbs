@@ -1,6 +1,6 @@
 (() => {
     if (typeof Swiper === 'undefined') return false;
-    if (!document.querySelectorAll('.news-carousel-list').length) return false;
+    if (!document.querySelectorAll('.news-carousel').length) return false;
 
     const getTotalWidth = function (swiper) {
         let width = 0;
@@ -12,16 +12,17 @@
         return width;
     };
 
-    document.querySelectorAll('.news-carousel-list').forEach((carousel) => {
+    document.querySelectorAll('.news-carousel').forEach((carousel) => {
         const default_carousel_settings = {
             slidesPerView: 'auto',
+            spaceBetween: 10,
             simulateTouch: false,
             navigation: {
-                nextEl: carousel.closest('.latest-news').querySelector('.latest-news-navigation-next'),
-                prevEl: carousel.closest('.latest-news').querySelector('.latest-news-navigation-prev')
+                nextEl: carousel.closest('.latest-news-urbs').querySelector('.latest-news-urbs-navigation-next'),
+                prevEl: carousel.closest('.latest-news-urbs').querySelector('.latest-news-urbs-navigation-prev')
             },  
             pagination: {
-                el: carousel.closest('.latest-news').querySelector('.latest-news-pagination'),
+                el: carousel.closest('.latest-news-urbs').querySelector('.latest-news-urbs-pagination'),
                 type: 'bullets',
             },
             on: {
