@@ -1,5 +1,9 @@
-<svg width="57" height="57" viewBox="0 0 57 57" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M28.7144 17.0293L40.5987 28.9138L28.7144 40.7981" stroke="currentColor" stroke-width="2"/>
-<path d="M40.8708 28.9611H17.6078" stroke="currentColor" stroke-width="2"/>
-<rect x="1.83008" y="1.91699" width="54.041" height="54.041" rx="27.0205" stroke="currentColor" stroke-width="2"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 57 57" style="enable-background:new 0 0 57 57;" xml:space="preserve">
+<path style="fill: #D73F32; stroke: #D73F32" d="M28.9,1.9L28.9,1.9c14.9,0,27,12.1,27,27v0c0,14.9-12.1,27-27,27h0c-14.9,0-27-12.1-27-27v0
+	C1.8,14,13.9,1.9,28.9,1.9z"/>
+<path style="fill: none; stroke: currentColor" d="M28.7,17l11.9,11.9L28.7,40.8"/>
+<path style="fill: none; stroke: currentColor" d="M40.9,29H17.6"/>
 </svg>
