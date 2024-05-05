@@ -8,7 +8,7 @@
 /**
  * Function to be used in the action callback to declare this block.
  */
-function theme_block_announcements_carousel() {
+function child_theme_block_announcements_carousel() {
 	theme_declare_block(
 		array(
 			'name'        => 'announcements-carousel',
@@ -25,4 +25,4 @@ function theme_block_announcements_carousel() {
 	);
 }
 
-add_action( 'theme_declare_block', 'theme_block_announcements_carousel', 20 );
+add_action( 'theme_declare_block', 'child_theme_block_announcements_carousel', 20 );

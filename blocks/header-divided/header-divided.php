@@ -18,7 +18,7 @@
         <div class="header-divided-left-menu-wrapper">
             <nav>
                 <?php
-                    add_filter( 'walker_nav_menu_start_el', 'theme_block_header_divided_submenu_toggle', 10, 4 );
+                    add_filter( 'walker_nav_menu_start_el', 'child_theme_block_header_divided_submenu_toggle', 10, 4 );
 
                     if( get_field('left_menu') ){
                         wp_nav_menu(
@@ -73,7 +73,7 @@
                     );
                 }
 
-                remove_filter( 'walker_nav_menu_start_el', 'theme_block_header_divided_submenu_toggle', 10 );
+                remove_filter( 'walker_nav_menu_start_el', 'child_theme_block_header_divided_submenu_toggle', 10 );
                 ?>
             </nav>
         

@@ -8,7 +8,7 @@
 /**
  * Function to be used in the action callback to declare this block.
  */
-function theme_block_footer_urbs() {
+function child_theme_block_footer_urbs() {
 	theme_declare_block(
 		array(
 			'name'        => 'footer-urbs',
@@ -27,4 +27,4 @@ function theme_block_footer_urbs() {
 	);
 }
 
-add_action( 'theme_declare_block', 'theme_block_footer_urbs', 50 );
+add_action( 'theme_declare_block', 'child_theme_block_footer_urbs', 50 );
