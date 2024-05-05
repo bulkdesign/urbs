@@ -11,9 +11,9 @@
 function child_theme_block_information_carousel() {
 	theme_declare_block(
 		array(
-			'name'        => 'announcements-carousel',
-			'title'       => __( 'Announcements Carousel', 'bulk' ),
-			'description' => __( 'A simple carousel for images annonucements.', 'bulk' ),
+			'name'        => 'information-carousel',
+			'title'       => __( 'Information Carousel', 'bulk' ),
+			'description' => __( 'A carousel for more important information.', 'bulk' ),
 			'icon'        => 'cover-image',
 			'mode'        => 'edit',
 			'supports'    => array(
