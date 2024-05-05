@@ -42,6 +42,7 @@ function child_theme_allowed_blocks() {
         'faq-accordion',
         'footer-urbs',
         'header-divided',
+        'information-carousel',
         'latest-news-urbs',
         'logos-carousel',
         'logos-grid',
