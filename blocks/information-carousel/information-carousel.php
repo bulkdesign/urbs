@@ -31,47 +31,92 @@
 				<?php the_row(); ?>
 				<div class="swiper-slide">
 					<div class="information-carousel-slide">
-						<?php $button = get_sub_field( 'link' ); ?>
-						<?php if ( 'image' === get_sub_field( 'media_type' ) ) : ?>
-							<?php $image = get_sub_field( 'image' ); ?>
-							<?php if ( ! empty( $image ) ) : ?>
-							<div class="information-carousel-media">
-								<div class="information-carousel-image">
-									<?php if ( ! empty( $button ) ) : ?>
-										<a href="<?php echo esc_attr( $button['url'] ); ?>" target="<?php echo esc_attr( theme_get_link_target( $button ) ); ?>" aria-label="<?php echo esc_attr( theme_get_link_aria_label( $button ) ); ?>">
+					
+						<?php $image = get_sub_field( 'image' ); ?>
+						<?php if ( ! empty( $image ) ) : ?>
+
+							<?php $button = get_sub_field( 'link' ); ?>
+							<?php if ( ! empty( $button ) ) : ?>
+								<a href="<?php echo esc_attr( $button['url'] ); ?>" target="<?php echo esc_attr( theme_get_link_target( $button ) ); ?>" aria-label="<?php echo esc_attr( theme_get_link_aria_label( $button ) ); ?>">
+									<div class="information-carousel-media">
+										<div class="information-carousel-image">
 											<?php echo wp_get_attachment_image( $image['ID'], 'full' ); ?>
-										</a>
-									<?php endif; ?>
+											<div class="information-carousel-image-overlay"></div>
+
+											<div class="information-carousel-content">
+												<?php if ( ! empty( get_sub_field('title') ) ): ?>
+													<div class="information-carousel-title">
+														<h2><?php echo get_sub_field('title'); ?></h2>
+													</div>
+												<?php endif; ?>
+
+												<div class="information-carousel-inner-content-wrapper">
+													<?php while( have_rows( 'content' ) ): ?>
+														<?php the_row(); ?>
+															<div class="information-carousel-inner-content">
+																<?php if ( ! empty( get_sub_field('title') ) ): ?>
+																	<h3 style="color: var(--color-<?php echo get_sub_field('title_color'); ?>);">
+																		<?php echo get_sub_field('title'); ?>
+																	</h3>
+																<?php endif; ?>
+
+																<?php if ( ! empty( get_sub_field('text') ) ): ?>
+																	<?php echo get_sub_field('text'); ?>
+																<?php endif; ?>
+															</div>
+													<?php endwhile; ?>
+												</div>
+
+												<?php if ( get_sub_field( 'footer_note' ) ): ?>
+													<div class="information-carousel-footer-note">
+														<p><?php the_sub_field( 'footer_note' ); ?></p>
+													</div>
+												<?php endif; ?>
+											</div>
+										</div>
+									</div>
+								</a>
+								
+								<?php else: ?>
+
+								<div class="information-carousel-media">
+									<div class="information-carousel-image">
+										<?php echo wp_get_attachment_image( $image['ID'], 'full' ); ?>
+										<div class="information-carousel-image-overlay"></div>
+
+										<div class="information-carousel-content">
+											<?php if ( ! empty( get_sub_field('title') ) ): ?>
+												<div class="information-carousel-title">
+													<h2><?php echo get_sub_field('title'); ?></h2>
+												</div>
+											<?php endif; ?>
+
+											<div class="information-carousel-inner-content-wrapper">
+												<?php while( have_rows( 'content' ) ): ?>
+													<?php the_row(); ?>
+														<div class="information-carousel-inner-content">
+															<?php if ( ! empty( get_sub_field('title') ) ): ?>
+																<h3 style="color: var(--color-<?php echo get_sub_field('title_color'); ?>);">
+																	<?php echo get_sub_field('title'); ?>
+																</h3>
+															<?php endif; ?>
+
+															<?php if ( ! empty( get_sub_field('text') ) ): ?>
+																<?php echo get_sub_field('text'); ?>
+															<?php endif; ?>
+														</div>
+												<?php endwhile; ?>
+											</div>
+
+											<?php if ( get_sub_field( 'footer_note' ) ): ?>
+												<div class="information-carousel-footer-note">
+													<p><?php the_sub_field( 'footer_note' ); ?></p>
+												</div>
+											<?php endif; ?>
+										</div>
+									</div>
 								</div>
-							</div>
-						<?php endif; ?>
-						<?php elseif ( in_array( get_sub_field( 'media_type' ), array( 'youtube', 'vimeo', 'video' ) ) ) : ?>
-							<div class="information-carousel-media">
-								<div class="information-carousel-video-player">
-									<?php if ( 'video' === get_sub_field( 'media_type' ) ) : ?>
-										<?php if ( ! empty( $button ) ) : ?>
-											<a href="<?php echo esc_attr( $button['url'] ); ?>" target="<?php echo esc_attr( theme_get_link_target( $button ) ); ?>" aria-label="<?php echo esc_attr( theme_get_link_aria_label( $button ) ); ?>">
-												<?php $file = get_sub_field( 'video_file' ); ?>
-												<video autoplay playsinline muted>
-													<source src="<?php echo esc_attr( $file['url'] ); ?>" type="<?php echo esc_attr( $file['mime_type'] ); ?>">
-												</video>
-											</a>
-										<?php endif; ?>
-									<?php elseif ( 'youtube' === get_sub_field( 'media_type' ) ) : ?>
-										<?php if ( ! empty( $button ) ) : ?>
-											<a href="<?php echo esc_attr( $button['url'] ); ?>" target="<?php echo esc_attr( theme_get_link_target( $button ) ); ?>" aria-label="<?php echo esc_attr( theme_get_link_aria_label( $button ) ); ?>">
-												<iframe src="https://www.youtube.com/embed/<?php the_field( 'video_id' ); ?>?autoplay=1&mute=1" aria-label="<?php esc_attr_e( 'Video', 'bulk' ); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-											</a>
-										<?php endif; ?>
-									<?php elseif ( 'vimeo' === get_sub_field( 'media_type' ) ) : ?>
-										<?php if ( ! empty( $button ) ) : ?>
-											<a href="<?php echo esc_attr( $button['url'] ); ?>" target="<?php echo esc_attr( theme_get_link_target( $button ) ); ?>" aria-label="<?php echo esc_attr( theme_get_link_aria_label( $button ) ); ?>">
-												<iframe src="https://player.vimeo.com/video/<?php the_field( 'video_id' ); ?>?autoplay=1&byline=0&portrait=0&badge=0&background=1" aria-label="<?php esc_attr_e( 'Video', 'bulk' ); ?>" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-											</a>
-										<?php endif; ?>
-									<?php endif; ?>
-								</div>
-							</div>
+							<?php endif; ?>
 						<?php endif; ?>
 					</div>
 				</div>
