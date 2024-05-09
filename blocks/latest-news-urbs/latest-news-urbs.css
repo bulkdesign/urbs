@@ -145,20 +145,25 @@
 }
 
 :is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next) svg {
-    width: 4.5rem;
+    width: 4.8rem;
     height: auto;
-    transition: 0.3s ease all;
 }
 
 :is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next) svg path {
-    transition: all 0.3s ease;
     stroke-width: 0.2rem;
-    stroke: var(--color-white) !important;
 }
 
-:is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next):is(:hover, :focus, :active) svg {
-    width: 4.8rem;
+:is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next) svg * {
     transition: all 0.3s ease;
+    stroke: var(--color-white);
+}
+
+:is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next):is(:hover, :focus, :active) svg * {
+    stroke: var(--color-light-grey);
+}
+
+:is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next):is(:hover, :focus, :active) svg path:first-child {
+    stroke: var(--color-white) !important;
 }
 
 .latest-news-urbs a.primary-button.all-news {
