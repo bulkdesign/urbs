@@ -1,0 +1,77 @@
+.quick-links-urbs {
+    margin-bottom: var(--block-margin);
+    max-width: 100%;
+}
+
+.quick-links-urbs-wrapper {
+    max-width: var(--wide-width);
+    margin: 0 auto;
+}
+
+.quick-links-urbs-title h2 {
+    font: var(--font-headline-6);
+    color: var(--color-grey);
+    text-transform: uppercase;
+}
+
+.quick-links-urbs-inner {
+    max-width: var(--wide-width);
+}
+
+.quick-links-urbs-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--column-gap);
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(15%, 1fr));
+}
+
+.quick-links-urbs-links ul li {
+    width: 100%;
+}
+
+.quick-links-urbs-links ul li a {
+    color: var(--link-color);
+    font-weight: 500;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.5rem;
+    transition: 0.3s ease all;
+}
+
+.quick-links-urbs-links ul li a:is(:active, :focus, :hover) {
+    color: var(--hover-link);
+    text-decoration: underline;
+}
+
+.quick-links-urbs-links ul li a img {
+    transition: 0.3s ease all;
+}
+
+.quick-links-urbs-links ul li a:is(:active, :focus, :hover) img {
+    opacity: 0.7;
+    transition: 0.3s ease all;
+}
+
+.quick-links-urbs-links ul li a:not(:has(img))::after {
+    content: '';
+    border: solid var(--color-black);
+    border-width: 0 0.15rem 0.15rem 0;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.25rem;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transition: 0.3s ease all;
+}
+
+.quick-links-urbs-links ul li a:is(:active, :focus, :hover)::after {
+    margin-left: 0.5rem;
+}
+
+@media (min-width: 480px) {
+    .quick-links-urbs-links ul {
+        grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
+    }
+}
