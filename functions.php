@@ -59,6 +59,7 @@ function child_theme_allowed_blocks() {
         'photos-carousel',
         'top-bar',
         'service-cards',
+        'quick-links-urbs',
     );
 }
 add_filter( 'theme_allowed_blocks', 'child_theme_allowed_blocks', 10, 0);
