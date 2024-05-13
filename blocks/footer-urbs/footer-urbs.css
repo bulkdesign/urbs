@@ -275,3 +275,9 @@
         justify-content: center;
     }
 }
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .footer-urbs-left-column .cta-buttons ul li a {
+        height: 8rem;
+    }
+}
