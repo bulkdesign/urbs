@@ -1,0 +1,310 @@
+.page-hero-carousel-urbs {
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.page-hero-carousel-urbs:is(.alignfull) {
+    width: 100%;
+    max-width: 100%;
+    height: 50vh;
+}
+
+.page-hero-carousel-urbs:is(.alignfull) .page-hero-carousel-urbs-swiper .swiper-slide {
+    height: 50vh;
+}
+
+.page-hero-carousel-urbs-swiper .swiper-slide {
+    height: 100%;
+}
+
+.page-hero-carousel-urbs-slide {
+    position: relative;
+    padding: var(--block-margin) 0;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-hero-carousel-urbs .page-hero-carousel-urbs-media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.page-hero-carousel-urbs :is(.page-hero-carousel-urbs-image, .page-hero-carousel-urbs-video-player, .page-hero-carousel-urbs-video-player iframe) {
+    width: 100%;
+    height: 100%;
+}
+
+.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-urbs-media {
+    display: grid;
+}
+
+.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) :is(.page-hero-carousel-urbs-image, .page-hero-carousel-urbs-video-player, .page-hero-carousel-urbs-video-player iframe) {
+    height: 50vh;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search {
+    width: 100%;
+    max-width: var(--wide-width);
+    margin: 0 auto;
+    align-items: center;
+    border-radius: var(--element-border-radius);
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper {
+    margin-top: -2.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    column-gap: 1rem;
+    background-color: var(--color-grey);
+    padding: 1rem;
+    border-radius: var(--element-border-radius);
+}
+
+.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper form {
+    display: grid;
+    grid-template-columns: 1fr 10rem;
+}
+
+.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper form input[type="text"] {
+    font: var(--font-body-small);
+    background: var(--color-white);
+    border-radius: 1.25rem 0rem 0rem 1.25rem;
+    border: 0;
+    outline: 0;
+}
+
+.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper form input[type="text"]:is(:active, :hover, :focus) {
+    border: 0;
+}
+
+.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button) {
+    background-color: var(--color-light-grey);
+    border: none;
+    border-radius: 0rem 1.25rem 1.25rem 0rem;
+    color: var(--color-grey);
+}
+
+.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button):is(:active, :focus, :hover) {
+    color: var(--color-white);
+    background-color: var(--color-darker-grey);
+}
+
+.page-hero-carousel-urbs-image img,
+.page-hero-carousel-urbs-video-player img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.page-hero-carousel-urbs-video-player iframe {
+    display: block;
+    border: none;
+}
+
+.page-hero-carousel-urbs .page-hero-carousel-urbs-video-player iframe {
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    aspect-ratio: 16/9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.page-hero-carousel-urbs[data-color-scheme|="light"] :is(.page-hero-carousel-urbs-image img, .page-hero-carousel-urbs-video-player iframe) {
+    opacity: 0.2;
+}
+
+.page-hero-carousel-urbs:is([data-color-scheme|="medium"], [data-color-scheme|="dark"]) :is(.page-hero-carousel-urbs-image img, .page-hero-carousel-urbs-video-player iframe) {
+    opacity: 0.5;
+}
+
+.page-hero-carousel-urbs-wrapper {
+    margin: 0 auto;
+    position: relative;
+}
+
+.page-hero-carousel-urbs[data-content-width="centered-half"] .page-hero-carousel-urbs-wrapper {
+    width: var(--wide-width);
+}
+
+.page-hero-carousel-urbs-inner>*:last-child {
+    margin-bottom: 0;
+}
+
+.page-hero-carousel-urbs-breadcrumbs {
+    padding: 0;
+    margin: 0 0 calc(1em * var(--secondary-line-height));
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--item-column-gap);
+    row-gap: var(--item-row-gap);
+}
+
+.page-hero-carousel-urbs-breadcrumbs li {
+    display: flex;
+    list-style: none;
+    column-gap: var(--item-column-gap);
+    align-items: center;
+}
+
+.page-hero-carousel-urbs-breadcrumbs li:not(:first-child):before {
+    content: '';
+    display: block;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0 0.8rem;
+    border-top: 0.2rem solid;
+    border-right: 0.2rem solid;
+    transform: rotateZ(45deg);
+}
+
+.page-hero-carousel-urbs-breadcrumbs li a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.page-hero-carousel-urbs-breadcrumbs li:last-child {
+    font-weight: 700;
+}
+
+.page-hero-carousel-urbs-content {
+    margin-bottom: calc(1em * var(--secondary-line-height));
+}
+
+.page-hero-carousel-urbs-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--item-column-gap);
+    row-gap: var(--item-row-gap);
+    align-items: center;
+}
+
+.page-hero-carousel-urbs-navigation {
+    display: flex;
+    align-items: center;
+    column-gap: var(--row-gap);
+    position: absolute;
+    bottom: var(--page-padding);
+    left: var(--page-padding);
+    z-index: 10;
+}
+
+.page-hero-carousel-urbs-navigation-prev,
+.page-hero-carousel-urbs-navigation-next {
+    display: block;
+}
+
+:is(.page-hero-carousel-urbs-navigation-prev, .page-hero-carousel-urbs-navigation-next) svg {
+    width: 4.8rem;
+    height: auto;
+}
+
+:is(.page-hero-carousel-urbs-navigation-prev, .page-hero-carousel-urbs-navigation-next) svg * {
+    transition: all 0.3s ease;
+    stroke: var(--link-color);
+}
+
+:is(.page-hero-carousel-urbs-navigation-prev, .page-hero-carousel-urbs-navigation-next):is(:hover, :focus, :active) svg * {
+    stroke: var(--hover-link-color);
+}
+
+.page-hero-carousel-urbs-pagination {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: var(--item-column-gap);
+    max-width: var(--wide-width);
+    position: absolute;
+    bottom: var(--page-padding);
+    left: 50% !important;
+    transform: translateX(-50%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.page-hero-carousel-urbs-pagination .swiper-pagination-bullet {
+    opacity: 1;
+    background-color: var(--link-color);
+}
+
+.page-hero-carousel-urbs-pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: var(--accent-color);
+}
+
+@media (max-width: 767px) {
+    .page-hero-carousel-urbs-navigation~* .page-hero-carousel-urbs-slide {
+        padding-bottom: calc(var(--block-margin) + 4.8rem + var(--page-padding));
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .page-hero-carousel-urbs-wrapper {
+        width: var(--wide-width);
+        margin: 0px calc(var(--block-margin) * 2);
+    }
+}
+
+@media (min-width: 768px) {
+    .page-hero-carousel-urbs.alignwide .page-hero-carousel-urbs-slide {
+        padding-left: calc((var(--page-padding)*2) + 4.8rem);
+        padding-right: calc((var(--page-padding)*2) + 4.8rem);
+    }
+
+    .page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper {
+        margin-top: 0;
+    }
+
+    .page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper form {
+        grid-template-columns: 1fr 15rem;
+    }
+
+    .page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper form input[type="text"] {
+        font: var(--font-body);
+    }
+
+    .page-hero-carousel-urbs-navigation {
+        position: static;
+    }
+
+    .page-hero-carousel-urbs-navigation-prev,
+    .page-hero-carousel-urbs-navigation-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+
+    .page-hero-carousel-urbs-navigation-prev {
+        left: var(--page-padding);
+    }
+
+    .page-hero-carousel-urbs-navigation-next {
+        right: var(--page-padding);
+    }
+}
+
+@media (min-width: 992px) {
+    .page-hero-carousel-urbs:is([data-content-width="centered-half"], [data-content-width="half"]) .page-hero-carousel-urbs-inner {
+        width: 50%;
+    }
+}
