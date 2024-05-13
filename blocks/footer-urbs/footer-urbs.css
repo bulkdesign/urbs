@@ -124,11 +124,11 @@
 
 .footer-urbs-left-column .cta-buttons ul li a {
     grid-template-columns: auto;
-    column-gap: var(--item-column-gap);
     background: rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
     padding: var(--item-row-gap);
     min-height: 4rem;
+    text-decoration: none;
 }
 
 .footer-urbs-left-column .cta-buttons ul li :is(h2, p) {
@@ -201,7 +201,7 @@
 @media (max-width: 767px) {
     .footer-urbs-left-column .cta-buttons ul li a {
         display: grid;
-        min-height: 4rem;
+        min-height: 12rem;
         justify-content: center;
         text-align: center;
     }
