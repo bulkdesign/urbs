@@ -52,7 +52,7 @@
                                         <h3><?php the_title(); ?></h3>
                                     </a>
                                     <p class="excerpt">
-                                        <?php the_excerpt(); ?>
+                                        <?php echo get_the_excerpt(); ?>
                                     </p>
                                     <a href="<?php the_permalink(); ?>" class="primary-button"><?php esc_html_e('Leia Mais', 'bulk'); ?></a>
                                 </div>
