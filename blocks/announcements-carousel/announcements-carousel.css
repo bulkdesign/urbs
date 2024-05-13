@@ -1,5 +1,5 @@
 .announcements-carousel {
-    margin: 0 auto;
+    margin: var(--row-gap) auto;
     overflow: hidden;
     position: relative;
 }
@@ -20,6 +20,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.announcements-carousel-slide:is(:active, :focus, :hover) img {
+    opacity: 0.7;
+    transition: 0.3s ease all;
 }
 
 .announcements-carousel .announcements-carousel-media {
@@ -43,6 +48,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transition: 0.3s ease all;
 }
 
 .announcements-carousel-video-player iframe {
@@ -77,9 +83,11 @@
     align-items: center;
     column-gap: var(--row-gap);
     position: absolute;
-    bottom: var(--page-padding);
-    left: var(--page-padding);
     z-index: 10;
+    width: 100%;
+    height: 100%;
+    padding: 0 var(--item-column-gap);
+    justify-content: space-between;
 }
 
 .announcements-carousel-navigation-prev,
