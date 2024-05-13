@@ -126,6 +126,7 @@
         /* EYEBROW */
 
         /* MARGINS */
+        --item-row-gap: calc( var(--row-gap) / 2 );
 
         /* MISCELANEOUS */
         --element-border-radius: 2rem;
@@ -171,6 +172,10 @@ body .cls-1 {
     -webkit-transform: translate3d(0,0,0);
 }
 
+.blocks-container> :is(div, section):is(:last-child) {
+    margin: var(--block-margin) auto;
+}
+
 .blocks-container > * {
     max-width: var(--wide-width);
 }
@@ -178,4 +183,10 @@ body .cls-1 {
 .blocks-container > .alignfull {
     max-width: 100%;
     -webkit-transform: translate3d(0,0,0);
+}
+
+@media (min-width: 768px) {
+    .blocks-container> :is(div, section):is(:last-child) {
+        margin: 0 auto var(--block-margin);
+    }
 }
