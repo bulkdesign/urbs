@@ -60,6 +60,7 @@ function child_theme_allowed_blocks() {
         'top-bar',
         'service-cards',
         'quick-links-urbs',
+        'page-hero-carousel-urbs'
     );
 }
 add_filter( 'theme_allowed_blocks', 'child_theme_allowed_blocks', 10, 0);
