@@ -1,3 +1,7 @@
+.service-cards {
+    margin: var(--row-gap) auto;
+}
+
 .service-cards h2 {
     font: var(--font-headline-6);
     color: var(--color-grey);

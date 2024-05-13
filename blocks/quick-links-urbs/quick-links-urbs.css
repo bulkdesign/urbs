@@ -1,5 +1,5 @@
 .quick-links-urbs {
-    margin-bottom: var(--block-margin);
+    margin: var(--row-gap) auto;
     max-width: 100%;
 }
 
@@ -12,6 +12,7 @@
     font: var(--font-headline-6);
     color: var(--color-grey);
     text-transform: uppercase;
+    margin-bottom: var(--item-row-gap);
 }
 
 .quick-links-urbs-inner {
