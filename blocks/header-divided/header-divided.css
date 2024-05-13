@@ -16,10 +16,13 @@
     display: grid;
     grid-template-columns: 1fr;
     width: var(--wide-width);
+    row-gap: 0;
+    transition: 0.5s ease all;
 }
 
 header:is(.menu-open) .header-divided-inner {
-    row-gap: 1rem;
+    row-gap: var(--item-row-gap);
+    transition: 0.5s ease all;
 }
 
 .header-divided button.header-divided-menu-toggle {
@@ -39,7 +42,7 @@ header:is(.menu-open) .header-divided-inner {
     z-index: 2;
     max-width: 20rem;
     margin: 0 auto;
-    transition: 0.3s ease all;
+    transition: 1s ease all;
 }
 
 .header-divided .logo svg * {
@@ -222,16 +225,27 @@ header:is(.menu-open) .header-divided-inner {
         margin-right: auto;
     }
 
-    header:not(.menu-open) .header-divided-left-menu-wrapper {
-        display: none;
+    header:not(.menu-open) :is(.header-divided-left-menu-wrapper, .header-divided-right-menu-wrapper) {
+        opacity: 0;
+        transition: 0.5s ease all;
+    }
+
+    header:is(.menu-open) .header-divided-right-menu-wrapper {
+        opacity: 1;
+        transition: 0.5s ease all;
     }
 
     .header-divided-left-menu-wrapper {
+        grid-column: 1 / span 3;
         grid-row: 2;
     }
 
     .header-divided-right-menu-wrapper {
+        width: 100%;
+        grid-column: 1;
         grid-row: 3;
+        margin-left: 0;
+        margin-right: auto;
     }
 
     header .header-divided-logo-wrapper {
