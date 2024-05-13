@@ -1,5 +1,5 @@
 .blocks-container .latest-news-urbs {
-    max-width: 100%;
+    max-width: fit-content;
     margin-left: var(--page-padding);
 }
 
