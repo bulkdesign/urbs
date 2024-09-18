@@ -18,7 +18,7 @@
 
 @media (min-width: 768px) {
     .top-bar-inner {
-        grid-template-columns: 1fr 20rem;
+        grid-template-columns: minmax(0, 1fr) 30%;
         max-width: var(--full-width);
     }
 
@@ -31,9 +31,9 @@
 
     .top-bar-social-media ul {
         width: 100%;
-        grid-template-columns: 20% 20% 1fr;
         align-items: center;
-        display: grid;
+        display: flex;
+        column-gap: calc( var(--item-column-gap) / 2);
         padding: 0;
     }
 
