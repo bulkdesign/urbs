@@ -44,17 +44,26 @@
 }
 
 .services ul li h3 {
-    font: var(--font-body);
-    color: var(--color-white);
+    font: var(--font-body-small);
+    color: var(--title-color);
     font-weight: bold;
     text-transform: uppercase;
     margin: 0;
+    transition: 0.3s ease all;
+}
+
+.services ul li[data-color-scheme="medium"] .service-icon svg path {
+    fill: var(--color-grey);
+}
+
+.services ul li[data-color-scheme="medium"]:is(:hover, :active, :focus) .service-title h3 {
+    color: var(--color-white);
+    transition: 0.3s ease all;
 }
 
 @media (min-width: 768px) {
-
     .services ul {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     }
 
     .services ul li {
@@ -65,11 +74,27 @@
     .services ul li img {
         width: 10rem;
     }
+}
 
+@media (min-width: 768px) and (max-width: 991px) {
+    .services ul li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .services .service-icon {
+        margin-right: auto;
+        margin-bottom: var(--item-row-gap);
+    }
+
+    .services .service-title {
+        max-width: 15rem;
+    }
 }
 
 @media (min-width: 992px) {
-    
     .services ul li {
         grid-template-columns: 1fr 6rem 15rem 1fr;
     }
