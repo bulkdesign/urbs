@@ -22,17 +22,26 @@
         --yellow-color: var(--color-yellow);
 
         /* COLOR SCHEMES */
-        [data-color-scheme|="grey"] {
+        [data-color-scheme="medium"] {
+            --title-color: var(--color-grey);
+            --background-color: var(--color-light-grey-2);
+            --background-shadow: var(--color-grey);
+        }
+
+        [data-color-scheme="grey"] {
+            --title-color: var(--color-white);
             --background-color: var(--grey-color);
             --background-shadow: var(--color-darker-grey);
         }
 
-        [data-color-scheme|="red"] {
+        [data-color-scheme="red"] {
+            --title-color: var(--color-white);
             --background-color: var(--red-color);
             --background-shadow: var(--color-darker-red);
         }
 
-        [data-color-scheme|="yellow"] {
+        [data-color-scheme="yellow"] {
+            --title-color: var(--color-white);
             --background-color: var(--yellow-color);
             --background-shadow: var(--color-darker-yellow);
         }
