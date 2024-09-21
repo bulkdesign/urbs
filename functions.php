@@ -47,7 +47,8 @@ function child_theme_allowed_blocks() {
         'logos-carousel',
         'logos-grid',
         'page-hero',
-        'page-hero-carousel',
+        'page-hero-carousel-urbs',
+        'page-hero-search-urbs',
         'posts-archive-with-filter',
         'section-background',
         'search',
@@ -60,7 +61,6 @@ function child_theme_allowed_blocks() {
         'top-bar',
         'service-cards',
         'quick-links-urbs',
-        'page-hero-carousel-urbs',
         'pmc-bar',
     );
 }
