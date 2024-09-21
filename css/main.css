@@ -4,6 +4,7 @@
         --color-white: #FFFFFF;
         --color-light-grey: #ececec;
         --color-light-grey-2: #E8E8E8;
+        --color-grey-1: #BEBEBE;
         --color-grey: #586877;
         --color-grey-2: #555555;
         --color-darker-grey: #46535f;
@@ -25,7 +26,7 @@
         [data-color-scheme="medium"] {
             --title-color: var(--color-grey);
             --background-color: var(--color-light-grey-2);
-            --background-shadow: var(--color-grey);
+            --background-shadow: var(--color-grey-1);
         }
 
         [data-color-scheme="grey"] {
