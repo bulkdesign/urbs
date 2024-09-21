@@ -41,6 +41,8 @@
 										<a href="<?php echo esc_attr( $button['url'] ); ?>" target="<?php echo esc_attr( theme_get_link_target( $button ) ); ?>" aria-label="<?php echo esc_attr( theme_get_link_aria_label( $button ) ); ?>">
 											<?php echo wp_get_attachment_image( $image['ID'], 'full' ); ?>
 										</a>
+									<?php else : ?>
+										<?php echo wp_get_attachment_image( $image['ID'], 'full' ); ?>
 									<?php endif; ?>
 								</div>
 							</div>
