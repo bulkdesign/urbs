@@ -52,53 +52,18 @@
     grid-row: 1;
 }
 
-.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search {
-    width: 100%;
-    max-width: var(--wide-width);
-    margin: 0 auto;
-    align-items: center;
-    border-radius: var(--element-border-radius);
-    display: grid;
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper {
-    margin-top: -2.5rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    column-gap: 1rem;
-    background-color: var(--color-grey);
-    padding: 1rem;
-    border-radius: var(--element-border-radius);
-}
-
-.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper form {
-    display: grid;
-    grid-template-columns: 1fr 10rem;
-}
-
-.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper form input[type="text"] {
-    font: var(--font-body-small);
-    background: var(--color-white);
-    border-radius: 1.25rem 0rem 0rem 1.25rem;
-    border: 0;
-    outline: 0;
-}
-
-.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper form input[type="text"]:is(:active, :hover, :focus) {
+.page-hero-carousel-urbs:is(.alignfull) .page-hero-carousel-search-wrapper form input[type="text"]:is(:active, :hover, :focus) {
     border: 0;
 }
 
-.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button) {
+.page-hero-carousel-urbs:is(.alignfull) .page-hero-carousel-search-wrapper :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button) {
     background-color: var(--color-light-grey);
     border: none;
     border-radius: 0rem 1.25rem 1.25rem 0rem;
     color: var(--color-grey);
 }
 
-.page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button):is(:active, :focus, :hover) {
+.page-hero-carousel-urbs:is(.alignfull) .page-hero-carousel-search-wrapper :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button):is(:active, :focus, :hover) {
     color: var(--color-white);
     background-color: var(--color-darker-grey);
 }
@@ -270,15 +235,15 @@
         padding-right: calc((var(--page-padding)*2) + 4.8rem);
     }
 
-    .page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper {
+    .page-hero-carousel-urbs:is(.alignfull) .page-hero-carousel-search-wrapper {
         margin-top: 0;
     }
 
-    .page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper form {
+    .page-hero-carousel-urbs:is(.alignfull) .page-hero-carousel-search-wrapper form {
         grid-template-columns: 1fr 15rem;
     }
 
-    .page-hero-carousel-urbs:is(.alignfull, [data-search="1"]) .page-hero-carousel-search-wrapper form input[type="text"] {
+    .page-hero-carousel-urbs:is(.alignfull) .page-hero-carousel-search-wrapper form input[type="text"] {
         font: var(--font-body);
     }
 

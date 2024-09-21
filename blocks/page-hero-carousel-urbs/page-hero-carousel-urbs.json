@@ -501,82 +501,6 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
-        },
-        {
-            "key": "field_664193a30aff5",
-            "label": "Enable Search Bar",
-            "name": "enable_search",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
-        },
-        {
-            "key": "field_66419743340a3",
-            "label": "Search Placeholder",
-            "name": "search_placeholder",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_664193a30aff5",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6641a56f72860",
-            "label": "Search Submit Text",
-            "name": "search_submit_text",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_664193a30aff5",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
         }
     ],
     "location": [
@@ -597,5 +521,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715578363
+    "modified": 1726908192
 }

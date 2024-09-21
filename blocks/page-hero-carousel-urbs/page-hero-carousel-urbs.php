@@ -7,7 +7,7 @@
 
 ?>
 
-<div <?php theme_block_attributes( $block, 'page-hero-carousel-urbs' ); ?> data-search="<?php the_field( 'enable_search' ); ?>" data-color-scheme="<?php the_field( 'color_scheme' ); ?>" data-content-width="<?php the_field('content_width'); ?>">
+<div <?php theme_block_attributes( $block, 'page-hero-carousel-urbs' ); ?> data-color-scheme="<?php the_field( 'color_scheme' ); ?>" data-content-width="<?php the_field('content_width'); ?>">
 	<?php if( have_rows( 'slides' ) ): ?>
 	<div class="page-hero-carousel-urbs-swiper swiper" data-autoplay="<?php the_field( 'enable_carousel_autoplay' ); ?>" data-autoplay-timeout="<?php the_field( 'carousel_slide_duration' ); ?>" data-start-on-next="<?php the_field( 'start_carousel_on_next_slide' ); ?>">
 		<?php $slides = get_field( 'slides' ); ?>
@@ -38,18 +38,6 @@
 								<div class="page-hero-carousel-urbs-image">
 									<?php echo wp_get_attachment_image( $image['ID'], 'full' ); ?>
 								</div>
-								
-								<?php if ( get_field( 'enable_search' ) ): ?>
-									<div class="page-hero-carousel-search">
-										<div class="page-hero-carousel-search-wrapper">
-											<form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-												<input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="<?php echo esc_attr( get_field( 'search_placeholder' ) ); ?>" />
-												<input type="submit" class="primary-button" value="<?php echo esc_attr( get_field( 'search_submit_text' ) ); ?>" />
-											</form>
-										</div>
-									</div>
-								<?php endif; ?>
-
 							</div>
 							<?php endif; ?>
 						<?php elseif ( in_array( get_sub_field( 'media_type' ), array( 'youtube', 'vimeo', 'video' ) ) ) : ?>
