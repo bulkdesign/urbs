@@ -153,6 +153,7 @@
 }
 
 .footer-urbs-right-column ul li a svg * {
+    fill: var(--color-white);
     transition: 0.3s ease all;
 }
 
