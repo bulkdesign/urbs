@@ -54,6 +54,14 @@
 
 .services ul li[data-color-scheme="medium"] .service-icon svg path {
     fill: var(--color-grey);
+    stroke: var(--color-grey);
+    transition: 0.3s ease all;
+}
+
+.services ul li[data-color-scheme="medium"]:is(:hover, :active, :focus) .service-icon svg path {
+    fill: var(--color-white);
+    stroke: var(--color-white);
+    transition: 0.3s ease all;
 }
 
 .services ul li[data-color-scheme="medium"]:is(:hover, :active, :focus) .service-title h3 {
