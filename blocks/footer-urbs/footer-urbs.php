@@ -37,7 +37,7 @@
                                                     echo file_get_contents( get_attached_file( $logo['ID'] ) );
                                                 ?>
                                             <?php else: ?>
-                                                <img src="<?php echo esc_attr( $logo['url'] ); ?>" alt="<?php echo esc_attr( $button['title'] ); ?>" loading="lazy">
+                                                <img src="<?php echo esc_attr( $logo['url'] ); ?>" alt="<?php echo esc_attr( $logo['title'] ); ?>">
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
@@ -71,7 +71,7 @@
                                                             echo file_get_contents( get_attached_file( $icon['ID'] ) );
                                                         ?>
                                                     <?php else: ?>
-                                                        <img src="<?php echo esc_attr( $icon['url'] ); ?>" alt="<?php echo esc_attr( $button_text['title'] ); ?>" loading="lazy">
+                                                        <img src="<?php echo esc_attr( $icon['url'] ); ?>" alt="<?php echo esc_attr( $button_text['title'] ); ?>">
                                                     <?php endif; ?>
                                                 </div>
                                             <?php endif; ?>
@@ -141,7 +141,7 @@
                                                         echo file_get_contents( get_attached_file( $logo['ID'] ) );
                                                     ?>
                                                 <?php else: ?>
-                                                    <img src="<?php echo esc_attr( $logo['url'] ); ?>" alt="<?php echo esc_attr( $button['title'] ); ?>" loading="lazy">
+                                                    <img src="<?php echo esc_attr( $logo['url'] ); ?>" alt="<?php echo esc_attr( $button['title'] ); ?>">
                                                 <?php endif; ?>
                                             <?php endif; ?>
                                             
@@ -165,7 +165,7 @@
                                                         echo file_get_contents( get_attached_file( $logo['ID'] ) );
                                                     ?>
                                                 <?php else: ?>
-                                                    <img src="<?php echo esc_attr( $logo['url'] ); ?>" alt="<?php echo esc_attr( $button['title'] ); ?>" loading="lazy">
+                                                    <img src="<?php echo esc_attr( $logo['url'] ); ?>" alt="<?php echo esc_attr( $button['title'] ); ?>">
                                                 <?php endif; ?>
                                             <?php endif; ?>
 
@@ -197,7 +197,7 @@
                                                         echo file_get_contents( get_attached_file( $map['ID'] ) );
                                                     ?>
                                                 <?php else: ?>
-                                                    <img src="<?php echo esc_attr( $map['url'] ); ?>" alt="<?php echo esc_attr( $map_button['title'] ); ?>" loading="lazy">
+                                                    <img src="<?php echo esc_attr( $map['url'] ); ?>" alt="<?php echo esc_attr( $map_button['title'] ); ?>">
                                                 <?php endif; ?>
                                             <?php endif; ?>
                                             
@@ -221,7 +221,7 @@
                                                         echo file_get_contents( get_attached_file( $map['ID'] ) );
                                                     ?>
                                                 <?php else: ?>
-                                                    <img src="<?php echo esc_attr( $map['url'] ); ?>" alt="<?php echo esc_attr( $map_button['title'] ); ?>" loading="lazy">
+                                                    <img src="<?php echo esc_attr( $map['url'] ); ?>" alt="<?php echo esc_attr( $map_button['title'] ); ?>">
                                                 <?php endif; ?>
                                             <?php endif; ?>
 
