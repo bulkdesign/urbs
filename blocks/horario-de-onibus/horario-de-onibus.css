@@ -1,0 +1,109 @@
+.horario-de-onibus ul {
+    display: grid;
+    padding: 0;
+    margin: -5rem 0 5rem;
+    position: relative;
+    z-index: 1;
+    column-gap: var(--item-column-gap);
+    row-gap: var(--item-row-gap);
+}
+
+.horario-de-onibus ul li {
+    list-style: none;
+    background: var(--background-color);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    text-align: center;
+    min-height: 10rem;
+    transition: 0.3s all ease;
+}
+
+.horario-de-onibus ul li:is(:hover, :active, :focus) {
+    background: var(--background-shadow);
+}
+
+.horario-de-onibus ul a {
+    text-decoration: none;
+}
+
+.horario-de-onibus .service-icon {
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: auto;
+}
+
+.horario-de-onibus ul li :is(img, svg) {
+    width: 6rem;
+}
+
+.horario-de-onibus .service-title {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.horario-de-onibus ul li h3 {
+    font: var(--font-body-small);
+    color: var(--title-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    transition: 0.3s ease all;
+}
+
+.horario-de-onibus ul li[data-color-scheme="medium"] .service-icon svg path {
+    fill: var(--color-grey);
+    stroke: var(--color-grey);
+    transition: 0.3s ease all;
+}
+
+.horario-de-onibus ul li[data-color-scheme="medium"]:is(:hover, :active, :focus) .service-icon svg path {
+    fill: var(--color-white);
+    stroke: var(--color-white);
+    transition: 0.3s ease all;
+}
+
+.horario-de-onibus ul li[data-color-scheme="medium"]:is(:hover, :active, :focus) .service-title h3 {
+    color: var(--color-white);
+    transition: 0.3s ease all;
+}
+
+@media (min-width: 768px) {
+    .horario-de-onibus ul {
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    }
+
+    .horario-de-onibus ul li {
+        min-height: 15rem;
+        grid-template-columns: 2rem 6rem 1fr 2rem;
+    }
+
+    .horario-de-onibus ul li img {
+        width: 10rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .horario-de-onibus ul li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .horario-de-onibus .service-icon {
+        margin-right: auto;
+        margin-bottom: var(--item-row-gap);
+    }
+
+    .horario-de-onibus .service-title {
+        max-width: 15rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .horario-de-onibus ul li {
+        grid-template-columns: 1fr 6rem 15rem 1fr;
+    }
+}
