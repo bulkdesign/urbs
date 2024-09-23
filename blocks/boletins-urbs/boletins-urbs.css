@@ -1,0 +1,197 @@
+.blocks-container .boletins-urbs {
+    max-width: var(--wide-width);
+    margin-left: var(--page-padding);
+}
+
+.boletins-urbs {
+    width: 100%;
+    max-width: 100%;
+    margin: var(--row-gap) auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: var(--column-gap);
+    row-gap: var(--item-row-gap);
+    align-items: start;
+    overflow: hidden;
+}
+
+.boletins-urbs h2 {
+    font: var(--font-headline-6);
+    color: var(--color-grey);
+    text-transform: uppercase;
+}
+
+.boletins-urbs img {
+    border-radius: var(--element-border-radius);
+}
+
+.boletins-urbs a {
+    text-decoration: none;
+}
+
+.boletins-urbs .news-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--element-border-radius);
+    margin-bottom: 1rem;
+}
+
+.boletins-urbs .news-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s ease all;
+}
+
+.boletins-urbs .news-wrapper img:is(:hover, :active, :focus) {
+    transform: scale(1.1);
+    transition: 0.3s ease all;
+}
+
+.boletins-urbs .latest-news-item h3 {
+    font: var(--font-headline-8);
+    transition: 0.3s all ease;
+}
+
+.boletins-urbs .latest-news-item p.excerpt {
+    font: var(--font-body-small);
+    margin: 0;
+}
+
+.boletins-urbs .news h3:is(:active, :hover, :focus) {
+    color: var(--color-red);
+    transition: 0.3s ease all;
+}
+
+.boletins-urbs-header.animate__animated {
+    animation-name: fadeInUp;
+}
+
+.boletins-urbs-list.animate__animated {
+    animation-name: fadeIn;
+}
+
+.boletins-urbs-list-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: var(--column-gap);
+    row-gap: calc(var(--row-gap) / 2);
+    align-items: start;
+    align-self: flex-start;
+}
+
+.boletins-urbs .boletins-urbs-wrapper .news-carousel {
+    display: grid;
+}
+
+.boletins-urbs .boletins-urbs-wrapper .news-carousel .swiper-wrapper {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.boletins-urbs .swiper-slide {
+    width: var(--wide-width);
+    padding: 1rem;
+}
+
+.boletins-urbs .swiper-slide .latest-news-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    row-gap: var(--item-row-gap);
+    border-radius: var(--element-border-radius);
+    padding: var(--item-column-gap);
+    box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.3);
+}
+
+.boletins-urbs .swiper-slide .latest-news-item a.primary-button {
+    margin-top: auto;
+}
+
+.boletins-urbs-pagination {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: var(--item-column-gap);
+    max-width: var(--wide-width);
+}
+
+.boletins-urbs-navigation {
+    display: flex;
+    align-items: center;
+    column-gap: var(--row-gap);
+    position: absolute;
+    z-index: 10;
+    padding: 0 var(--item-column-gap);
+    justify-content: flex-end;
+    right: var(--item-column-gap);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.boletins-urbs-navigation .boletins-urbs-navigation-next {
+    z-index: 1;
+}
+
+.boletins-urbs-pagination.animate__animated,
+.boletins-urbs-navigation.animate__animated {
+    animation-name: fadeIn;
+}
+
+.boletins-urbs-pagination .swiper-pagination-bullet {
+    opacity: 1;
+    background-color: var(--link-color);
+}
+
+.boletins-urbs-pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: var(--accent-color);
+}
+
+:is(.boletins-urbs-navigation-prev, .boletins-urbs-navigation-next) svg {
+    width: 4.8rem;
+    height: auto;
+}
+
+:is(.boletins-urbs-navigation-prev, .boletins-urbs-navigation-next) svg path {
+    stroke-width: 0.2rem;
+}
+
+:is(.boletins-urbs-navigation-prev, .boletins-urbs-navigation-next) svg * {
+    transition: all 0.3s ease;
+    stroke: var(--color-white);
+}
+
+:is(.boletins-urbs-navigation-prev, .boletins-urbs-navigation-next):is(:hover, :focus, :active) svg * {
+    stroke: var(--color-light-grey);
+}
+
+:is(.boletins-urbs-navigation-prev, .boletins-urbs-navigation-next):is(:hover, :focus, :active) svg path:first-child {
+    stroke: var(--color-white) !important;
+}
+
+.boletins-urbs a.primary-button.all-news {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+}
+
+@media (min-width: 768px) {
+    .blocks-container .boletins-urbs {
+        margin-left: auto;
+    }
+
+    .boletins-urbs .swiper-slide {
+        width: min(50%, 30rem);
+    }
+
+    .boletins-urbs-navigation {
+        right: 0;
+    }
+}
