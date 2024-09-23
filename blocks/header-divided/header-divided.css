@@ -202,7 +202,7 @@ header:is(.menu-open) .header-divided-inner {
 
 @media (min-width: 768px) {
     .header-divided-inner {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 40% minmax(0, 1fr) 40%;
     }
 
     .header-divided-right-menu-wrapper {
@@ -453,6 +453,7 @@ header:is(.menu-open) .header-divided-inner {
     .header-divided nav ul>li.menu-item-has-children:is(:hover)>.sub-menu {
         display: flex !important;
         flex-direction: column;
+        row-gap: calc(var(--item-row-gap) / 4);
         align-items: stretch;
         background-color: rgba(255, 255, 255, 0.9);
         padding: 2.4rem;
