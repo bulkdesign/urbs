@@ -42,6 +42,7 @@ function child_theme_allowed_blocks() {
         'faq-accordion',
         'footer-urbs',
         'header-divided',
+        'horario-de-onibus',
         'information-carousel',
         'latest-news-urbs',
         'logos-carousel',
@@ -54,7 +55,7 @@ function child_theme_allowed_blocks() {
         'search',
         'services',
         'columns-of-services',
-        'single-post-content',
+        'post-content',
         'template-content',
         'title-and-content',
         'photos-carousel',
@@ -62,6 +63,7 @@ function child_theme_allowed_blocks() {
         'service-cards',
         'quick-links-urbs',
         'pmc-bar',
+        'boletins-urbs'
     );
 }
 add_filter( 'theme_allowed_blocks', 'child_theme_allowed_blocks', 10, 0);
