@@ -63,7 +63,8 @@ function child_theme_allowed_blocks() {
         'service-cards',
         'quick-links-urbs',
         'pmc-bar',
-        'boletins-urbs'
+        'boletins-urbs',
+        'links-list',
     );
 }
 add_filter( 'theme_allowed_blocks', 'child_theme_allowed_blocks', 10, 0);
