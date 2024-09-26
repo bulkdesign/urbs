@@ -80,12 +80,11 @@
 
 .announcements-carousel-navigation {
     display: flex;
-    align-items: center;
-    column-gap: var(--row-gap);
     position: absolute;
-    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
     width: 100%;
-    height: 100%;
     padding: 0 var(--item-column-gap);
     justify-content: space-between;
 }
@@ -100,13 +99,21 @@
     height: auto;
 }
 
+:is(.announcements-carousel-navigation-prev, .announcements-carousel-navigation-next) svg path {
+    stroke-width: 0.2rem;
+}
+
 :is(.announcements-carousel-navigation-prev, .announcements-carousel-navigation-next) svg * {
     transition: all 0.3s ease;
     stroke: var(--color-white);
 }
 
-:is(.announcements-carousel-navigation-prev, .announcements-carousel-navigation-next):is(:hover, :focus, :active) svg * {
+:is(.announcements-carousel-navigation-prev, .announcements-carousel-navigation-next):is(:hover, :focus) svg * {
     stroke: var(--color-light-grey);
+}
+
+:is(.announcements-carousel-navigation-prev, .announcements-carousel-navigation-next):is(:hover, :focus) svg path:first-child {
+    stroke: var(--color-white) !important;
 }
 
 .announcements-carousel-pagination {
@@ -152,11 +159,7 @@
         padding-left: calc((var(--page-padding)*2) + 4.8rem);
         padding-right: calc((var(--page-padding)*2) + 4.8rem);
     }
-
-    .announcements-carousel-navigation {
-        position: static;
-    }
-
+    
     .announcements-carousel-navigation-prev,
     .announcements-carousel-navigation-next {
         position: absolute;

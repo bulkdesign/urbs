@@ -6,7 +6,6 @@
         const default_carousel_settings = {
             slidesPerView: 1,
             loop: true,
-            simulateTouch: false,
             navigation: {
                 nextEl: carousel.querySelector('.announcements-carousel-navigation-next'),
                 prevEl: carousel.querySelector('.announcements-carousel-navigation-prev')
