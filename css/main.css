@@ -14,6 +14,7 @@
         --color-yellow: #e19f2f;
         --color-darker-yellow: #b47f26;
 
+        --title-color: var(--color-grey);
         --link-color: var(--color-yellow);
         --hover-link-color: var(--color-red);
 
@@ -23,6 +24,10 @@
         --yellow-color: var(--color-yellow);
 
         /* COLOR SCHEMES */
+        [data-color-scheme|="light"] {
+            --title-color: var(--color-grey);
+        }
+
         [data-color-scheme="medium"] {
             --title-color: var(--color-grey);
             --background-color: var(--color-light-grey-2);
@@ -46,23 +51,6 @@
             --background-color: var(--yellow-color);
             --background-shadow: var(--color-darker-yellow);
         }
-
-        /* TEXT */
-            /* PRIMARY FONT */
-
-            /* SECONDARY FONT */
-
-            /* FONT SIZES */
-            h1 { font: var(--font-headline-2); }
-            h2 { font: var(--font-headline-3); }
-            h3 { font: var(--font-headline-4); }
-            h4 { font: var(--font-headline-5); }
-            h5 { font: var(--font-headline-6); }
-            h6 { font: var(--font-headline-7); }  
-
-            /* LIGHT BACKGROUND COLORS */
-
-            /* DARK BACKGROUND COLORS */
 
         /* PRIMARY BUTTON */
             /* DEFAULT STYLE */
@@ -89,9 +77,9 @@
                 border-color: var(--color-grey);
             }
 
-            :is([data-color-scheme="light"], [data-color-scheme="yellow"]) :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button):is(:active, :hover, :focus) {
-                background-color: var(--color-grey);
-                border-color: var(--color-grey);
+            :is([data-color-scheme|="light"], [data-color-scheme="yellow"]) :is(.primary-button, .wp-block-button:not(.is-style-outline) > .wp-element-button):is(:active, :hover, :focus) {
+                background-color: var(--color-darker-grey);
+                border-color: var(--color-darker-grey);
             }
 
             /* DARK */
@@ -145,6 +133,40 @@
 
 }
 
+@media (min-width: 768px) {
+    :root {
+        /* CONFIGURABLE SETTINGS */
+        /* FONT SIZES */
+        --font-multiplier: 1.1;
+        /* MISCELANEOUS */
+        --container-width: 72rem;
+    }
+}
+
+@media (min-width: 992px) {
+    :root {
+        /* CONFIGURABLE SETTINGS */
+        /* FONT SIZES */
+        --font-multiplier: 1.2;
+        /* MARGINS */
+        --block-margin: 9.6rem;
+        --column-gap: 4.8rem;
+        --row-gap: 4.8rem;
+        /* MISCELANEOUS */
+        --container-width: 96rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        /* CONFIGURABLE SETTINGS */
+        /* FONT SIZES */
+        --font-multiplier: 1.2;
+        /* MISCELANEOUS */
+        --container-width: 117rem;
+    }
+}
+
 .urbs-separator {
     display: grid;
     grid-template-columns: 1fr;
@@ -190,6 +212,10 @@ body .cls-1 {
 
 .blocks-container > * {
     max-width: var(--wide-width);
+}
+
+main > .blocks-container:last-child > *:last-child {
+    margin-bottom: var(--block-margin);
 }
 
 .blocks-container > .alignfull {
