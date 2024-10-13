@@ -145,9 +145,11 @@
                                                 <?php endif; ?>
                                             <?php endif; ?>
                                             
-                                            <span>
-                                                <?php echo wp_kses_post( $button['title'] ); ?>
-                                            </span>
+                                            <?php if ( ! empty( $button['title'] ) ) : ?>
+                                                <span>
+                                                    <?php echo wp_kses_post( $button['title'] ); ?>
+                                                </span>
+                                            <?php endif; ?>
 
                                             <?php if ( '_blank' === theme_get_link_target( $button ) ) : ?>
                                             <span class="sr-only">
