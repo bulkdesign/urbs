@@ -146,10 +146,18 @@
 }
 
 .footer-urbs-right-column ul {
-    display: grid;
-    width: 20rem;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    display: flex;
+    width: 100%;
     column-gap: var(--item-column-gap);
+}
+
+.footer-urbs-right-column ul li :is(svg, img) {
+    width: 4rem;
+}
+
+.footer-urbs-right-column ul li a {
+    display: flex;
+    column-gap: calc(var(--item-column-gap) / 2);
 }
 
 .footer-urbs-right-column ul li a svg * {
@@ -262,11 +270,7 @@
     }
 
     .footer-urbs-right-column ul {
-        margin-left: auto;
-    }
-
-    .footer-urbs-right-column ul li {
-        width: 4rem;
+        justify-content: end;
     }
 
     .footer-urbs-copyright {
