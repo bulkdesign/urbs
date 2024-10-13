@@ -1,10 +1,10 @@
 {
     "key": "group_8080b90181f0c_urbs_page_hero_search",
-    "title": "Block: Page Hero Search URBS",
+    "title": "Bloco: Banner com Busca",
     "fields": [
         {
             "key": "field_8080b926a8a1c_urbs_page_hero_search",
-            "label": "Slides",
+            "label": "Banners",
             "name": "slides",
             "aria-label": "",
             "type": "repeater",
@@ -21,12 +21,12 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Add Slide",
+            "button_label": "Add Banner",
             "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_8080b901855dd_urbs_page_hero_search",
-                    "label": "Media Type",
+                    "label": "Tipo de Mídia",
                     "name": "media_type",
                     "aria-label": "",
                     "type": "select",
@@ -39,10 +39,10 @@
                         "id": ""
                     },
                     "choices": {
-                        "image": "Image",
-                        "video": "Video",
-                        "youtube": "YouTube Video",
-                        "vimeo": "Vimeo Video"
+                        "image": "Imagem",
+                        "video": "Vídeo",
+                        "youtube": "YouTube",
+                        "vimeo": "Vimeo"
                     },
                     "default_value": false,
                     "return_format": "value",
@@ -55,7 +55,7 @@
                 },
                 {
                     "key": "field_8080b9018561b_urbs_page_hero_search",
-                    "label": "Image",
+                    "label": "Imagem",
                     "name": "image",
                     "aria-label": "",
                     "type": "image",
@@ -89,7 +89,7 @@
                 },
                 {
                     "key": "field_8080b90185658_urbs_page_hero_search",
-                    "label": "Video ID",
+                    "label": "ID do Vídeo",
                     "name": "video_id",
                     "aria-label": "",
                     "type": "text",
@@ -125,7 +125,7 @@
                 },
                 {
                     "key": "field_8080b90185695_urbs_page_hero_search",
-                    "label": "Video File",
+                    "label": "Arquivo",
                     "name": "video_file",
                     "aria-label": "",
                     "type": "file",
@@ -173,7 +173,7 @@
         },
         {
             "key": "field_66419743340a3_urbs_page_hero_search",
-            "label": "Search Placeholder",
+            "label": "Texto Inicial da Busca",
             "name": "search_placeholder",
             "aria-label": "",
             "type": "text",
@@ -182,9 +182,8 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_664193a30aff5_urbs_page_hero_search",
-                        "operator": "==",
-                        "value": "1"
+                        "field": "field_8080b926a8a1c_urbs_page_hero_search",
+                        "operator": "!=empty"
                     }
                 ]
             ],
@@ -201,7 +200,7 @@
         },
         {
             "key": "field_6641a56f72860_urbs_page_hero_search",
-            "label": "Search Submit Text",
+            "label": "Texto do Botão de Buscar",
             "name": "search_submit_text",
             "aria-label": "",
             "type": "text",
@@ -210,9 +209,8 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_664193a30aff5_urbs_page_hero_search",
-                        "operator": "==",
-                        "value": "1"
+                        "field": "field_8080b926a8a1c_urbs_page_hero_search",
+                        "operator": "!=empty"
                     }
                 ]
             ],
@@ -246,5 +244,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726908120
+    "modified": 1728829234
 }

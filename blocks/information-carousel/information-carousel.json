@@ -1,6 +1,6 @@
 {
     "key": "group_2580b90181f0c",
-    "title": "Block: Information Carousel",
+    "title": "Bloco: Banner de Informações",
     "fields": [
         {
             "key": "field_2580b926a8a1c",
@@ -26,7 +26,7 @@
             "sub_fields": [
                 {
                     "key": "field_66ee92354df00",
-                    "label": "Type",
+                    "label": "Tipo",
                     "name": "type",
                     "aria-label": "",
                     "type": "select",
@@ -39,8 +39,8 @@
                         "id": ""
                     },
                     "choices": {
-                        "select": "Select Banner",
-                        "add_info": "Add Information"
+                        "select": "Fazer Upload de Banner",
+                        "add_info": "Criar um Banner"
                     },
                     "default_value": false,
                     "return_format": "value",
@@ -53,7 +53,7 @@
                 },
                 {
                     "key": "field_66381adb25703",
-                    "label": "Title",
+                    "label": "Título",
                     "name": "title",
                     "aria-label": "",
                     "type": "text",
@@ -82,7 +82,7 @@
                 },
                 {
                     "key": "field_66381b1625705",
-                    "label": "Content",
+                    "label": "Conteúdo",
                     "name": "content",
                     "aria-label": "",
                     "type": "repeater",
@@ -111,7 +111,7 @@
                     "sub_fields": [
                         {
                             "key": "field_66381b5725706",
-                            "label": "Title",
+                            "label": "Título",
                             "name": "title",
                             "aria-label": "",
                             "type": "text",
@@ -132,7 +132,7 @@
                         },
                         {
                             "key": "field_663b6d3b56fd8",
-                            "label": "Title Color",
+                            "label": "Cor do Título",
                             "name": "title_color",
                             "aria-label": "",
                             "type": "select",
@@ -161,7 +161,7 @@
                         },
                         {
                             "key": "field_66381ce025707",
-                            "label": "Text",
+                            "label": "Texto",
                             "name": "text",
                             "aria-label": "",
                             "type": "wysiwyg",
@@ -202,7 +202,7 @@
                 },
                 {
                     "key": "field_2580b9018561b",
-                    "label": "Background Image",
+                    "label": "Imagem de Fundo",
                     "name": "image",
                     "aria-label": "",
                     "type": "image",
@@ -228,7 +228,7 @@
                 },
                 {
                     "key": "field_66381d7125708",
-                    "label": "Footer Note",
+                    "label": "Texto de Rodapé",
                     "name": "footer_note",
                     "aria-label": "",
                     "type": "text",
@@ -259,7 +259,7 @@
         },
         {
             "key": "field_25b19ef726ac1",
-            "label": "Enable Carousel Pagination",
+            "label": "Habilitar Paginação",
             "name": "enable_carousel_pagination",
             "aria-label": "",
             "type": "true_false",
@@ -279,7 +279,7 @@
         },
         {
             "key": "field_25b19f2826ac2",
-            "label": "Enable Carousel Navigation",
+            "label": "Habilitar Navegação",
             "name": "enable_carousel_navigation",
             "aria-label": "",
             "type": "true_false",
@@ -299,7 +299,7 @@
         },
         {
             "key": "field_25d3c1ebee3da",
-            "label": "Enable Carousel Autoplay",
+            "label": "Habilitar Transição Automática",
             "name": "enable_carousel_autoplay",
             "aria-label": "",
             "type": "true_false",
@@ -319,7 +319,7 @@
         },
         {
             "key": "field_25d3c30cbcea7",
-            "label": "Carousel Slide Duration",
+            "label": "Duração de Cada Banner",
             "name": "carousel_slide_duration",
             "aria-label": "",
             "type": "number",
@@ -341,7 +341,7 @@
         },
         {
             "key": "field_25d3c1f9ee3db",
-            "label": "Start Carousel on Next Slide",
+            "label": "Começar Transição no Banner Seguinte",
             "name": "start_carousel_on_next_slide",
             "aria-label": "",
             "type": "true_false",
@@ -378,5 +378,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726911170
+    "modified": 1728828669
 }

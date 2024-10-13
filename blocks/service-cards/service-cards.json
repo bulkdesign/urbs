@@ -1,10 +1,10 @@
 {
     "key": "group_28909b4f0569a",
-    "title": "Block: Service Cards",
+    "title": "Bloco: Cards de Serviços",
     "fields": [
         {
             "key": "field_6608ff58bf11c",
-            "label": "Title",
+            "label": "Título",
             "name": "title",
             "aria-label": "",
             "type": "text",
@@ -24,7 +24,7 @@
         },
         {
             "key": "field_28909d95f504f",
-            "label": "Service Card",
+            "label": "Serviço",
             "name": "service_cards",
             "aria-label": "",
             "type": "repeater",
@@ -41,12 +41,12 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Adicionar card",
+            "button_label": "Adicionar serviço",
             "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_28909ba22fd9e",
-                    "label": "Title",
+                    "label": "Título",
                     "name": "title",
                     "aria-label": "",
                     "type": "text",
@@ -67,7 +67,7 @@
                 },
                 {
                     "key": "field_28909baf2fd9f",
-                    "label": "Image",
+                    "label": "Imagem",
                     "name": "image",
                     "aria-label": "",
                     "type": "image",
@@ -110,7 +110,7 @@
                 },
                 {
                     "key": "field_28ffd4c90b71f",
-                    "label": "Color Scheme",
+                    "label": "Esquema de Cor",
                     "name": "color_scheme",
                     "aria-label": "",
                     "type": "select",
@@ -160,5 +160,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711865825
+    "modified": 1728829398
 }

@@ -1,10 +1,10 @@
 {
     "key": "group_65909b4f0569a",
-    "title": "Block: Services",
+    "title": "Bloco: Serviços Destacados",
     "fields": [
         {
             "key": "field_65909d95f504f",
-            "label": "Service",
+            "label": "Serviço",
             "name": "service",
             "aria-label": "",
             "type": "repeater",
@@ -21,12 +21,12 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Adicionar linha",
+            "button_label": "Adicionar serviço",
             "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_65909ba22fd9e",
-                    "label": "Title",
+                    "label": "Título",
                     "name": "title",
                     "aria-label": "",
                     "type": "text",
@@ -47,7 +47,7 @@
                 },
                 {
                     "key": "field_65909baf2fd9f",
-                    "label": "Image",
+                    "label": "Imagem",
                     "name": "image",
                     "aria-label": "",
                     "type": "image",
@@ -90,7 +90,7 @@
                 },
                 {
                     "key": "field_65ffd4c90b71f",
-                    "label": "Color Scheme",
+                    "label": "Esquema de Cor",
                     "name": "color_scheme",
                     "aria-label": "",
                     "type": "select",
@@ -140,5 +140,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711265262
+    "modified": 1728829492
 }

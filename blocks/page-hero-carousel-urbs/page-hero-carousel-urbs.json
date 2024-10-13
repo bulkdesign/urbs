@@ -1,10 +1,10 @@
 {
     "key": "group_8080b90181f0c",
-    "title": "Block: Page Hero Carousel URBS",
+    "title": "Bloco: Banners Rotativos URBS",
     "fields": [
         {
             "key": "field_8080b926a8a1c",
-            "label": "Slides",
+            "label": "Banners",
             "name": "slides",
             "aria-label": "",
             "type": "repeater",
@@ -21,12 +21,12 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Add Slide",
+            "button_label": "Add Banner",
             "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_8080b901855dd",
-                    "label": "Media Type",
+                    "label": "Tipo de Mídia",
                     "name": "media_type",
                     "aria-label": "",
                     "type": "select",
@@ -39,10 +39,10 @@
                         "id": ""
                     },
                     "choices": {
-                        "image": "Image",
-                        "video": "Video",
-                        "youtube": "YouTube Video",
-                        "vimeo": "Vimeo Video"
+                        "image": "Imagem",
+                        "video": "Vídeo",
+                        "youtube": "YouTube",
+                        "vimeo": "Vimeo"
                     },
                     "default_value": false,
                     "return_format": "value",
@@ -55,7 +55,7 @@
                 },
                 {
                     "key": "field_8080b9018561b",
-                    "label": "Image",
+                    "label": "Imagem",
                     "name": "image",
                     "aria-label": "",
                     "type": "image",
@@ -89,7 +89,7 @@
                 },
                 {
                     "key": "field_8080b90185658",
-                    "label": "Video ID",
+                    "label": "ID do Vídeo",
                     "name": "video_id",
                     "aria-label": "",
                     "type": "text",
@@ -125,7 +125,7 @@
                 },
                 {
                     "key": "field_8080b90185695",
-                    "label": "Video File",
+                    "label": "Arquivo",
                     "name": "video_file",
                     "aria-label": "",
                     "type": "file",
@@ -154,7 +154,7 @@
                 },
                 {
                     "key": "field_8080b901856d1",
-                    "label": "Breadcrumbs",
+                    "label": "Breadcrumbs (navegação)",
                     "name": "breadcrumbs",
                     "aria-label": "",
                     "type": "flexible_content",
@@ -231,7 +231,7 @@
                 },
                 {
                     "key": "field_8080b9018570d",
-                    "label": "Eyebrow",
+                    "label": "Pré-título",
                     "name": "eyebrow",
                     "aria-label": "",
                     "type": "text",
@@ -252,7 +252,7 @@
                 },
                 {
                     "key": "field_8080b90185749",
-                    "label": "Title",
+                    "label": "Título",
                     "name": "title",
                     "aria-label": "",
                     "type": "wysiwyg",
@@ -273,7 +273,7 @@
                 },
                 {
                     "key": "field_8080b90185786",
-                    "label": "Content",
+                    "label": "Conteúdo",
                     "name": "content",
                     "aria-label": "",
                     "type": "textarea",
@@ -286,15 +286,15 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
                     "maxlength": "",
                     "rows": 4,
+                    "placeholder": "",
                     "new_lines": "br",
                     "parent_repeater": "field_8080b926a8a1c"
                 },
                 {
                     "key": "field_8080b901857d7",
-                    "label": "Primary Button",
+                    "label": "Botão Primário",
                     "name": "button_1",
                     "aria-label": "",
                     "type": "link",
@@ -311,7 +311,7 @@
                 },
                 {
                     "key": "field_8080b9018582e",
-                    "label": "Secondary Button",
+                    "label": "Botão Secundário",
                     "name": "button_2",
                     "aria-label": "",
                     "type": "link",
@@ -328,7 +328,7 @@
                 },
                 {
                     "key": "field_8080b90185874",
-                    "label": "Tertiary Button",
+                    "label": "Botão Terciário",
                     "name": "button_3",
                     "aria-label": "",
                     "type": "link",
@@ -347,7 +347,7 @@
         },
         {
             "key": "field_80b19ef726ac1",
-            "label": "Enable Carousel Pagination",
+            "label": "Habilitar Paginação",
             "name": "enable_carousel_pagination",
             "aria-label": "",
             "type": "true_false",
@@ -367,7 +367,7 @@
         },
         {
             "key": "field_80b19f2826ac2",
-            "label": "Enable Carousel Navigation",
+            "label": "Habilitar Navegação",
             "name": "enable_carousel_navigation",
             "aria-label": "",
             "type": "true_false",
@@ -387,7 +387,7 @@
         },
         {
             "key": "field_80d3c1ebee3da",
-            "label": "Enable Carousel Autoplay",
+            "label": "Habilitar Transição Automática",
             "name": "enable_carousel_autoplay",
             "aria-label": "",
             "type": "true_false",
@@ -407,7 +407,7 @@
         },
         {
             "key": "field_80d3c30cbcea7",
-            "label": "Carousel Slide Duration",
+            "label": "Duração de Cada Banner",
             "name": "carousel_slide_duration",
             "aria-label": "",
             "type": "number",
@@ -429,7 +429,7 @@
         },
         {
             "key": "field_80d3c1f9ee3db",
-            "label": "Start Carousel on Next Slide",
+            "label": "Iniciar Transição no Banner Seguinte",
             "name": "start_carousel_on_next_slide",
             "aria-label": "",
             "type": "true_false",
@@ -449,7 +449,7 @@
         },
         {
             "key": "field_8080b901858ba",
-            "label": "Color Scheme",
+            "label": "Esquema de Cor",
             "name": "color_scheme",
             "aria-label": "",
             "type": "select",
@@ -477,7 +477,7 @@
         },
         {
             "key": "field_8080b901858fd",
-            "label": "Content Width",
+            "label": "Largura",
             "name": "content_width",
             "aria-label": "",
             "type": "select",
@@ -490,9 +490,9 @@
                 "id": ""
             },
             "choices": {
-                "centered-half": "Centered Half Width",
-                "half": "Half Width",
-                "full": "Full Width"
+                "centered-half": "50% centralizado",
+                "half": "Metade",
+                "full": "Tamanho Completo"
             },
             "default_value": false,
             "return_format": "value",
@@ -521,5 +521,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726908192
+    "modified": 1728829087
 }

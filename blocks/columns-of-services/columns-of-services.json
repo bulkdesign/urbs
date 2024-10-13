@@ -1,10 +1,10 @@
 {
     "key": "group_82909b4f0569a",
-    "title": "Block: Columns of Services",
+    "title": "Bloco: Grade de Serviços",
     "fields": [
         {
             "key": "field_6608d4296c584",
-            "label": "Title",
+            "label": "Título",
             "name": "title",
             "aria-label": "",
             "type": "text",
@@ -24,7 +24,7 @@
         },
         {
             "key": "field_82909d95f504f",
-            "label": "Service",
+            "label": "Serviço",
             "name": "service",
             "aria-label": "",
             "type": "repeater",
@@ -46,7 +46,7 @@
             "sub_fields": [
                 {
                     "key": "field_82909ba22fd9e",
-                    "label": "Title",
+                    "label": "Título",
                     "name": "title",
                     "aria-label": "",
                     "type": "text",
@@ -67,7 +67,7 @@
                 },
                 {
                     "key": "field_6608d49c5cc86",
-                    "label": "Description",
+                    "label": "Descrição",
                     "name": "description",
                     "aria-label": "",
                     "type": "text",
@@ -88,7 +88,7 @@
                 },
                 {
                     "key": "field_82909baf2fd9f",
-                    "label": "Image",
+                    "label": "Imagem",
                     "name": "image",
                     "aria-label": "",
                     "type": "image",
@@ -150,5 +150,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711854761
+    "modified": 1728830027
 }

@@ -1,10 +1,10 @@
 {
     "key": "group_9990d990d8bb8",
-    "title": "Block: Latest News URBS",
+    "title": "Bloco: Últimas Notícias URBS",
     "fields": [
         {
             "key": "field_9990d9a5246b5",
-            "label": "Title",
+            "label": "Título",
             "name": "title",
             "aria-label": "",
             "type": "text",
@@ -24,7 +24,7 @@
         },
         {
             "key": "field_9990d9ae246b6",
-            "label": "Subtitle",
+            "label": "Subtítulo",
             "name": "subtitle",
             "aria-label": "",
             "type": "textarea",
@@ -44,7 +44,7 @@
         },
         {
             "key": "field_99c9b2f8c99d0",
-            "label": "Primary Button",
+            "label": "Botão com Link Externo",
             "name": "primary_button",
             "aria-label": "",
             "type": "link",
@@ -60,7 +60,7 @@
         },
         {
             "key": "field_99c9b35cc99d1",
-            "label": "Enable Carousel Autoplay",
+            "label": "Habilitar Transição Automática",
             "name": "enable_carousel_autoplay",
             "aria-label": "",
             "type": "true_false",
@@ -80,7 +80,7 @@
         },
         {
             "key": "field_99c9b38ac99d2",
-            "label": "Enable Carousel Loop",
+            "label": "Habilitar Carrossel Infinito",
             "name": "enable_carousel_loop",
             "aria-label": "",
             "type": "true_false",
@@ -100,7 +100,7 @@
         },
         {
             "key": "field_99c9b39ac99d3",
-            "label": "Enable Carousel Pagination",
+            "label": "Habilitar Paginação",
             "name": "enable_carousel_pagination",
             "aria-label": "",
             "type": "true_false",
@@ -120,7 +120,7 @@
         },
         {
             "key": "field_99c9b3aec99d4",
-            "label": "Enable Carousel Navigation",
+            "label": "Habilitar Navegação",
             "name": "enable_carousel_navigation",
             "aria-label": "",
             "type": "true_false",
@@ -157,5 +157,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1707718615
+    "modified": 1728830502
 }

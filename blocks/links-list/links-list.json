@@ -1,10 +1,10 @@
 {
     "key": "group_285eb29ab7486_urbs_links_list",
-    "title": "Block: Links List",
+    "title": "Bloco: Lista de Links",
     "fields": [
         {
             "key": "field_285eb29ab9d54_urbs_links_list",
-            "label": "Eyebrow",
+            "label": "Pré-Título",
             "name": "eyebrow",
             "aria-label": "",
             "type": "text",
@@ -24,7 +24,7 @@
         },
         {
             "key": "field_285eb29ab9d90_urbs_links_list",
-            "label": "Title",
+            "label": "Título",
             "name": "title",
             "aria-label": "",
             "type": "wysiwyg",
@@ -44,7 +44,7 @@
         },
         {
             "key": "field_285eb29ab9dcf_urbs_links_list",
-            "label": "Subtitle",
+            "label": "Subtítulo",
             "name": "subtitle",
             "aria-label": "",
             "type": "textarea",
@@ -64,7 +64,7 @@
         },
         {
             "key": "field_285eb29ab9e0b_urbs_links_list",
-            "label": "Content",
+            "label": "Conteúdo",
             "name": "content",
             "aria-label": "",
             "type": "wysiwyg",
@@ -78,7 +78,7 @@
             },
             "default_value": "",
             "tabs": "all",
-            "toolbar": "highlight",
+            "toolbar": "full",
             "media_upload": 1,
             "delay": 0
         },
@@ -125,7 +125,7 @@
         },
         {
             "key": "field_285eb29ab9f3c_urbs_links_list",
-            "label": "Primary Button",
+            "label": "Botão Primário",
             "name": "primary_button",
             "aria-label": "",
             "type": "link",
@@ -141,7 +141,7 @@
         },
         {
             "key": "field_285eb29ab9f79_urbs_links_list",
-            "label": "Secondary Button",
+            "label": "Botão Secundário",
             "name": "secondary_button",
             "aria-label": "",
             "type": "link",
@@ -157,7 +157,7 @@
         },
         {
             "key": "field_285eb29ab9fb6_urbs_links_list",
-            "label": "Tertiary Button",
+            "label": "Botão Terciário",
             "name": "tertiary_button",
             "aria-label": "",
             "type": "link",
@@ -186,10 +186,10 @@
                 "id": ""
             },
             "choices": {
-                "1center": "1 column (Center aligned)",
-                "1fullycenter": "1 column (Fully center aligned)",
-                "1left": "1 column (Left aligned)",
-                "2": "2 columns",
+                "1center": "1 coluna (alinhado ao centro)",
+                "1fullycenter": "1 coluna (texto ao centro)",
+                "1left": "1 coluna (alinhado à esquerda)",
+                "2": "2 colunas",
                 "2sidebar": "2 columns (Sidebar)"
             },
             "default_value": 2,
@@ -219,5 +219,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727355171
+    "modified": 1728828826
 }

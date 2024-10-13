@@ -1,6 +1,6 @@
 {
     "key": "group_72528e769db54",
-    "title": "Footer URBS",
+    "title": "Rodapé URBS",
     "fields": [
         {
             "key": "field_72528e77e50ae",
@@ -29,7 +29,7 @@
         },
         {
             "key": "field_6600f93127424",
-            "label": "Left Column",
+            "label": "Coluna da Esquerda",
             "name": "left_column",
             "aria-label": "",
             "type": "group",
@@ -45,7 +45,7 @@
             "sub_fields": [
                 {
                     "key": "field_6600f96727425",
-                    "label": "Title",
+                    "label": "Título",
                     "name": "title",
                     "aria-label": "",
                     "type": "text",
@@ -65,7 +65,7 @@
                 },
                 {
                     "key": "field_6600f9b027427",
-                    "label": "Icon + Text",
+                    "label": "Ícone e Texto",
                     "name": "icon_text",
                     "aria-label": "",
                     "type": "repeater",
@@ -87,7 +87,7 @@
                     "sub_fields": [
                         {
                             "key": "field_6600fa0127428",
-                            "label": "Icon",
+                            "label": "Ícone",
                             "name": "icon",
                             "aria-label": "",
                             "type": "image",
@@ -113,7 +113,7 @@
                         },
                         {
                             "key": "field_6600fa1227429",
-                            "label": "Text",
+                            "label": "Texto",
                             "name": "text",
                             "aria-label": "",
                             "type": "wysiwyg",
@@ -136,7 +136,7 @@
                 },
                 {
                     "key": "field_6600fa442742a",
-                    "label": "Buttons",
+                    "label": "Botões",
                     "name": "buttons",
                     "aria-label": "",
                     "type": "repeater",
@@ -153,12 +153,12 @@
                     "min": 0,
                     "max": 0,
                     "collapsed": "",
-                    "button_label": "Adicionar linha",
+                    "button_label": "Adicionar botão",
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
                             "key": "field_6600fa5e2742b",
-                            "label": "Icon",
+                            "label": "Ícone",
                             "name": "icon",
                             "aria-label": "",
                             "type": "image",
@@ -205,7 +205,7 @@
         },
         {
             "key": "field_6600faaf2742d",
-            "label": "Right Column",
+            "label": "Coluna da Direita",
             "name": "right_column",
             "aria-label": "",
             "type": "group",
@@ -221,7 +221,7 @@
             "sub_fields": [
                 {
                     "key": "field_6600fad12742e",
-                    "label": "Title",
+                    "label": "Título",
                     "name": "title",
                     "aria-label": "",
                     "type": "text",
@@ -258,12 +258,12 @@
                     "min": 0,
                     "max": 0,
                     "collapsed": "",
-                    "button_label": "Adicionar linha",
+                    "button_label": "Adicionar social media",
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
                             "key": "field_72529cc73b8e7",
-                            "label": "Icon",
+                            "label": "Ícone",
                             "name": "icon",
                             "aria-label": "",
                             "type": "image",
@@ -308,7 +308,7 @@
                 },
                 {
                     "key": "field_6600fafd2742f",
-                    "label": "Text",
+                    "label": "Texto",
                     "name": "text",
                     "aria-label": "",
                     "type": "wysiwyg",
@@ -328,7 +328,7 @@
                 },
                 {
                     "key": "field_6600fb0d27430",
-                    "label": "Map",
+                    "label": "Mapa",
                     "name": "map",
                     "aria-label": "",
                     "type": "group",
@@ -344,7 +344,7 @@
                     "sub_fields": [
                         {
                             "key": "field_6600fb2627431",
-                            "label": "Map Image",
+                            "label": "Imagem do Mapa",
                             "name": "map_image",
                             "aria-label": "",
                             "type": "image",
@@ -389,7 +389,7 @@
         },
         {
             "key": "field_72528f554d746",
-            "label": "Copyright",
+            "label": "Texto do Rodapé",
             "name": "copyright",
             "aria-label": "",
             "type": "text",
@@ -409,7 +409,7 @@
         },
         {
             "key": "field_6590907893e0d",
-            "label": "Copyright Text",
+            "label": "Texto de Direitos Reservados",
             "name": "copyright_text",
             "aria-label": "",
             "type": "text",
@@ -446,5 +446,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711766057
+    "modified": 1728829964
 }

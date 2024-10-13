@@ -1,10 +1,10 @@
 {
     "key": "group_21ef126d6e19b",
-    "title": "Block: Quick Links URBS",
+    "title": "Bloco: Links Rápidos URBS",
     "fields": [
         {
             "key": "field_21c38e8a70959",
-            "label": "Title",
+            "label": "Título",
             "name": "title",
             "aria-label": "",
             "type": "text",
@@ -108,5 +108,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715472400
+    "modified": 1728829318
 }

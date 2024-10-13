@@ -1,6 +1,6 @@
 {
     "key": "group_6212d68a6c660",
-    "title": "Block: Header Divided",
+    "title": "Bloco: Cabeçalho",
     "fields": [
         {
             "key": "field_6212d9eb360e0",
@@ -29,7 +29,7 @@
         },
         {
             "key": "field_6212d68d845f1",
-            "label": "Left Menu",
+            "label": "Menu da Esquerda",
             "name": "left_menu",
             "aria-label": "",
             "type": "select",
@@ -52,7 +52,7 @@
         },
         {
             "key": "field_61faecde5edcc",
-            "label": "Right Menu",
+            "label": "Menu da Direita",
             "name": "right_menu",
             "aria-label": "",
             "type": "select",
@@ -75,7 +75,7 @@
         },
         {
             "key": "field_6212d9ca360df",
-            "label": "Featured Menu",
+            "label": "Menu em Destaque",
             "name": "featured_menu",
             "aria-label": "",
             "type": "select",
@@ -98,7 +98,7 @@
         },
         {
             "key": "field_621029617a1a5",
-            "label": "Color Scheme",
+            "label": "Esquema de Cor",
             "name": "color_scheme",
             "aria-label": "",
             "type": "select",
@@ -126,7 +126,7 @@
         },
         {
             "key": "field_621029e4eb819",
-            "label": "Fixed on Scroll",
+            "label": "Fixo ao Rolar",
             "name": "fixed_on_scroll",
             "aria-label": "",
             "type": "true_false",
@@ -146,7 +146,7 @@
         },
         {
             "key": "field_61afc2c41f07d",
-            "label": "Display Search",
+            "label": "Mostrar Busca",
             "name": "display_search",
             "aria-label": "",
             "type": "true_false",
@@ -166,7 +166,7 @@
         },
         {
             "key": "field_61afe7bd19405",
-            "label": "Search Placeholder Text",
+            "label": "Texto Inicial do Campo de Busca",
             "name": "search_placeholder_text",
             "aria-label": "",
             "type": "text",
@@ -175,9 +175,8 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_61afc3c41f07d",
-                        "operator": "==",
-                        "value": "1"
+                        "field": "field_6212d9eb360e0",
+                        "operator": "!=empty"
                     }
                 ]
             ],
@@ -211,5 +210,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1710944000
+    "modified": 1728828416
 }

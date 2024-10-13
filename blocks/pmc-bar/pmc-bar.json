@@ -1,6 +1,6 @@
 {
     "key": "group_64dd126d6e19b_urbs_pmc_bar",
-    "title": "Block: PMC Bar",
+    "title": "Bloco: Barra da Prefeitura",
     "fields": [
         {
             "key": "field_66ead4243dc9c",
@@ -29,7 +29,7 @@
         },
         {
             "key": "field_66ead43d3dc9d",
-            "label": "Logo Link",
+            "label": "Link do Logo",
             "name": "logo_link",
             "aria-label": "",
             "type": "link",
@@ -103,5 +103,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726666285
+    "modified": 1728829288
 }

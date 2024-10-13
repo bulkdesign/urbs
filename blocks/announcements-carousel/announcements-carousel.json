@@ -1,6 +1,6 @@
 {
     "key": "group_7180b90181f0c",
-    "title": "Block: Announcements Carousel",
+    "title": "Bloco: Carrossel de Anúncios",
     "fields": [
         {
             "key": "field_7180b926a8a1c",
@@ -26,7 +26,7 @@
             "sub_fields": [
                 {
                     "key": "field_7180b901855dd",
-                    "label": "Media Type",
+                    "label": "Tipo de Mídia",
                     "name": "media_type",
                     "aria-label": "",
                     "type": "select",
@@ -39,10 +39,10 @@
                         "id": ""
                     },
                     "choices": {
-                        "image": "Image",
+                        "image": "Imagem",
                         "video": "Video",
-                        "youtube": "YouTube Video",
-                        "vimeo": "Vimeo Video"
+                        "youtube": "YouTube",
+                        "vimeo": "Vimeo"
                     },
                     "default_value": false,
                     "return_format": "value",
@@ -55,7 +55,7 @@
                 },
                 {
                     "key": "field_7180b9018561b",
-                    "label": "Image",
+                    "label": "Imagem",
                     "name": "image",
                     "aria-label": "",
                     "type": "image",
@@ -89,7 +89,7 @@
                 },
                 {
                     "key": "field_7180b90185658",
-                    "label": "Video ID",
+                    "label": "ID do Vídeo",
                     "name": "video_id",
                     "aria-label": "",
                     "type": "text",
@@ -125,7 +125,7 @@
                 },
                 {
                     "key": "field_7180b90185695",
-                    "label": "Video File",
+                    "label": "Arquivo",
                     "name": "video_file",
                     "aria-label": "",
                     "type": "file",
@@ -173,7 +173,7 @@
         },
         {
             "key": "field_71b19ef726ac1",
-            "label": "Enable Carousel Pagination",
+            "label": "Habilitar Paginação",
             "name": "enable_carousel_pagination",
             "aria-label": "",
             "type": "true_false",
@@ -193,7 +193,7 @@
         },
         {
             "key": "field_71b19f2826ac2",
-            "label": "Enable Carousel Navigation",
+            "label": "Habilitar Navegação",
             "name": "enable_carousel_navigation",
             "aria-label": "",
             "type": "true_false",
@@ -213,7 +213,7 @@
         },
         {
             "key": "field_71d3c1ebee3da",
-            "label": "Enable Carousel Autoplay",
+            "label": "Habilitar Transição Automática",
             "name": "enable_carousel_autoplay",
             "aria-label": "",
             "type": "true_false",
@@ -233,7 +233,7 @@
         },
         {
             "key": "field_71d3c30cbcea7",
-            "label": "Carousel Slide Duration",
+            "label": "Duração de Cada Slide",
             "name": "carousel_slide_duration",
             "aria-label": "",
             "type": "number",
@@ -255,7 +255,7 @@
         },
         {
             "key": "field_71d3c1f9ee3db",
-            "label": "Start Carousel on Next Slide",
+            "label": "Iniciar Transição no Slide Seguinte",
             "name": "start_carousel_on_next_slide",
             "aria-label": "",
             "type": "true_false",
@@ -292,5 +292,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711302907
+    "modified": 1728828666
 }
