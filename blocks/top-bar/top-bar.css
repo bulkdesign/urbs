@@ -18,7 +18,7 @@
 
 @media (min-width: 768px) {
     .top-bar-inner {
-        grid-template-columns: minmax(0, 1fr) 30%;
+        grid-template-columns: minmax(0, 1fr) 40%;
         max-width: var(--full-width);
     }
 
