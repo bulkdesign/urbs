@@ -65,6 +65,7 @@ function child_theme_allowed_blocks() {
         'pmc-bar',
         'boletins-urbs',
         'links-list',
+        'equipamentos-urbs',
     );
 }
 add_filter( 'theme_allowed_blocks', 'child_theme_allowed_blocks', 10, 0);
