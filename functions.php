@@ -15,7 +15,7 @@ require_once get_stylesheet_directory() . '/inc/taxonomies.php';
  * Enqueue all the stylesheets necessary for the child theme.
  */
 function child_theme_enqueue_styles() {
-    wp_enqueue_style( 'font-roboto', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap' );
+    wp_enqueue_style( 'font-archivo', 'https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap' );
     wp_enqueue_style( 'child-main-css', get_stylesheet_directory_uri() . '/css/main.css', array('main-css'), theme_get_app_css_version() );
 }
 add_action( 'wp_enqueue_scripts', 'child_theme_enqueue_styles' );
