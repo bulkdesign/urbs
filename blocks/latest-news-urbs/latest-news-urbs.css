@@ -1,194 +1,211 @@
 .blocks-container .latest-news-urbs {
-    max-width: fit-content;
-    margin-left: var(--page-padding);
+	max-width: fit-content;
+	margin-left: var(--page-padding);
 }
 
 .latest-news-urbs {
-    width: 100%;
-    max-width: 100%;
-    margin: var(--row-gap) auto;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    column-gap: var(--column-gap);
-    row-gap: var(--item-row-gap);
-    align-items: start;
-    overflow: hidden;
+	width: 100%;
+	max-width: 100%;
+	margin: var(--row-gap) auto;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	column-gap: var(--column-gap);
+	row-gap: var(--item-row-gap);
+	align-items: start;
+	overflow: hidden;
 }
 
 .latest-news-urbs h2 {
-    font: var(--font-headline-6);
-    color: var(--color-grey);
-    text-transform: uppercase;
+	font: var(--font-headline-6);
+	color: var(--color-grey);
+	text-transform: uppercase;
 }
 
 .latest-news-urbs img {
-    border-radius: var(--element-border-radius);
+	border-radius: var(--element-border-radius);
 }
 
 .latest-news-urbs a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .latest-news-urbs .news-wrapper {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    border-radius: var(--element-border-radius);
-    margin-bottom: 1rem;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	border-radius: var(--element-border-radius);
+	margin-bottom: 1rem;
 }
 
 .latest-news-urbs .news-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.3s ease all;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 0.3s ease all;
+	aspect-ratio: 3/2;
 }
 
 .latest-news-urbs .news-wrapper img:is(:hover, :active, :focus) {
-    transform: scale(1.1);
-    transition: 0.3s ease all;
+	transform: scale(1.1);
+	transition: 0.3s ease all;
 }
 
 .latest-news-urbs .latest-news-item h3 {
-    font: var(--font-headline-8);
-    transition: 0.3s all ease;
+	font: var(--font-headline-8);
+	transition: 0.3s all ease;
 }
 
 .latest-news-urbs .latest-news-item p.excerpt {
-    font: var(--font-body-small);
-    margin: 0;
+	font: var(--font-body-small);
+	margin: 0;
 }
 
 .latest-news-urbs .news h3:is(:active, :hover, :focus) {
-    color: var(--color-red);
-    transition: 0.3s ease all;
+	color: var(--color-red);
+	transition: 0.3s ease all;
 }
 
 .latest-news-urbs-header.animate__animated {
-    animation-name: fadeInUp;
+	animation-name: fadeInUp;
 }
 
 .latest-news-urbs-list.animate__animated {
-    animation-name: fadeIn;
+	animation-name: fadeIn;
 }
 
 .latest-news-urbs-list-wrapper {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    column-gap: var(--column-gap);
-    row-gap: calc(var(--row-gap) / 2);
-    align-items: start;
-    align-self: flex-start;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	column-gap: var(--column-gap);
+	row-gap: calc(var(--row-gap) / 2);
+	align-items: start;
+	align-self: flex-start;
 }
 
 .latest-news-urbs .latest-news-urbs-wrapper .news-carousel {
-    display: grid;
+	display: grid;
 }
 
 .latest-news-urbs .latest-news-urbs-wrapper .news-carousel .swiper-wrapper {
-    grid-column: 1;
-    grid-row: 1;
+	grid-column: 1;
+	grid-row: 1;
 }
 
 .latest-news-urbs .swiper-slide {
-    width: min(50%, 30rem);
-    padding: 1rem;
+	width: min(50%, 30rem);
+	padding: 1rem;
 }
 
 .latest-news-urbs .swiper-slide .latest-news-item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 100%;
-    row-gap: var(--item-row-gap);
-    border-radius: var(--element-border-radius);
-    padding: var(--item-column-gap);
-    box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.3);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	height: 100%;
+	row-gap: var(--item-row-gap);
+	border-radius: var(--element-border-radius);
+	padding: var(--item-column-gap);
+	box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.3);
 }
 
 .latest-news-urbs .swiper-slide .latest-news-item a.primary-button {
-    margin-top: auto;
+	margin-top: auto;
 }
 
 .latest-news-urbs-pagination {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: var(--item-column-gap);
-    max-width: var(--wide-width);
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: var(--item-column-gap);
+	max-width: var(--wide-width);
 }
 
 .latest-news-urbs-navigation {
-    display: flex;
-    align-items: center;
-    column-gap: var(--row-gap);
-    position: absolute;
-    z-index: 10;
-    padding: 0 var(--item-column-gap);
-    justify-content: flex-end;
-    right: var(--item-column-gap);
-    top: 50%;
-    transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	column-gap: var(--row-gap);
+	position: absolute;
+	z-index: 10;
+	padding: 0 var(--item-column-gap);
+	justify-content: flex-end;
+	right: var(--item-column-gap);
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .latest-news-urbs-navigation .latest-news-urbs-navigation-next {
-    z-index: 1;
+	z-index: 1;
 }
 
 .latest-news-urbs-pagination.animate__animated,
 .latest-news-urbs-navigation.animate__animated {
-    animation-name: fadeIn;
+	animation-name: fadeIn;
 }
 
 .latest-news-urbs-pagination .swiper-pagination-bullet {
-    opacity: 1;
-    background-color: var(--link-color);
+	opacity: 1;
+	background-color: var(--link-color);
 }
 
 .latest-news-urbs-pagination .swiper-pagination-bullet-active {
-    opacity: 1;
-    background-color: var(--accent-color);
+	opacity: 1;
+	background-color: var(--accent-color);
 }
 
 :is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next) svg {
-    width: 4.8rem;
-    height: auto;
+	width: 4.8rem;
+	height: auto;
 }
 
-:is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next) svg path {
-    stroke-width: 0.2rem;
+:is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next)
+	svg
+	path {
+	stroke-width: 0.2rem;
 }
 
-:is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next) svg * {
-    transition: all 0.3s ease;
-    stroke: var(--color-white);
+:is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next)
+	svg
+	* {
+	transition: all 0.3s ease;
+	stroke: var(--color-white);
 }
 
-:is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next):is(:hover, :focus, :active) svg * {
-    stroke: var(--color-light-grey);
+:is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next):is(
+		:hover,
+		:focus,
+		:active
+	)
+	svg
+	* {
+	stroke: var(--color-light-grey);
 }
 
-:is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next):is(:hover, :focus, :active) svg path:first-child {
-    stroke: var(--color-white) !important;
+:is(.latest-news-urbs-navigation-prev, .latest-news-urbs-navigation-next):is(
+		:hover,
+		:focus,
+		:active
+	)
+	svg
+	path:first-child {
+	stroke: var(--color-white) !important;
 }
 
 .latest-news-urbs a.primary-button.all-news {
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: auto;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: auto;
 }
 
 @media (min-width: 768px) {
-    .blocks-container .latest-news-urbs {
-        max-width: var(--wide-width);
-        margin-left: auto;
-    }
+	.blocks-container .latest-news-urbs {
+		max-width: var(--wide-width);
+		margin-left: auto;
+	}
 
-    .latest-news-urbs-navigation {
-        right: 0;
-    }
+	.latest-news-urbs-navigation {
+		right: 0;
+	}
 }
