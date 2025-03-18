@@ -36,8 +36,8 @@
                 <?php endif; ?>
 
                 <div class="post-content-header-inner-content-meta">
-                    <p><?php esc_attr_e( 'Publish Date:', 'bulk' ); ?></p>
-                    <time><?php echo get_the_date(); ?></time>
+                    <p><?php esc_attr_e( 'Publicado em:', 'bulk' ); ?></p>
+                    <time><?php echo get_the_date('j F Y'); ?></time>
                 </div>
             </div>
         </div>
@@ -49,25 +49,9 @@
     </div>
     <footer class="post-content-footer">
         <div class="post-content-footer-inner">
-            <ul class="post-content-footer-categories">
-            
-                <?php $terms = get_the_terms( get_the_ID(), apply_filters( 'single_post_content_footer_taxonomy', 'category' ) ); ?>
-                <?php if( ! is_wp_error( $terms ) && ! empty( $terms ) ): ?>
-                    <?php foreach ( $terms as $term ) : ?>
-                    <li>
-                        <a href="<?php echo get_term_link( $term ); ?>">
-                            <?php
-                                echo $term->name;
-                            ?>
-                        </a>
-                    </li>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </ul>
-
             <div class="post-content-footer-share">
                 <span>
-                    <?php esc_attr_e( 'Share this article', 'bulk' ); ?>
+                    <?php esc_attr_e( 'Compartilhe esta notícia', 'bulk' ); ?>
                 </span>
                 
                 <ul class="post-content-share">
