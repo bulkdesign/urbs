@@ -105,10 +105,10 @@
                     "choices": {
                         "light": "Branco",
                         "medium": "Cinza",
-                        "dark": "Preto",
                         "grey": "Cinza Escuro",
                         "red": "Vermelho",
-                        "yellow": "Amarelo"
+                        "yellow": "Amarelo",
+                        "green": "Verde"
                     },
                     "default_value": false,
                     "return_format": "value",
@@ -140,5 +140,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728829492
+    "modified": 1742336451
 }
