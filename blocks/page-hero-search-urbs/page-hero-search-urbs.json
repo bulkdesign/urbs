@@ -188,7 +188,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -215,7 +215,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -224,6 +224,26 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_67d9b98a74c6e",
+            "label": "Habilitar Navegação (Setas)",
+            "name": "enable_navigation",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         }
     ],
     "location": [
@@ -244,5 +264,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728829234
+    "modified": 1742322106
 }

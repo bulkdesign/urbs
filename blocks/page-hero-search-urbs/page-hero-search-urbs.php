@@ -11,7 +11,7 @@
 	<?php if( have_rows( 'slides' ) ): ?>
 	<div class="page-hero-search-urbs-swiper swiper">
 		<?php $slides = get_field( 'slides' ); ?>
-		<?php if ( count( $slides ) > 1 ): ?>
+		<?php if ( count( $slides ) > 1 && get_field( 'enable_navigation' ) ): ?>
 			<div class="page-hero-search-urbs-navigation">
 				<button class="page-hero-search-urbs-navigation-prev" aria-label="<?php esc_attr_e( 'Previous Slide', 'bulk' ); ?>" title="<?php esc_attr_e( 'Previous Slide', 'bulk' ); ?>">
 					<?php theme_block_asset( 'img/nav-button-left.svg' ); ?>
