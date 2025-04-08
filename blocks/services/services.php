@@ -17,7 +17,7 @@
                 <?php $button = get_sub_field( 'link' ); ?>
                 <?php if ( ! empty( $button ) ) : ?>
                     <a href="<?php echo esc_attr( $button['url'] ); ?>" target="<?php echo esc_attr( theme_get_link_target( $button ) ); ?>" aria-label="<?php echo esc_attr( theme_get_link_aria_label( $button ) ); ?>" title="<?php echo esc_attr( $button['title'] ); ?>">
-                        <li>
+                        <li data-color-scheme="<?php the_sub_field('color_scheme'); ?>">
                             <?php if(!empty($image)): ?>
                                 <?php if( 'image/svg+xml' === $image['mime_type'] ): ?>
                                     <div class="service-icon">
