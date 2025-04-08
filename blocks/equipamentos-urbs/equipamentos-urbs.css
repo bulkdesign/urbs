@@ -1,255 +1,288 @@
 .blocks-container .equipamentos-urbs {
-    max-width: var(--wide-width);
-    padding-bottom: var(--block-margin);
+	max-width: 100%;
+	padding-bottom: var(--block-margin);
 }
 
 .equipamentos-urbs {
-    width: 100%;
-    max-width: 100%;
-    margin: var(--row-gap) auto;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    column-gap: var(--column-gap);
-    row-gap: var(--item-row-gap);
-    align-items: start;
-    overflow: hidden;
+	width: 100%;
+	max-width: 100%;
+	margin: var(--row-gap) auto;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	column-gap: var(--column-gap);
+	row-gap: var(--item-row-gap);
+	align-items: start;
+	overflow: hidden;
 }
 
 .equipamentos-urbs-wrapper {
-    display: flex;
-    flex-direction: column;
-    margin: var(--block-margin) 0 0;
-    padding: 0 0 var(--row-gap) 0;
-    position: relative;
-    border-radius: var(--element-border-radius);
-    overflow: hidden;
-    row-gap: var(--item-row-gap);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin: var(--block-margin) 0 0;
+	padding: 0 0 var(--row-gap) 0;
+	position: relative;
+	border-radius: var(--element-border-radius);
+	overflow: hidden;
+	row-gap: var(--item-row-gap);
 }
 
 .equipamentos-urbs-background {
-    position: absolute;
-    height: 100%;
+	position: absolute;
+	height: 100%;
 }
 
 .equipamentos-urbs-background img {
-    height: 100%;
-    object-fit: cover;
+	height: 100%;
+	object-fit: cover;
 }
 
 .equipamentos-urbs-background::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.75);
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.equipamentos-urbs-content-wrapper {
+	max-width: var(--wide-width);
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--item-row-gap);
 }
 
 .equipamentos-urbs-heading {
-    max-width: var(--wide-width);
-    margin: var(--block-margin) var(--column-gap) var(--row-gap);
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
+	max-width: var(--wide-width);
+	margin: var(--block-margin) var(--column-gap) var(--row-gap);
+	display: flex;
+	flex-direction: column;
+	z-index: 1;
 }
 
 .equipamentos-urbs-heading h2 {
-    font: var(--font-headline-4);
-    color: var(--color-white);
-    text-transform: uppercase;
+	font: var(--font-headline-4);
+	color: var(--color-white);
+	text-transform: uppercase;
 }
 
 .equipamentos-urbs-heading .equipamentos-urbs-subtitle {
-    color: var(--color-white);
+	color: var(--color-white);
 }
 
 .equipamentos-urbs-carousel {
-    max-width: var(--wide-width);
-    margin: 0 auto;
+	max-width: var(--wide-width);
+	margin: 0 auto;
 }
 
 .equipamentos-urbs-carousel .swiper-slide .equipamentos-urbs-image img {
-    aspect-ratio: 3/4;
-    object-fit: cover;
+	aspect-ratio: 3/4;
+	object-fit: cover;
 }
 
 .equipamentos-urbs .swiper-slide p.excerpt {
-    font: var(--font-body-small);
-    margin: 0;
+	font: var(--font-body-small);
+	margin: 0;
 }
 
 .equipamentos-urbs-list-wrapper {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    column-gap: var(--column-gap);
-    row-gap: calc(var(--row-gap) / 2);
-    align-items: start;
-    align-self: flex-start;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	column-gap: var(--column-gap);
+	row-gap: calc(var(--row-gap) / 2);
+	align-items: start;
+	align-self: flex-start;
 }
 
 .equipamentos-urbs .swiper-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    aspect-ratio: 2 / 3;
-    height: 100%;
-    row-gap: var(--item-row-gap);
-    border-radius: var(--element-border-radius);
-    box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.3);
-    padding-bottom: var(--row-gap);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	aspect-ratio: 2 / 3;
+	height: 100%;
+	row-gap: var(--item-row-gap);
+	border-radius: var(--element-border-radius);
+	box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.3);
+	padding-bottom: var(--row-gap);
 }
 
 .equipamentos-urbs .swiper-slide a {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    text-decoration-color: transparent;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	text-decoration-color: transparent;
 }
 
-.equipamentos-urbs .swiper-slide a:is(:hover, :active, :focus) .equipamentos-urbs-image::before {
-    background: rgba(0, 0, 0, 0.7);
-    transition: 0.3s ease all;
+.equipamentos-urbs
+	.swiper-slide
+	a:is(:hover, :active, :focus)
+	.equipamentos-urbs-image::before {
+	background: rgba(0, 0, 0, 0.7);
+	transition: 0.3s ease all;
 }
 
 .equipamentos-urbs .swiper-slide a:is(:hover, :active, :focus) {
-    color: var(--color-white);
-    text-decoration-color: var(--color-white);
-    transition: 0.3s ease all;
+	color: var(--color-white);
+	text-decoration-color: var(--color-white);
+	transition: 0.3s ease all;
 }
 
-.equipamentos-urbs .swiper-slide a:is(:hover, :active, :focus) .equipamentos-urbs-description {
-    color: var(--color-white);
-    transition: 0.3s ease all;
+.equipamentos-urbs
+	.swiper-slide
+	a:is(:hover, :active, :focus)
+	.equipamentos-urbs-description {
+	color: var(--color-white);
+	transition: 0.3s ease all;
 }
 
 .equipamentos-urbs .swiper-slide .equipamentos-urbs-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 
 .equipamentos-urbs .swiper-slide .equipamentos-urbs-image::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-    transition: 0.3s ease all;
-    border-radius: calc(var(--element-border-radius) * 2);
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 1;
+	transition: 0.3s ease all;
+	border-radius: calc(var(--element-border-radius) * 2);
 }
 
 .equipamentos-urbs .swiper-slide .equipamentos-urbs-image img {
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    height: 100%;
-    border-radius: calc( var(--element-border-radius) * 2 );
-    position: relative;
+	aspect-ratio: 3 / 4;
+	object-fit: cover;
+	height: 100%;
+	border-radius: calc(var(--element-border-radius) * 2);
+	position: relative;
 }
 
 .equipamentos-urbs .equipamentos-urbs-content-wrapper {
-    z-index: 1;
-    margin-top: auto;
-    margin-bottom: var(--item-row-gap);
-    padding-left: var(--item-column-gap);
-    padding-right: var(--item-column-gap);
+	z-index: 1;
+	margin-top: auto;
+	margin-bottom: var(--item-row-gap);
+	padding-left: var(--item-column-gap);
+	padding-right: var(--item-column-gap);
 }
 
 .equipamentos-urbs .equipamentos-urbs-content-wrapper h3 {
-    font: var(--font-headline-5);
-    color: var(--color-white);
-    margin-bottom: 0;
+	font: var(--font-headline-5);
+	color: var(--color-white);
+	margin-bottom: 0;
 }
 
 .equipamentos-urbs-pagination {
-    margin: var(--row-gap) auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: var(--wide-width);
+	margin: var(--row-gap) auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: var(--wide-width);
 }
 
 .equipamentos-urbs-navigation {
-    display: flex;
-    align-items: center;
-    column-gap: var(--row-gap);
-    position: absolute;
-    z-index: 10;
-    justify-content: flex-end;
-    right: var(--item-column-gap);
-    top: 0;
-    bottom: var(--block-margin);
+	display: flex;
+	align-items: center;
+	column-gap: var(--row-gap);
+	position: absolute;
+	z-index: 10;
+	justify-content: flex-end;
+	right: var(--item-column-gap);
+	top: 0;
+	bottom: var(--block-margin);
 }
 
 .equipamentos-urbs-navigation .equipamentos-urbs-navigation-next {
-    z-index: 1;
+	z-index: 1;
 }
 
 .equipamentos-urbs-pagination.animate__animated,
 .equipamentos-urbs-navigation.animate__animated {
-    animation-name: fadeIn;
+	animation-name: fadeIn;
 }
 
 .equipamentos-urbs-pagination .swiper-pagination-bullet {
-    opacity: 1;
-    background-color: var(--color-white);
+	opacity: 1;
+	background-color: var(--color-white);
 }
 
 .equipamentos-urbs-pagination .swiper-pagination-bullet-active {
-    opacity: 1;
-    background-color: var(--link-color);
+	opacity: 1;
+	background-color: var(--link-color);
 }
 
-:is(.equipamentos-urbs-navigation-prev, .equipamentos-urbs-navigation-next) svg {
-    width: 4.8rem;
-    height: auto;
+:is(.equipamentos-urbs-navigation-prev, .equipamentos-urbs-navigation-next)
+	svg {
+	width: 4.8rem;
+	height: auto;
 }
 
-:is(.equipamentos-urbs-navigation-prev, .equipamentos-urbs-navigation-next) svg path {
-    stroke-width: 0.2rem;
+:is(.equipamentos-urbs-navigation-prev, .equipamentos-urbs-navigation-next)
+	svg
+	path {
+	stroke-width: 0.2rem;
 }
 
-:is(.equipamentos-urbs-navigation-prev, .equipamentos-urbs-navigation-next) svg * {
-    transition: all 0.3s ease;
-    stroke: var(--color-white);
+:is(.equipamentos-urbs-navigation-prev, .equipamentos-urbs-navigation-next)
+	svg
+	* {
+	transition: all 0.3s ease;
+	stroke: var(--color-white);
 }
 
-:is(.equipamentos-urbs-navigation-prev, .equipamentos-urbs-navigation-next):is(:hover, :focus, :active) svg * {
-    stroke: var(--color-light-grey);
+:is(.equipamentos-urbs-navigation-prev, .equipamentos-urbs-navigation-next):is(
+		:hover,
+		:focus,
+		:active
+	)
+	svg
+	* {
+	stroke: var(--color-light-grey);
 }
 
-:is(.equipamentos-urbs-navigation-prev, .equipamentos-urbs-navigation-next):is(:hover, :focus, :active) svg path:first-child {
-    stroke: var(--color-white) !important;
+:is(.equipamentos-urbs-navigation-prev, .equipamentos-urbs-navigation-next):is(
+		:hover,
+		:focus,
+		:active
+	)
+	svg
+	path:first-child {
+	stroke: var(--color-white) !important;
 }
 
 @media (min-width: 768px) {
-    .equipamentos-urbs .swiper-slide {
-        width: min(50%, 30rem);
-        padding-bottom: 0;
-    }
+	.equipamentos-urbs .swiper-slide {
+		width: min(50%, 30rem);
+		padding-bottom: 0;
+	}
 
-    .equipamentos-urbs-heading {
-        max-width: calc( var(--wide-width) - ( var(--column-gap) * 2 ) );
-        margin: 0 var(--column-gap) 0;
-    }
+	.equipamentos-urbs-heading {
+		max-width: calc(var(--wide-width) - (var(--column-gap) * 2));
+		margin: 0 var(--column-gap) 0;
+	}
 
-    .equipamentos-urbs-carousel {
-        max-width: calc( var(--wide-width) - ( var(--column-gap) * 2 ) );
-        margin: 0 var(--column-gap);
-    }
+	.equipamentos-urbs-carousel {
+		max-width: calc(var(--wide-width) - (var(--column-gap) * 2));
+		margin: 0 var(--column-gap);
+	}
 
-    .equipamentos-urbs-wrapper {
-        display: grid;
-        margin: 0 auto;
-        padding: var(--block-margin) 0 0;
-        border-radius: 0 0 calc(var(--element-border-radius) * 2) calc(var(--element-border-radius) * 2);
-    }
+	.equipamentos-urbs-wrapper {
+		display: grid;
+		margin: 0 auto;
+		padding: var(--block-margin) 0 0;
+		border-radius: 0 0 calc(var(--element-border-radius) * 2)
+			calc(var(--element-border-radius) * 2);
+	}
 
-    .equipamentos-urbs-navigation {
-        right: 0;
-    }
+	.equipamentos-urbs-navigation {
+		right: 0;
+	}
 }
