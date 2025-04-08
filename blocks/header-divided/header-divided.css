@@ -328,6 +328,7 @@ header:is(.menu-open) .header-divided-inner {
 	header:is(.menu-open) .header-divided-right-menu-wrapper {
 		opacity: 1;
 		transition: 0.5s ease all;
+		grid-column: 1 / span 3;
 	}
 
 	.header-divided-left-menu-wrapper {
