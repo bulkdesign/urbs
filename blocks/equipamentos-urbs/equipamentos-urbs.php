@@ -58,7 +58,7 @@
                                                     <?php echo wp_get_attachment_image( $background['ID'], 'full', false,
                                                         [
                                                             'class' => '',
-                                                            'loading' => false
+                                                            'loading' => 'eager'
                                                         ]
                                                     ); ?>
                                                 </div>
