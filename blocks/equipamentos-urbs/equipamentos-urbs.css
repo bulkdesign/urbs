@@ -19,10 +19,10 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	margin: var(--block-margin) 0 0;
+	margin: 0 auto;
 	padding: 0 0 var(--row-gap) 0;
 	position: relative;
-	border-radius: var(--element-border-radius);
+	border-radius: 0 0 var(--element-border-radius) var(--element-border-radius);
 	overflow: hidden;
 	row-gap: var(--item-row-gap);
 }
@@ -50,11 +50,19 @@
 }
 
 .equipamentos-urbs-content-wrapper {
+	z-index: 1;
 	max-width: var(--wide-width);
-	margin: 0 auto;
+	margin: auto auto 0;
 	display: flex;
 	flex-direction: column;
 	row-gap: var(--item-row-gap);
+}
+
+.equipamentos-urbs-text-wrapper {
+	width: 100%;
+	z-index: 1;
+	max-width: var(--wide-width);
+	margin: auto auto 0;
 }
 
 .equipamentos-urbs-heading {
@@ -168,14 +176,6 @@
 	position: relative;
 }
 
-.equipamentos-urbs .equipamentos-urbs-content-wrapper {
-	z-index: 1;
-	margin-top: auto;
-	margin-bottom: var(--item-row-gap);
-	padding-left: var(--item-column-gap);
-	padding-right: var(--item-column-gap);
-}
-
 .equipamentos-urbs .equipamentos-urbs-content-wrapper h3 {
 	font: var(--font-headline-5);
 	color: var(--color-white);
@@ -267,13 +267,17 @@
 	}
 
 	.equipamentos-urbs-heading {
-		max-width: calc(var(--wide-width) - (var(--column-gap) * 2));
-		margin: 0 var(--column-gap) 0;
+		max-width: var(--wide-width);
+		margin: 0 auto;
 	}
 
 	.equipamentos-urbs-carousel {
-		max-width: calc(var(--wide-width) - (var(--column-gap) * 2));
-		margin: 0 var(--column-gap);
+		max-width: var(--wide-width);
+		margin: 0 auto;
+	}
+
+	.equipamentos-urbs-text-wrapper {
+		padding: var(--item-column-gap);
 	}
 
 	.equipamentos-urbs-wrapper {

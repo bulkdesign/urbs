@@ -65,7 +65,7 @@
                                                     </div>
                                                 <?php endif; ?>
                                                 <?php if ( get_sub_field( 'title' ) || get_sub_field( 'description' ) ) : ?>
-                                                    <div class="equipamentos-urbs-content-wrapper">
+                                                    <div class="equipamentos-urbs-text-wrapper">
                                                         <?php if ( get_sub_field( 'title' ) ) : ?>
                                                             <h3 class="equipamentos-urbs-title">
                                                                 <?php echo wp_kses_post( strip_tags( get_sub_field( 'title' ), '<span><u><br><strong><em>' ) ); ?>
