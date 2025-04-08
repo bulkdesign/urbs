@@ -8,9 +8,8 @@
 ?>
 
 <div <?php theme_block_attributes( $block, 'services' ); ?>>
-
-    <ul>
-        <?php if( have_rows( 'service' ) ): ?>
+    <?php if( have_rows( 'service' ) ): ?>
+        <ul>
             <?php while( have_rows( 'service' ) ): ?>
                 <?php the_row(); ?>
 
@@ -18,7 +17,7 @@
                 <?php $button = get_sub_field( 'link' ); ?>
                 <?php if ( ! empty( $button ) ) : ?>
                     <a href="<?php echo esc_attr( $button['url'] ); ?>" target="<?php echo esc_attr( theme_get_link_target( $button ) ); ?>" aria-label="<?php echo esc_attr( theme_get_link_aria_label( $button ) ); ?>" title="<?php echo esc_attr( $button['title'] ); ?>">
-                        <li data-color-scheme="<?php the_sub_field('color_scheme'); ?>">
+                        <li>
                             <?php if(!empty($image)): ?>
                                 <?php if( 'image/svg+xml' === $image['mime_type'] ): ?>
                                     <div class="service-icon">
@@ -42,7 +41,6 @@
                     </a>
                 <?php endif; ?>
             <?php endwhile; ?>
-        <?php endif; ?>
-    </ul>
-
+        </ul>
+    <?php endif; ?>
 </div>
