@@ -1,71 +1,81 @@
 .pmc-bar {
-  background: var(--color-light-grey-2);
-  height: 4rem;
+	background: var(--color-light-grey-2);
+	height: 4rem;
 }
 
 .pmc-bar-inner {
-  max-width: var(--wide-width);
-  margin: 0 auto;
-  height: 4rem;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 10rem minmax(0, 1fr);
+	max-width: var(--wide-width);
+	margin: 0 auto;
+	height: 4rem;
+	display: grid;
+	align-items: center;
+	grid-template-columns: 10rem minmax(0, 1fr);
 }
 
 .pmc-bar-logo :is(img, svg) {
-  height: 3rem;
+	height: 3rem;
 }
 
 .pmc-bar-links {
-  display: block;
-  height: 4rem;
+	display: block;
+	height: 4rem;
 }
 
 .pmc-bar-links ul {
-  display: flex;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  justify-content: flex-end;
+	display: flex;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	justify-content: flex-end;
 }
 
 .pmc-bar-links ul li {
-  display: flex;
-  height: 100%;
-  list-style: none;
-  padding: 0 2rem;
-  border-left: 1px solid #d6d6d6;
+	display: flex;
+	height: 100%;
+	list-style: none;
+	padding: 0 2rem;
+	border-left: 1px solid #d6d6d6;
 }
 
 .pmc-bar-links ul li a {
-  font-family: "Archivo", sans-serif;
-  font-weight: 700;
-  font-size: 1.3rem;
-  display: flex;
-  align-items: center;
-  color: var(--color-grey-2);
-  text-decoration-color: transparent;
-  text-transform: uppercase;
-  transition: 0.3s ease all;
+	font-family: "Archivo", sans-serif;
+	font-weight: 700;
+	font-size: 1.3rem;
+	display: flex;
+	align-items: center;
+	color: var(--color-grey-2);
+	text-decoration-color: transparent;
+	text-transform: uppercase;
+	transition: 0.3s ease all;
 }
 
 .pmc-bar-links ul li a:is(:hover) {
-  color: var(--hover-link-color);
-  text-decoration-color: var(--hover-link-color);
-  transition: 0.3s ease all;
+	color: var(--hover-link-color);
+	text-decoration-color: var(--hover-link-color);
+	transition: 0.3s ease all;
+}
+
+@media (max-width: 600px) {
+	.pmc-bar-links ul li a {
+		font-size: 1rem;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		width: 7rem;
+	}
 }
 
 @media (max-width: 767px) {
-  .pmc-bar-inner {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+	.pmc-bar-inner {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
 
-  .pmc-bar-links ul li {
-    padding: 0 0.8rem;
-    text-align: center;
-  }
+	.pmc-bar-links ul li {
+		padding: 0 0.8rem;
+		text-align: center;
+	}
 
-  .pmc-bar-links ul li a {
-    font-size: 1rem;
-  }
+	.pmc-bar-links ul li a {
+		font-size: 1rem;
+	}
 }
