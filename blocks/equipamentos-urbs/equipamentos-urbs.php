@@ -55,7 +55,12 @@
                                         <?php endif; ?>
                                             <?php if ( ! empty( $background ) ) : ?>
                                                 <div class="equipamentos-urbs-image">
-                                                    <?php echo wp_get_attachment_image( $background['ID'], 'full' ); ?>
+                                                    <?php echo wp_get_attachment_image( $background['ID'], 'full', false,
+                                                        [
+                                                            'class' => '',
+                                                            'loading' => false
+                                                        ]
+                                                    ); ?>
                                                 </div>
                                             <?php endif; ?>
                                             <?php if ( get_sub_field( 'title' ) || get_sub_field( 'description' ) ) : ?>
