@@ -8,10 +8,6 @@
 	animation-name: fadeInUp;
 }
 
-.accordion-list header {
-	margin-bottom: var(--block-margin);
-}
-
 .accordion-list-grid {
 	display: grid;
 	grid-template-columns: minmax(0, auto);
