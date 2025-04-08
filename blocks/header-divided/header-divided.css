@@ -582,6 +582,11 @@ header:is(.menu-open) .header-divided-inner {
 		padding-left: var(--column-gap);
 	}
 
+	.header-divided .menu-menu-direita-container ul li {
+		width: 100%;
+		text-align: right;
+	}
+
 	.header-divided nav ul {
 		row-gap: 0;
 	}
