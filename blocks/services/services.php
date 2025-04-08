@@ -8,9 +8,8 @@
 ?>
 
 <div <?php theme_block_attributes( $block, 'services' ); ?>>
-
-    <ul>
-        <?php if( have_rows( 'service' ) ): ?>
+    <?php if( have_rows( 'service' ) ): ?>
+        <ul>
             <?php while( have_rows( 'service' ) ): ?>
                 <?php the_row(); ?>
 
@@ -42,7 +41,6 @@
                     </a>
                 <?php endif; ?>
             <?php endwhile; ?>
-        <?php endif; ?>
-    </ul>
-
+        </ul>
+    <?php endif; ?>
 </div>
