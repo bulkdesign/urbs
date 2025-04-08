@@ -577,6 +577,16 @@ header:is(.menu-open) .header-divided-inner {
 	}
 }
 
+@media (min-width: 992px) and (max-width: 1199px) {
+	.header-divided .menu-menu-direita-container {
+		padding-left: var(--column-gap);
+	}
+
+	.header-divided nav ul {
+		row-gap: 0;
+	}
+}
+
 @media (min-width: 1200px) {
 	.header-divided nav ul {
 		column-gap: var(--item-column-gap);
