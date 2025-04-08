@@ -29,10 +29,12 @@
 
 .equipamentos-urbs-background {
 	position: absolute;
+	width: 100%;
 	height: 100%;
 }
 
 .equipamentos-urbs-background img {
+	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
