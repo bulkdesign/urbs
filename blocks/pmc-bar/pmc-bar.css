@@ -37,6 +37,10 @@
 	border-left: 1px solid #d6d6d6;
 }
 
+.pmc-bar-links ul li:last-child {
+	padding-right: 0;
+}
+
 .pmc-bar-links ul li a {
 	font-family: "Archivo", sans-serif;
 	font-weight: 700;
@@ -75,6 +79,12 @@
 		text-align: center;
 	}
 
+	.pmc-bar-links ul li a {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 991px) {
 	.pmc-bar-links ul li a {
 		font-size: 1rem;
 	}
