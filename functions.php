@@ -66,7 +66,8 @@ function child_theme_allowed_blocks() {
         'boletins-urbs',
         'links-list',
         'equipamentos-urbs',
-        'featured-columns'
+        'featured-columns',
+        'accordion-list'
     );
 }
 add_filter( 'theme_allowed_blocks', 'child_theme_allowed_blocks', 10, 0);

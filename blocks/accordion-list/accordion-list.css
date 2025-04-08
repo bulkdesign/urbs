@@ -1,0 +1,84 @@
+.accordion-list {
+	margin: var(--block-margin) auto;
+}
+
+.accordion-list header.animate__animated,
+.accordion-list-grid.animate__animated,
+.accordion-list footer.animate__animated {
+	animation-name: fadeInUp;
+}
+
+.accordion-list header {
+	margin-bottom: var(--block-margin);
+}
+
+.accordion-list-grid {
+	display: grid;
+	grid-template-columns: minmax(0, auto);
+	column-gap: var(--column-gap);
+	align-items: start;
+}
+
+.accordion-list details {
+	border-top: 0.1rem solid;
+	border-bottom: 0.1rem solid;
+}
+
+.accordion-list details:not(:last-child) {
+	margin-bottom: -0.1rem;
+}
+
+.accordion-list details > summary {
+	padding: 1em 5rem 1em 0;
+	font: var(--font-headline-8);
+	letter-spacing: var(--secondary-letter-spacing);
+	list-style: none;
+	position: relative;
+	color: var(--title-color);
+}
+
+.accordion-list details > summary::-webkit-details-marker {
+	display: none;
+}
+
+.accordion-list details > summary::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 1.2rem;
+	border-right: 0.2rem solid;
+	border-bottom: 0.2rem solid;
+	width: 1em;
+	height: 1em;
+	transform: translateY(-75%) rotateZ(45deg);
+	transition: all 0.3s ease;
+}
+
+.accordion-list details[open] > summary::before {
+	transform: translateY(-25%) rotateZ(-135deg);
+}
+
+.accordion-list details > div {
+	padding-bottom: 1em;
+}
+
+.accordion-list details > div > *:last-child {
+	margin-bottom: 0;
+}
+
+.accordion-list-grid-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	column-gap: var(--item-column-gap);
+	row-gap: var(--item-row-gap);
+}
+
+.accordion-list-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	column-gap: var(--item-column-gap);
+	row-gap: var(--item-row-gap);
+}
