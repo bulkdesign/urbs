@@ -63,7 +63,7 @@
 
 @media (min-width: 768px) {
 	.service-cards ul {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
 	}
 
 	.service-cards ul li {
