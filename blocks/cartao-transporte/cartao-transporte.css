@@ -104,6 +104,7 @@
 	text-align: left;
 	align-items: flex-start;
 	margin: 0 auto;
+	grid-column: 1 / span 2;
 }
 
 .cartao-transporte .cartao-transporte-item-info h3 {
@@ -114,6 +115,12 @@
 .cartao-transporte .cartao-transporte-item-info .primary-button {
 	margin-top: var(--item-row-gap);
 	border-radius: 1rem;
+}
+
+.cartao-transporte
+	.cartao-transporte-item-description
+	:is(h1, h2, h3, h4, h5, h6) {
+	font-size: 1.2em;
 }
 
 .cartao-transporte .cartao-transporte-item-description p:last-child {
@@ -258,6 +265,7 @@
 	.cartao-transporte-informacoes-tabs-content
 	:is(h1, h2, h3, h4, h5, h6) {
 	padding: 0;
+	font-size: 1.2em;
 }
 
 .cartao-transporte .cartao-transporte-informacoes-tabs-content :is(ul, ol) {
