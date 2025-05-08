@@ -67,7 +67,8 @@ function child_theme_allowed_blocks() {
         'links-list',
         'equipamentos-urbs',
         'featured-columns',
-        'accordion-list'
+        'accordion-list',
+        'cartao-transporte',
     );
 }
 add_filter( 'theme_allowed_blocks', 'child_theme_allowed_blocks', 10, 0);
