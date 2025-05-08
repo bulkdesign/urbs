@@ -1,98 +1,112 @@
 (() => {
-	if (!document.querySelectorAll(".cartao-transporte").length) return false;
+	// Run immediately, but check if DOM is ready
+	const runTabsInit = function () {
+		// Main tabs functionality
+		const mainTabButtons = document.querySelectorAll(
+			".cartao-transporte-tabs .tablink"
+		);
+		const mainTabPanels = document.querySelectorAll(
+			'.cartao-transporte-list-item[role="tabpanel"]'
+		);
 
-	// Function to initialize tabs
-	function initializeTabs(tabContainer, tabButtonSelector, tabPanelSelector) {
-		// Select all elements with the role 'tab' within the selected tab container
-		const tabButtons = tabContainer.querySelectorAll(tabButtonSelector);
-
-		// Function to handle tab click events
-		function tabClickHandler(e) {
-			// Get the parent tablist container
-			const tablistContainer = e.currentTarget.closest('[role="tablist"]');
-
-			// Get all tab buttons and panels within this tablist
-			const currentTabButtons =
-				tablistContainer.querySelectorAll(tabButtonSelector);
-			const currentTabPanels = Array.from(
-				tablistContainer.querySelectorAll(tabPanelSelector)
-			);
-
-			// Hide all tab panels in this tablist
-			currentTabPanels.forEach((panel) => {
-				panel.hidden = true; // Set hidden attribute to true
-			});
-
-			// Deselect all tab buttons in this tablist
-			currentTabButtons.forEach((button) => {
-				button.setAttribute("aria-selected", "false"); // Set aria-selected attribute to false
-			});
-
-			// Select the clicked tab button
-			e.currentTarget.setAttribute("aria-selected", "true");
-
-			// Scroll the tab into view (for mobile)
-			if (window.innerWidth <= 1199) {
-				// Use scrollIntoView with options to make it smooth and position at start
-				e.currentTarget.scrollIntoView({
-					behavior: "smooth",
-					block: "nearest",
-					inline: "start",
+		// Add click event to each main tab button
+		mainTabButtons.forEach((button) => {
+			button.addEventListener("click", function () {
+				// Deselect all main tab buttons
+				mainTabButtons.forEach((btn) => {
+					btn.setAttribute("aria-selected", "false");
 				});
-			}
 
-			// Get the id of the clicked tab button
-			const { id } = e.currentTarget;
+				// Select the clicked button
+				this.setAttribute("aria-selected", "true");
 
-			// Find the corresponding tab panel for the clicked tab button
-			const currentTab = currentTabPanels.find(
-				(panel) => panel.getAttribute("aria-labelledby") === id
-			);
+				// Hide all main tab panels
+				mainTabPanels.forEach((panel) => {
+					panel.hidden = true;
+				});
 
-			// Show the corresponding tab panel
-			if (currentTab) {
-				currentTab.hidden = false; // Set hidden attribute to false
-			}
-		}
+				// Show the corresponding panel
+				const panelId = this.id;
+				const panel = document.querySelector(`[aria-labelledby="${panelId}"]`);
+				if (panel) {
+					panel.hidden = false;
+				}
 
-		// Add click event listener to each tab button
-		tabButtons.forEach((button) => {
-			button.addEventListener("click", tabClickHandler);
+				// Scroll the tab into view (for mobile)
+				if (window.innerWidth <= 1199) {
+					this.scrollIntoView({
+						behavior: "smooth",
+						block: "nearest",
+						inline: "start",
+					});
+				}
+			});
 		});
 
-		// Make the first tab and panel active by default in each tablist
-		const tablists = tabContainer.querySelectorAll('[role="tablist"]');
-		tablists.forEach((tablist) => {
-			const firstButton = tablist.querySelector(tabButtonSelector);
-			if (firstButton) {
-				firstButton.setAttribute("aria-selected", "true");
-				const firstPanelId = firstButton.id;
-				const firstPanel = tabContainer.querySelector(
-					`[aria-labelledby="${firstPanelId}"]`
+		// Inner tabs functionality (for each tab panel)
+		document
+			.querySelectorAll(".cartao-transporte-informacoes-wrapper")
+			.forEach((wrapper) => {
+				const innerTabButtons = wrapper.querySelectorAll(
+					".cartao-transporte-informacoes-tabs .informacoesTab"
 				);
-				if (firstPanel) {
-					firstPanel.hidden = false;
+				const innerTabPanels = wrapper.querySelectorAll(
+					".cartao-transporte-informacoes-tabs-content"
+				);
+
+				// Add click event to each inner tab button
+				innerTabButtons.forEach((button) => {
+					button.addEventListener("click", function () {
+						// Deselect all inner tab buttons in this wrapper
+						innerTabButtons.forEach((btn) => {
+							btn.setAttribute("aria-selected", "false");
+						});
+
+						// Select the clicked button
+						this.setAttribute("aria-selected", "true");
+
+						// Hide all inner tab panels in this wrapper
+						innerTabPanels.forEach((panel) => {
+							panel.hidden = true;
+						});
+
+						// Show the corresponding panel
+						const panelId = this.id;
+						const panel = wrapper.querySelector(
+							`[aria-labelledby="${panelId}"]`
+						);
+						if (panel) {
+							panel.hidden = false;
+						}
+
+						// Scroll the tab into view (for mobile)
+						if (window.innerWidth <= 1199) {
+							this.scrollIntoView({
+								behavior: "smooth",
+								block: "nearest",
+								inline: "start",
+							});
+						}
+					});
+				});
+			});
+
+		// Set first tab as active by default (if not already set in HTML)
+		if (mainTabButtons.length > 0 && mainTabPanels.length > 0) {
+			// Check if any tab is already selected
+			const anySelected = Array.from(mainTabButtons).some(
+				(btn) => btn.getAttribute("aria-selected") === "true"
+			);
+
+			if (!anySelected) {
+				mainTabButtons[0].setAttribute("aria-selected", "true");
+				if (mainTabPanels[0]) {
+					mainTabPanels[0].hidden = false;
 				}
 			}
-		});
-	}
+		}
+	};
 
-	// Initialize main tabs
-	const cartaoTransporte = document.querySelector(".cartao-transporte");
-	initializeTabs(
-		cartaoTransporte,
-		'.cartao-transporte-tabs [role="tab"]',
-		'.cartao-transporte-list-item[role="tabpanel"]'
-	);
-
-	// Initialize inner tabs (informacoes)
-	document
-		.querySelectorAll(".cartao-transporte-informacoes-wrapper")
-		.forEach((wrapper) => {
-			initializeTabs(
-				wrapper,
-				'.cartao-transporte-informacoes-tabs .informacoesTab[role="tab"]',
-				'.cartao-transporte-informacoes-tabs-content[role="tabpanel"]'
-			);
-		});
+	// Run the initialization function
+	runTabsInit();
 })();
