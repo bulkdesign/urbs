@@ -1,0 +1,332 @@
+.cartao-transporte {
+	width: 100%;
+	max-width: var(--wide-width);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: var(--item-column-gap);
+}
+
+.cartao-transporte .cartao-transporte-tabs {
+	display: flex;
+	row-gap: calc(var(--item-row-gap) / 2);
+	-webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+}
+
+.cartao-transporte .cartao-transporte-tabs button {
+	background: var(--color-black);
+	border-color: var(--color-black);
+	color: var(--color-white);
+	text-align: center;
+	transition: 0.3s ease all;
+	display: flex;
+	width: fit-content;
+	min-width: 20rem;
+	height: 8rem;
+	align-items: center;
+	overflow: hidden;
+	font: var(--font-headline-7);
+	line-height: normal;
+	column-gap: 1rem;
+}
+
+.cartao-transporte .cartao-transporte-tabs button :is(img, svg) {
+	object-fit: contain;
+	height: 100%;
+	border-radius: 1rem;
+	max-width: fit-content;
+}
+
+.cartao-transporte .cartao-transporte-tabs button.tablink.primary-button {
+	font: var(--font-headline-8);
+	line-height: normal;
+	text-align: center;
+}
+
+.cartao-transporte
+	.cartao-transporte-tabs
+	button.tablink.primary-button:is(:hover, :active, :focus) {
+	background: var(--color-yellow);
+	border-color: var(--color-yellow);
+	transition: 0.3s ease all;
+}
+
+.cartao-transporte
+	.cartao-transporte-tabs
+	button.primary-button:is(.tablink[aria-selected="true"]) {
+	background: var(--color-green);
+	border-color: var(--color-green);
+	transition: 0.3s ease all;
+}
+
+.cartao-transporte .cartao-transporte-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: var(--item-column-gap);
+	row-gap: var(--item-row-gap);
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 2rem;
+}
+
+.cartao-transporte .cartao-transporte-list-wrapper {
+	display: grid;
+	grid-row: 1;
+	grid-column: 1;
+	grid-template-columns: minmax(0, 1fr);
+	column-gap: var(--column-gap);
+	row-gap: var(--row-gap);
+}
+
+.cartao-transporte .cartao-transporte-list-item {
+	background: var(--color-light-grey);
+	border-radius: calc(var(--element-border-radius) * 2);
+	padding: var(--column-gap);
+	display: flex;
+	flex-direction: column;
+	gap: var(--item-column-gap);
+	height: fit-content;
+}
+
+.cartao-transporte .cartao-transporte-list-item :is(svg, img) {
+	display: block;
+	width: 100%;
+	object-fit: cover;
+}
+
+.cartao-transporte .cartao-transporte-list-item :is(img) {
+	border-radius: var(--element-border-radius);
+}
+
+.cartao-transporte .cartao-transporte-item-info {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	align-items: flex-start;
+	margin: 0 auto;
+}
+
+.cartao-transporte .cartao-transporte-item-info h3 {
+	color: var(--color-light-blue);
+	line-height: normal;
+}
+
+.cartao-transporte .cartao-transporte-item-info .primary-button {
+	margin-top: var(--item-row-gap);
+	border-radius: 1rem;
+}
+
+.cartao-transporte .cartao-transporte-item-description p:last-child {
+	margin-bottom: 0;
+}
+
+.cartao-transporte .cartao-transporte-links {
+	display: flex;
+	flex-direction: column;
+	grid-column: 1 / span 2;
+	gap: var(--item-column-gap);
+}
+
+.cartao-transporte .cartao-transporte-informacoes {
+	margin-top: var(--item-row-gap);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--item-column-gap);
+	grid-column: 1 / span 2;
+}
+
+.cartao-transporte .cartao-transporte-informacoes-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	width: 100%;
+}
+
+.cartao-transporte .cartao-transporte-informacoes-tabs {
+	display: flex;
+	width: 100%;
+	-webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+}
+
+.cartao-transporte .cartao-transporte-informacoes-tabs button.informacoesTab {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.5rem;
+	background: var(--color-black);
+	border: 0.1rem solid var(--color-light-blue) !important;
+	color: var(--color-white);
+	font: var(--font-headline-8);
+	cursor: pointer;
+	transition: 0.3s ease all;
+	position: relative;
+	border-radius: var(--element-border-radius);
+	flex: 1;
+	background-color: var(--color-light-blue) !important;
+}
+
+.cartao-transporte
+	.cartao-transporte-informacoes-tabs
+	button.informacoesTab:is(:hover) {
+	background: var(--color-darker-blue) !important;
+	border-color: var(--color-darker-blue) !important;
+	transition: 0.3s ease all;
+}
+
+.cartao-transporte
+	.cartao-transporte-informacoes-tabs
+	button.informacoesTab[aria-selected="true"] {
+	background: var(--color-white) !important;
+	border-color: var(--color-light-blue);
+	color: var(--color-light-blue);
+	transition: 0.3s ease all;
+}
+
+.cartao-transporte
+	.cartao-transporte-informacoes-tabs
+	button.informacoesTab
+	.informacoesTab-icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	position: relative;
+	margin-left: 1rem;
+	flex-shrink: 0;
+}
+
+.cartao-transporte
+	.cartao-transporte-informacoes-tabs
+	button.informacoesTab
+	.informacoesTab-icon::before,
+.cartao-transporte
+	.cartao-transporte-informacoes-tabs
+	button.informacoesTab
+	.informacoesTab-icon::after {
+	content: "";
+	position: absolute;
+	background-color: var(--color-white);
+	transition: all 0.3s ease;
+}
+
+.cartao-transporte
+	.cartao-transporte-informacoes-tabs
+	button.informacoesTab
+	.informacoesTab-icon::before {
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	transform: translateY(-50%);
+}
+
+.cartao-transporte
+	.cartao-transporte-informacoes-tabs
+	button.informacoesTab
+	.informacoesTab-icon::after {
+	top: 0;
+	left: 50%;
+	width: 2px;
+	height: 100%;
+	transform: translateX(-50%);
+}
+
+.cartao-transporte
+	.cartao-transporte-informacoes-tabs
+	button.informacoesTab[aria-selected="true"]
+	.informacoesTab-icon::before {
+	background-color: var(--color-light-blue);
+}
+
+.cartao-transporte
+	.cartao-transporte-informacoes-tabs
+	button.informacoesTab[aria-selected="true"]
+	.informacoesTab-icon::after {
+	transform: translateX(-50%) rotate(90deg);
+	opacity: 0;
+}
+
+.cartao-transporte .cartao-transporte-informacoes-tabs-content {
+	padding: calc(var(--row-gap) * 1.5) var(--item-row-gap) 0;
+	background-color: var(--color-white);
+	border-radius: var(--element-border-radius);
+	width: 100%;
+	overflow-wrap: break-word;
+	margin-top: calc(var(--row-gap) * -1);
+}
+
+.cartao-transporte
+	.cartao-transporte-informacoes-tabs-content
+	:is(h1, h2, h3, h4, h5, h6) {
+	padding: 0;
+}
+
+.cartao-transporte .cartao-transporte-informacoes-tabs-content :is(ul, ol) {
+	padding: var(--item-row-gap) 0;
+	margin-bottom: 0;
+	list-style-position: inside;
+}
+
+.cartao-transporte
+	.cartao-transporte-informacoes-tabs-content
+	:is(ul, ol)
+	li
+	p {
+	padding: 0;
+}
+
+.cartao-transporte .cartao-transporte-informacoes-tabs-content p {
+	padding: 0;
+}
+
+@media (max-width: 1199px) {
+	.cartao-transporte .cartao-transporte-tabs,
+	.cartao-transporte .cartao-transporte-informacoes-tabs {
+		overflow-x: auto;
+		overflow-y: hidden;
+		scrollbar-width: none; /* Firefox */
+	}
+
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	.cartao-transporte .cartao-transporte-tabs::-webkit-scrollbar,
+	.cartao-transporte .cartao-transporte-informacoes-tabs::-webkit-scrollbar {
+		display: none;
+	}
+
+	.cartao-transporte .cartao-transporte-tabs button {
+		flex-shrink: 0;
+	}
+
+	.cartao-transporte .cartao-transporte-informacoes-tabs button.informacoesTab {
+		width: 100%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.cartao-transporte {
+		flex-direction: row;
+	}
+
+	.cartao-transporte .cartao-transporte-tabs {
+		max-width: 35rem;
+		flex-direction: column;
+	}
+
+	.cartao-transporte .cartao-transporte-list-item {
+		display: grid;
+		grid-template-columns: 25% minmax(0, 1fr);
+		column-gap: var(--column-gap);
+	}
+
+	.cartao-transporte .cartao-transporte-list-item :is(img) {
+		max-width: 30rem;
+		height: 100%;
+	}
+
+	.cartao-transporte .cartao-transporte-links {
+		flex-direction: row;
+	}
+
+	.cartao-transporte .cartao-transporte-informacoes-tabs {
+		gap: 1rem;
+	}
+}

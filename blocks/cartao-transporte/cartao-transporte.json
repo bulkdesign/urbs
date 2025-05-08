@@ -1,0 +1,269 @@
+{
+    "key": "group_0588c2bbc325f_cartao_transporte",
+    "title": "Block: Cartão Transporte",
+    "fields": [
+        {
+            "key": "field_0588c2bbc5ed3_cartao_transporte",
+            "label": "Cartões",
+            "name": "cartoes",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Adicionar Cartão",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6658ae4bb4c27_cartao_transporte",
+                    "label": "Título do Cartão",
+                    "name": "cartao_titulo",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_0588c2bbc5ed3_cartao_transporte"
+                },
+                {
+                    "key": "field_68121ecaa7286",
+                    "label": "Ícone do Cartão",
+                    "name": "icone_do_cartao",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_0588c2bbc5ed3_cartao_transporte"
+                },
+                {
+                    "key": "field_0588c2bbcc027_cartao_transporte",
+                    "label": "Imagem",
+                    "name": "imagem",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_0588c2bbc5ed3_cartao_transporte"
+                },
+                {
+                    "key": "field_66582d40d6838_cartao_transporte",
+                    "label": "Descrição",
+                    "name": "descricao",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
+                    "parent_repeater": "field_0588c2bbc5ed3_cartao_transporte"
+                },
+                {
+                    "key": "field_681d386724d7d",
+                    "label": "Link Externo",
+                    "name": "link_externo",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_0588c2bbc5ed3_cartao_transporte"
+                },
+                {
+                    "key": "field_0588c2bbcc066_cartao_transporte",
+                    "label": "Links",
+                    "name": "links",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "Botões opcionais que serão exibidos dentro do cartão. Por exemplo: Agendar Atendimento, Comprar Créditos, etc",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Adicionar Link",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_68122087a728a",
+                            "label": "Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "parent_repeater": "field_0588c2bbcc066_cartao_transporte"
+                        }
+                    ],
+                    "parent_repeater": "field_0588c2bbc5ed3_cartao_transporte"
+                },
+                {
+                    "key": "field_68121faea7287",
+                    "label": "Informações do Cartão",
+                    "name": "informacoes",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "Área que exibe informações pertinentes sobre como comprar o cartão, quem tem direito, etc.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Adicionar Informação",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_68121ff3a7288",
+                            "label": "Pergunta",
+                            "name": "pergunta",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_68121faea7287"
+                        },
+                        {
+                            "key": "field_68122002a7289",
+                            "label": "Resposta",
+                            "name": "resposta",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0,
+                            "parent_repeater": "field_68121faea7287"
+                        }
+                    ],
+                    "parent_repeater": "field_0588c2bbc5ed3_cartao_transporte"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/cartao-transporte"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1746745461
+}
