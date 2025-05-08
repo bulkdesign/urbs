@@ -104,7 +104,6 @@
 	text-align: left;
 	align-items: flex-start;
 	margin: 0 auto;
-	grid-column: 1 / span 2;
 }
 
 .cartao-transporte .cartao-transporte-item-info h3 {
