@@ -9,11 +9,12 @@
 
 <section <?php theme_block_attributes( $block, 'cartao-transporte' ); ?>>
     <?php if ( have_rows( 'cartoes') ) : ?>
+        <?php $tab_counter = 0; ?>
 
         <div role="tablist" aria-label="<?php esc_attr_e( 'Cartão Transporte URBS', 'bulk' ); ?>" class="cartao-transporte-tabs">
             <?php while ( have_rows( 'cartoes' ) ) : ?>
             <?php the_row(); ?>
-                <button class="tablink primary-button" role="tab" aria-label="<?php echo esc_attr( get_sub_field('cartao_titulo') ); ?>" id="<?php echo strtolower( str_replace( ' ', '-', get_sub_field('cartao_titulo') ) ); ?>" aria-selected="false">
+                <button class="tablink primary-button" role="tab" aria-label="<?php echo esc_attr( get_sub_field('cartao_titulo') ); ?>" id="<?php echo strtolower( str_replace( ' ', '-', get_sub_field('cartao_titulo') ) ); ?>" aria-selected="<?php echo $tab_counter === 0 ? 'true' : 'false'; ?>">
                     <?php the_sub_field('cartao_titulo'); ?>
 
                     <?php $icon = get_sub_field( 'icone_do_cartao' ); ?>
@@ -28,13 +29,16 @@
                         <?php endif; ?>
                     <?php endif; ?>
                 </button>
+                <?php $tab_counter++; ?>
             <?php endwhile; ?>
         </div>
 
         <div class="cartao-transporte-list-wrapper">
+            <?php $tab_counter = 0; ?>
             <?php while ( have_rows( 'cartoes' ) ) : ?>
             <?php the_row(); ?>
-                <div class="cartao-transporte-list-item" role="tabpanel" aria-labelledby="<?php echo strtolower( str_replace( ' ', '-', get_sub_field('cartao_titulo') ) ); ?>" hidden>
+                <div class="cartao-transporte-list-item" role="tabpanel" aria-labelledby="<?php echo strtolower( str_replace( ' ', '-', get_sub_field('cartao_titulo') ) ); ?>" <?php echo $tab_counter === 0 ? '' : 'hidden'; ?>>
+                <?php $tab_counter++; ?>
                     <?php $image = get_sub_field( 'imagem' ); ?>
                     <?php if ( ! empty( $image ) ) : ?>
                         <?php if( 'image/svg+xml' === $image['mime_type'] ): ?>
