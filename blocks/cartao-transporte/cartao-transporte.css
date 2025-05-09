@@ -305,7 +305,7 @@
 	}
 
 	.cartao-transporte .cartao-transporte-informacoes-tabs button.informacoesTab {
-		min-width: 100%;
+		min-width: fit-content;
 	}
 }
 
