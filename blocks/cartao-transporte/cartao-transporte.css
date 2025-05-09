@@ -291,6 +291,7 @@
 		overflow-x: auto;
 		overflow-y: hidden;
 		scrollbar-width: none; /* Firefox */
+		column-gap: 1rem;
 	}
 
 	/* Hide scrollbar for Chrome, Safari and Opera */
@@ -304,7 +305,7 @@
 	}
 
 	.cartao-transporte .cartao-transporte-informacoes-tabs button.informacoesTab {
-		width: 100%;
+		min-width: 100%;
 	}
 }
 
