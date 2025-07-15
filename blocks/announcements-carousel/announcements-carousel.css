@@ -1,178 +1,188 @@
 .announcements-carousel {
-    margin: var(--row-gap) auto;
-    overflow: hidden;
-    position: relative;
+	margin: var(--row-gap) auto;
+	overflow: hidden;
+	position: relative;
 }
 
 .announcements-carousel .announcements-carousel-swiper {
-    border-radius: var(--element-border-radius);
+	border-radius: var(--element-border-radius);
 }
 
 .announcements-carousel-swiper .swiper-slide {
-    height: auto;
+	height: auto;
 }
 
 .announcements-carousel-slide {
-    position: relative;
-    padding: calc(var(--block-margin) + var(--page-padding)) 0;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	position: relative;
+	padding: calc(var(--block-margin) + var(--page-padding)) 0;
+	height: 100%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .announcements-carousel-slide:is(:active, :focus, :hover) img {
-    opacity: 0.7;
-    transition: 0.3s ease all;
+	opacity: 0.7;
+	transition: 0.3s ease all;
 }
 
 .announcements-carousel .announcements-carousel-media {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
 }
 
 .announcements-carousel :is(.announcements-carousel-image, .announcements-carousel-video-player, .announcements-carousel-video-player iframe) {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .announcements-carousel-image img,
 .announcements-carousel-video-player img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: 0.3s ease all;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	transition: 0.3s ease all;
 }
 
 .announcements-carousel-video-player iframe {
-    display: block;
-    border: none;
+	display: block;
+	border: none;
 }
 
 .announcements-carousel .announcements-carousel-video-player iframe {
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
-    aspect-ratio: 16/9;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+	width: auto;
+	height: auto;
+	min-width: 100%;
+	min-height: 100%;
+	aspect-ratio: 16/9;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .announcements-carousel .announcements-carousel-image a {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: all;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: all;
 }
 
 .announcements-carousel-navigation {
-    display: flex;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    width: 100%;
-    padding: 0 var(--item-column-gap);
-    justify-content: space-between;
+	display: flex;
+	z-index: 2;
+	width: 100%;
+	justify-content: center;
+
+	@media (min-width: 768px) {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		padding: 0 var(--item-column-gap);
+		justify-content: space-between;
+	}
 }
 
 .announcements-carousel-navigation-prev,
 .announcements-carousel-navigation-next {
-    display: block;
+	display: block;
 }
 
 :is(.announcements-carousel-navigation-prev, .announcements-carousel-navigation-next) svg {
-    width: 4.8rem;
-    height: auto;
+	width: 4.8rem;
+	height: auto;
 }
 
 :is(.announcements-carousel-navigation-prev, .announcements-carousel-navigation-next) svg path {
-    stroke-width: 0.2rem;
+	stroke-width: 0.2rem;
 }
 
 :is(.announcements-carousel-navigation-prev, .announcements-carousel-navigation-next) svg * {
-    transition: all 0.3s ease;
-    stroke: var(--color-white);
+	transition: all 0.3s ease;
+	stroke: var(--color-white);
 }
 
 :is(.announcements-carousel-navigation-prev, .announcements-carousel-navigation-next):is(:hover, :focus) svg * {
-    stroke: var(--color-light-grey);
+	stroke: var(--color-light-grey);
 }
 
 :is(.announcements-carousel-navigation-prev, .announcements-carousel-navigation-next):is(:hover, :focus) svg path:first-child {
-    stroke: var(--color-white) !important;
+	stroke: var(--color-white) !important;
 }
 
 .announcements-carousel-pagination {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: var(--item-column-gap);
-    max-width: var(--wide-width);
-    position: absolute;
-    bottom: var(--page-padding);
-    left: 50% !important;
-    transform: translateX(-50%);
-    z-index: 2;
-    pointer-events: none;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: var(--item-column-gap);
+	max-width: var(--wide-width);
+	position: absolute;
+	bottom: var(--page-padding);
+	left: 50% !important;
+	transform: translateX(-50%);
+	z-index: 2;
+	pointer-events: none;
 }
 
 .announcements-carousel-pagination .swiper-pagination-bullet {
-    opacity: 1;
-    background-color: var(--link-color);
+	opacity: 1;
+	background-color: var(--link-color);
 }
 
 .announcements-carousel-pagination .swiper-pagination-bullet-active {
-    opacity: 1;
-    background-color: var(--accent-color);
+	opacity: 1;
+	background-color: var(--accent-color);
 }
 
 @media (max-width: 767px) {
-    .announcements-carousel-navigation~* .announcements-carousel-slide {
-        padding-bottom: calc(var(--block-margin) + 4.8rem + var(--page-padding));
-    }
+	.announcements-carousel .announcements-carousel-swiper {
+		display: flex;
+		flex-direction: column-reverse;
+		row-gap: var(--item-row-gap);
+	}
+
+	.announcements-carousel .announcements-carousel-media {
+		border-radius: var(--element-border-radius);
+	}
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-    .announcements-carousel-wrapper {
-        width: var(--wide-width);
-        margin: 0px calc(var(--block-margin) * 2);
-    }
+	.announcements-carousel-wrapper {
+		width: var(--wide-width);
+		margin: 0px calc(var(--block-margin) * 2);
+	}
 }
 
 @media (min-width: 768px) {
-    .announcements-carousel.alignwide .announcements-carousel-slide {
-        padding-left: calc((var(--page-padding)*2) + 4.8rem);
-        padding-right: calc((var(--page-padding)*2) + 4.8rem);
-    }
-    
-    .announcements-carousel-navigation-prev,
-    .announcements-carousel-navigation-next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-    }
+	.announcements-carousel.alignwide .announcements-carousel-slide {
+		padding-left: calc((var(--page-padding) * 2) + 4.8rem);
+		padding-right: calc((var(--page-padding) * 2) + 4.8rem);
+	}
 
-    .announcements-carousel-navigation-prev {
-        left: var(--page-padding);
-    }
+	.announcements-carousel-navigation-prev,
+	.announcements-carousel-navigation-next {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+	}
 
-    .announcements-carousel-navigation-next {
-        right: var(--page-padding);
-    }
+	.announcements-carousel-navigation-prev {
+		left: var(--page-padding);
+	}
+
+	.announcements-carousel-navigation-next {
+		right: var(--page-padding);
+	}
 }
