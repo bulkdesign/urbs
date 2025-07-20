@@ -69,6 +69,7 @@ function child_theme_allowed_blocks() {
         'featured-columns',
         'accordion-list',
         'cartao-transporte',
+        'licitacoes-filter'
     );
 }
 add_filter( 'theme_allowed_blocks', 'child_theme_allowed_blocks', 10, 0);
