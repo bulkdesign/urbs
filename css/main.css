@@ -291,6 +291,10 @@ main > .blocks-container:last-child > *:last-child {
 	-webkit-transform: translate3d(0, 0, 0);
 }
 
+.blocks-container > p:is(.has-background) {
+	border-radius: var(--element-border-radius);
+}
+
 @media (min-width: 768px) {
 	.blocks-container > :is(div, section):is(:last-child) {
 		margin: 0 auto var(--block-margin);
