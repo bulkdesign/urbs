@@ -195,7 +195,7 @@
 }
 
 @media (min-width: 768px) {
-    .information-carousel-swiper .swiper-slide {
+    .information-carousel-swiper .swiper-slide:not(:has(.information-carousel-media[data-type="add_info"])) {
         height: 50rem;
     }
 
@@ -205,6 +205,10 @@
 
     .information-carousel .information-carousel-media {
         height: auto;
+    }
+
+    .information-carousel-media[data-type="add_info"] {
+        height: 100%;
     }
 
     .information-carousel-content {
