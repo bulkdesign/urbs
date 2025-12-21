@@ -1,10 +1,13 @@
 (() => {
-    if (!document.querySelectorAll('.horario-de-onibus').length) return false;
+    if (!document.querySelectorAll('.horario-de-onibus').length) {
+        return false;
+    }
 
     const horarioWrapper = document.querySelectorAll('.horario-de-onibus');
 
     horarioWrapper.forEach((horario) => {
 
+        // Linhas
         const listaLinhas = async () => {
             let linhasData = [];
 
@@ -28,12 +31,23 @@
                 linhasSelect.appendChild(linhasOption);
             });
 
+            const listaHorarios = horario.querySelector('.horario-de-onibus-lista');
+            let horarioData = [];
+
+            const exibirHorarios = (filteredData) => {
+                listaHorarios.innerHTML = '';
+                filteredData.forEach((todosHorarios) => {
+                    const listaItem = document.createElement('li');
+                    listaItem.textContent = todosHorarios.horario_tela;
+                    listaHorarios.appendChild(listaItem);
+                });
+            };
+
+            // Horários dos Pontos
             linhasSelect.addEventListener('change', async (linha) => {
                 const linhaSelecionada = linha.target.value;
 
                 if (!linhaSelecionada) return;
-
-                let horarioData = [];
 
                 try {
                     const horarioPontosEndpoint = await fetch(`/wp-json/urbs/v1/horarios-pontos?codigo_linha=${linhaSelecionada}`);
@@ -46,16 +60,32 @@
                     return;
                 }
 
-                const listaHorarios = horario.querySelector('.horario-de-onibus-lista');
+                const diaSelect = horario.querySelector('select[name="horario-de-onibus-tipo-dia"]');
+                const diaSelecionado = diaSelect.value;
 
-                listaHorarios.innerHTML = '';
+                if (diaSelecionado) {
+                    const filteredData = horarioData.filter((item) => item.codigo_tipo_dia === diaSelecionado);
+                    exibirHorarios(filteredData);
+                } else {
+                    exibirHorarios(horarioData);
+                }
+            });
 
-                horarioData.forEach((todosHorarios) => {
-                    const listaItem = document.createElement('li');
-                    listaItem.textContent = todosHorarios.horario_tela;
-                    listaHorarios.appendChild(listaItem);
-                });
+            // Tipo de Dia
+            const diaSelect = horario.querySelector('select[name="horario-de-onibus-tipo-dia"]');
 
+            diaSelect.addEventListener('change', (dia) => {
+                const diaSelecionado = dia.target.value;
+
+                if (!horarioData.length) return;
+
+                if (!diaSelecionado) {
+                    exibirHorarios(horarioData);
+                    return;
+                }
+
+                const filteredData = horarioData.filter((item) => item.codigo_tipo_dia === diaSelecionado);
+                exibirHorarios(filteredData);
             });
         };
 
