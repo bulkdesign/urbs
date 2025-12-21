@@ -6,12 +6,17 @@
     horarioWrapper.forEach((horario) => {
 
         const listaLinhas = async () => {
+            let linhasData = [];
+
             try {
                 const linhasEndpoint = await fetch('/wp-json/urbs/v1/linhas');
-                const linhasJson = await linhasEndpoint.json();
-                const linhasData = linhasJson;
+                if (!linhasEndpoint.ok) {
+                    throw new Error(`HTTP error! status: ${linhasEndpoint.status}`);
+                }
+                linhasData = await linhasEndpoint.json();
             } catch (error) {
-                console.error(error);
+                console.error('Error fetching linhas:', error);
+                return;
             }
 
             const linhasSelect = horario.querySelector('select[name="horario-de-onibus-linhas"]');
@@ -28,11 +33,17 @@
 
                 if (!linhaSelecionada) return;
 
+                let horarioData = [];
+
                 try {
                     const horarioPontosEndpoint = await fetch(`/wp-json/urbs/v1/horarios-pontos?codigo_linha=${linhaSelecionada}`);
-                    const horarioData = await horarioPontosEndpoint.json();
+                    if (!horarioPontosEndpoint.ok) {
+                        throw new Error(`HTTP error! status: ${horarioPontosEndpoint.status}`);
+                    }
+                    horarioData = await horarioPontosEndpoint.json();
                 } catch (error) {
-                    console.error(error);
+                    console.error('Error fetching horarios:', error);
+                    return;
                 }
 
                 const listaHorarios = horario.querySelector('.horario-de-onibus-lista');
@@ -46,7 +57,7 @@
                 });
 
             });
-        }
+        };
 
         listaLinhas();
 
