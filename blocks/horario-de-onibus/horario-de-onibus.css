@@ -1,4 +1,4 @@
-.horario-de-onibus ul {
+/* .horario-de-onibus ul {
     display: grid;
     padding: 0;
     margin: -5rem 0 5rem;
@@ -106,4 +106,4 @@
     .horario-de-onibus ul li {
         grid-template-columns: 1fr 6rem 15rem 1fr;
     }
-}
+} */
