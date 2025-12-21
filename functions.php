@@ -20,14 +20,6 @@ function child_theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'child_theme_enqueue_styles' );
 
-/**
- * Enqueue all the scripts necessary for the child.
- */
-
-function child_theme_enqueue_scripts() {
-    //wp_enqueue_script( 'select2-js', get_stylesheet_directory_uri() . '/js/select2.min.js', array( 'jquery' ) );
-}
-add_action( 'wp_enqueue_scripts', 'child_theme_enqueue_scripts', 30 );
 
 /**
  * Filter allowed blocks
