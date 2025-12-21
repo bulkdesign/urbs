@@ -21,6 +21,24 @@ function child_theme_block_horario_de_onibus() {
 				'mode'   => false,
 				'anchor' => true,
 			),
+			'enqueue_assets' => function() {
+				// Enqueue Choices.js CSS
+				wp_enqueue_style(
+					'choices-js',
+					'https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css',
+					array(),
+					'10.2.0'
+				);
+
+				// Enqueue Choices.js script
+				wp_enqueue_script(
+					'choices-js',
+					'https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js',
+					array(),
+					'10.2.0',
+					true
+				);
+			},
 		)
 	);
 }
