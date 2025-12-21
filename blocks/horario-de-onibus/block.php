@@ -27,28 +27,6 @@ function child_theme_block_horario_de_onibus() {
 
 add_action( 'theme_declare_block', 'child_theme_block_horario_de_onibus', 20 );
 
-add_action( 'rest_api_init', function () {
-    register_rest_route( 'urbs/v1', '/linhas', array(
-        'methods' => 'GET',
-        'callback' => 'get_horarios_linhas_urbs',
-        'permission_callback' => '__return_true',
-    ) );
-
-    register_rest_route( 'urbs/v1', '/horarios-pontos', array(
-        'methods' => 'GET',
-        'callback' => 'get_horarios_pontos_urbs',
-        'permission_callback' => '__return_true',
-        'args' => array(
-            'codigo_linha' => array(
-                'required' => true,
-                'validate_callback' => function( $param ) {
-                    return ! empty( $param );
-                }
-            ),
-        ),
-    ) );
-});
-
 function get_horarios_linhas_urbs() {
     $cache_key = 'urbs_linhas_data';
     $linhas = get_transient( $cache_key );
@@ -65,7 +43,7 @@ function get_horarios_linhas_urbs() {
 			}
 
 			if ( is_wp_error( $response ) ) {
-				return new WP_Error( 'api_error', 'Erro ao conectar na URBS', array( 'status' => 500 ) );
+				return new WP_Error( 'api_error', 'Erro ao processar dados', array( 'status' => 500 ) );
 			}
 
 			$body = wp_remote_retrieve_body( $response );
@@ -123,3 +101,25 @@ function get_horarios_pontos_urbs( $request ) {
 
     return rest_ensure_response( $horarios );
 }
+
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'urbs/v1', '/linhas', array(
+        'methods' => 'GET',
+        'callback' => 'get_horarios_linhas_urbs',
+        'permission_callback' => '__return_true',
+    ) );
+
+    register_rest_route( 'urbs/v1', '/horarios-pontos', array(
+        'methods' => 'GET',
+        'callback' => 'get_horarios_pontos_urbs',
+        'permission_callback' => '__return_true',
+        'args' => array(
+            'codigo_linha' => array(
+                'required' => true,
+                'validate_callback' => function( $param ) {
+                    return ! empty( $param );
+                }
+            ),
+        ),
+    ) );
+});
