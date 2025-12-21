@@ -1,6 +1,8 @@
 .horario-de-onibus .horario-de-onibus-filtros {
     display: flex;
-    column-gap: var(--item-column-gap);
+    flex-direction: column;
+    gap: var(--item-column-gap);
+    justify-content: space-between;
 }
 
 .horario-de-onibus .horario-de-onibus-lista {
@@ -11,4 +13,25 @@
     grid-template-columns: repeat(14, 1fr);
     gap: calc(var(--item-row-gap) / 2);
     text-align: center;
+}
+
+.horario-de-onibus .choices {
+    margin-bottom: 0px;
+}
+
+.horario-de-onibus .choices[data-type*=select-one] {
+    width: 100%;
+}
+
+.horario-de-onibus .choices[data-type*=select-one] .choices__input {
+    box-shadow: none !important;
+    font: var(--font-body-small) !important;
+    border: none !important;
+    padding: 1rem !important;
+}
+
+@media (min-width: 768px) {
+    .horario-de-onibus .horario-de-onibus-filtros {
+        flex-direction: row;
+    }
 }

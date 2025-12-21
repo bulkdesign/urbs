@@ -31,6 +31,21 @@
                 linhasSelect.appendChild(linhasOption);
             });
 
+            // Initialize Choices.js on the linhas select
+            const linhasChoices = new Choices(linhasSelect, {
+                searchEnabled: true,
+                searchPlaceholderValue: 'DIGITE O NOME DE UMA LINHA...',
+                noResultsText: 'Nenhuma linha encontrada',
+                noChoicesText: 'Nenhuma opção disponível',
+                itemSelectText: 'Clique para selecionar',
+                shouldSort: false,
+                searchFields: ['label'],
+                fuseOptions: {
+                    threshold: 0.3,
+                    distance: 100
+                }
+            });
+
             const listaHorarios = horario.querySelector('.horario-de-onibus-lista');
             let horarioData = [];
 
@@ -43,7 +58,7 @@
                 });
             };
 
-            // Horários dos Pontos
+            // Horários dos Pontos - Listen to Choices.js change event
             linhasSelect.addEventListener('change', async (linha) => {
                 const linhaSelecionada = linha.target.value;
 
@@ -87,9 +102,25 @@
                 const filteredData = horarioData.filter((item) => item.codigo_tipo_dia === diaSelecionado);
                 exibirHorarios(filteredData);
             });
+
+            // Initialize Choices.js on the days select
+            const diasChoices = new Choices(diaSelect, {
+                searchEnabled: true,
+                searchPlaceholderValue: 'Digite para buscar...',
+                noResultsText: 'Nenhuma opção encontrada',
+                noChoicesText: 'Nenhuma opção disponível',
+                itemSelectText: 'Clique para selecionar',
+                shouldSort: false,
+                searchFields: ['label'],
+                fuseOptions: {
+                    threshold: 0.3,
+                    distance: 100
+                }
+            });
+
         };
 
-        listaLinhas();
+        listaLinhas();        
 
     });
 
