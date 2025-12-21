@@ -55,8 +55,14 @@ function get_horarios_linhas_urbs() {
 
 	try {
 		if ( false === $linhas ) {
-			// Se não houver cache, faz o fetch remoto
-			$response = wp_remote_get( 'http://172.31.17.21:8080/linhas' );
+			
+			try {
+				$url = 'http://172.31.17.21:8080/linhas';
+				$response = wp_remote_get( $url );
+			} catch (Exception $e) {
+				error_log( $e->getMessage() );
+				return new WP_Error( 'exception', 'Erro ao conectar na API da URBS', array( 'status' => 500 ) );
+			}
 
 			if ( is_wp_error( $response ) ) {
 				return new WP_Error( 'api_error', 'Erro ao conectar na URBS', array( 'status' => 500 ) );
@@ -87,12 +93,17 @@ function get_horarios_pontos_urbs( $request ) {
 
     try {
         if ( false === $horarios ) {
-            // Se não houver cache, faz o fetch remoto
-            $url = 'http://172.31.17.21:8080/horarios-pontos?codigo_linha=' . urlencode( $codigo_linha );
-            $response = wp_remote_get( $url );
+            
+			try {
+				$url = 'http://172.31.17.21:8080/horarios-pontos?codigo_linha=' . urlencode( $codigo_linha );
+				$response = wp_remote_get( $url );
+			} catch (Exception $e) {
+				error_log( $e->getMessage() );
+				return new WP_Error( 'exception', 'Erro ao conectar na API da URBS', array( 'status' => 500 ) );
+			}
 
             if ( is_wp_error( $response ) ) {
-                return new WP_Error( 'api_error', 'Erro ao conectar na URBS', array( 'status' => 500 ) );
+                return new WP_Error( 'api_error', 'Erro ao processar dados', array( 'status' => 500 ) );
             }
 
             $body = wp_remote_retrieve_body( $response );
@@ -107,7 +118,7 @@ function get_horarios_pontos_urbs( $request ) {
         }
     } catch (Exception $e) {
         error_log( $e->getMessage() );
-        return new WP_Error( 'exception', 'Erro ao processar dados', array( 'status' => 500 ) );
+        return new WP_Error( 'exception', 'Erro ao acessar dados', array( 'status' => 500 ) );
     }
 
     return rest_ensure_response( $horarios );
