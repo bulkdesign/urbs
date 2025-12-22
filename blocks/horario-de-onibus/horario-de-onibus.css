@@ -15,6 +15,36 @@
     justify-content: space-between;
 }
 
+.horario-de-onibus .horario-de-onibus-linha-info:is([data-linha-cor="laranja"]) {
+    background: #F17210;
+}
+
+.horario-de-onibus .horario-de-onibus-linha-info:is([data-linha-cor="amarela"]) {
+    background: #ffc156;
+}
+
+.horario-de-onibus .horario-de-onibus-linha-info:is([data-linha-cor="prata"]) {
+    background: #7E7E7E;
+}
+
+.horario-de-onibus .horario-de-onibus-linha-info:is([data-linha-cor="vermelha"]) {
+    background: #ef5350;
+}
+
+.horario-de-onibus .horario-de-onibus-linha-info:is([data-linha-cor="verde"]) {
+    background: #107210;
+}
+
+.horario-de-onibus .horario-de-onibus-linha-info:is(
+    [data-linha-cor="laranja"],
+    [data-linha-cor="amarela"],
+    [data-linha-cor="prata"],
+    [data-linha-cor="vermelha"],
+    [data-linha-cor="verde"]
+) :is(h4, p, strong) {
+    color: var(--color-white);
+}
+
 .horario-de-onibus .horario-de-onibus-linha-info:empty {
     display: none;
 }
@@ -27,6 +57,15 @@
 
 .horario-de-onibus .horario-de-onibus-linha-info p {
     margin: 0 0 1rem;
+}
+
+.horario-de-onibus .horario-de-onibus-linha-info .linha-info-detalhes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.horario-de-onibus .horario-de-onibus-linha-info .linha-info-detalhes h4 {
+    grid-column: 1 / span 3;
 }
 
 .horario-de-onibus .horario-de-onibus-lista {

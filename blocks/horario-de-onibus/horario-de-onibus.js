@@ -22,6 +22,7 @@
                 return;
             }
 
+            // Dropdown das Linhas
             const linhasSelect = horario.querySelector('select[name="horario-de-onibus-linhas"]');
 
             linhasData.forEach((linha) => {
@@ -46,9 +47,91 @@
                 }
             });
 
+            // Elements
+            const linhaInfo = horario.querySelector('.horario-de-onibus-linha-info');
             const listaHorarios = horario.querySelector('.horario-de-onibus-lista');
             let horarioData = [];
 
+            // Function to display line info
+            const exibirLinhaInfo = async (codigoLinha) => {
+                linhaInfo.innerHTML = '<p>Carregando informações...</p>';
+
+                try {
+                    const infoLinhasCompletasEndpoint = await fetch(`/wp-json/urbs/v1/info-linhas-completas/${codigoLinha}`);
+
+                    if (!infoLinhasCompletasEndpoint.ok) {
+                        throw new Error(`HTTP error! status: ${infoLinhasCompletasEndpoint.status}`);
+                    }
+
+                    const infoLinhasCompletas = await infoLinhasCompletasEndpoint.json();
+
+                    linhaInfo.innerHTML = '';
+
+                    if (!infoLinhasCompletas) {
+                        linhaInfo.innerHTML = '<p>Nenhuma informação disponível.</p>';
+                        return;
+                    }
+
+                    // Display main line information
+                    const infoContainer = document.createElement('div');
+                    infoContainer.className = 'linha-info-detalhes';
+
+                    // Add color indicator
+                    if (infoLinhasCompletas.cor) {
+                        const linhaCor = infoLinhasCompletas.nome_cor.toLowerCase().replace(' ', '-');
+                        linhaInfo.setAttribute('data-linha-cor', linhaCor);
+                    }
+
+                    // Line name and code
+                    const linhaHeader = document.createElement('h4');
+                    linhaHeader.textContent = `${infoLinhasCompletas.nome} - Linha ${infoLinhasCompletas.codigo}`;
+                    infoContainer.appendChild(linhaHeader);
+
+                    // Line details
+                    const detalhes = [
+                        { label: 'Categoria', value: infoLinhasCompletas.categoria_servico },
+                        { label: 'Tipo de Linha', value: infoLinhasCompletas.tipo_linha },
+                        { label: 'Abrangência', value: infoLinhasCompletas.abrangencia },
+                        { label: 'Data de Implantação', value: infoLinhasCompletas.data_implantacao },
+                        { label: 'Somente Cartão', value: infoLinhasCompletas.somente_cartao === 'S' ? 'Sim' : 'Não' },
+                    ];
+
+                    if (infoLinhasCompletas.observacoes) {
+                        detalhes.push({ label: 'Observações', value: infoLinhasCompletas.observacoes });
+                    }
+
+                    detalhes.forEach(({ label, value }) => {
+                        const detalheItem = document.createElement('p');
+                        detalheItem.innerHTML = `<strong>${label}:</strong> ${value}`;
+                        infoContainer.appendChild(detalheItem);
+                    });
+
+                    linhaInfo.appendChild(infoContainer);
+
+                    // Display bus stops (pontos)
+                    if (infoLinhasCompletas.pontos && infoLinhasCompletas.pontos.length > 0) {
+                        const pontosHeader = document.createElement('h5');
+                        pontosHeader.textContent = 'Pontos de Parada';
+                        linhaInfo.appendChild(pontosHeader);
+
+                        const pontosList = document.createElement('ul');
+                        pontosList.className = 'linha-pontos-lista';
+
+                        infoLinhasCompletas.pontos.forEach((ponto) => {
+                            const pontoItem = document.createElement('li');
+                            pontoItem.textContent = ponto.ponto;
+                            pontosList.appendChild(pontoItem);
+                        });
+
+                        linhaInfo.appendChild(pontosList);
+                    }
+                } catch (error) {
+                    console.error('Error fetching info linhas completas:', error);
+                    linhaInfo.innerHTML = '<p>Erro ao carregar informações da linha.</p>';
+                }
+            };
+
+            // Function to display schedules
             const exibirHorarios = (filteredData) => {
                 listaHorarios.innerHTML = '';
                 filteredData.forEach((todosHorarios) => {
@@ -64,6 +147,10 @@
 
                 if (!linhaSelecionada) return;
 
+                // Fetch line info
+                exibirLinhaInfo(linhaSelecionada);
+
+                // Fetch schedules
                 try {
                     const horarioPontosEndpoint = await fetch(`/wp-json/urbs/v1/horarios-pontos?codigo_linha=${linhaSelecionada}`);
                     if (!horarioPontosEndpoint.ok) {
