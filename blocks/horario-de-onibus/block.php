@@ -82,6 +82,44 @@ function get_horarios_linhas_urbs() {
     return rest_ensure_response( $linhas );
 }
 
+function get_info_linhas_completas_urbs( $request ) {
+	$codigo_linha = $request->get_param( 'codigo_linha' );
+    $cache_key = 'urbs_info_linhas_completas_data' . sanitize_key( $codigo_linha );
+    $infoLinhasCompletas = get_transient( $cache_key );
+
+	try {
+		if ( false === $infoLinhasCompletas ) {
+			
+			try {
+				$url = 'http://172.31.17.21:8080/info-linhas-completas/' . urlencode( $codigo_linha );
+				$response = wp_remote_get( $url );
+			} catch (Exception $e) {
+				error_log( $e->getMessage() );
+				return new WP_Error( 'exception', 'Erro ao conectar na API da URBS', array( 'status' => 500 ) );
+			}
+
+			if ( is_wp_error( $response ) ) {
+				return new WP_Error( 'api_error', 'Erro ao processar dados', array( 'status' => 500 ) );
+			}
+
+			$body = wp_remote_retrieve_body( $response );
+			$data = json_decode( $body );
+
+			if ( ! isset( $data->data ) ) {
+				return new WP_Error( 'invalid_data', 'Dados inválidos da API', array( 'status' => 500 ) );
+			}
+
+			$infoLinhasCompletas = $data->data;
+			set_transient( $cache_key, $infoLinhasCompletas, DAY_IN_SECONDS );
+		}
+	} catch (Exception $e) {
+		error_log( $e->getMessage() );
+		return new WP_Error( 'exception', 'Erro ao processar dados', array( 'status' => 500 ) );
+	}
+
+    return rest_ensure_response( $infoLinhasCompletas );
+}
+
 function get_horarios_pontos_urbs( $request ) {
     $codigo_linha = $request->get_param( 'codigo_linha' );
     $cache_key = 'urbs_horarios_' . sanitize_key( $codigo_linha );
@@ -127,9 +165,9 @@ add_action( 'rest_api_init', function () {
         'permission_callback' => '__return_true',
     ) );
 
-    register_rest_route( 'urbs/v1', '/horarios-pontos', array(
+    register_rest_route( 'urbs/v1', '/info-linhas-completas/(?P<codigo_linha>[a-zA-Z0-9-]+)', array(
         'methods' => 'GET',
-        'callback' => 'get_horarios_pontos_urbs',
+        'callback' => 'get_info_linhas_completas_urbs',
         'permission_callback' => '__return_true',
         'args' => array(
             'codigo_linha' => array(
@@ -139,5 +177,11 @@ add_action( 'rest_api_init', function () {
                 }
             ),
         ),
+    ) );
+
+    register_rest_route( 'urbs/v1', '/horarios-pontos', array(
+        'methods' => 'GET',
+        'callback' => 'get_horarios_pontos_urbs',
+        'permission_callback' => '__return_true',
     ) );
 });
