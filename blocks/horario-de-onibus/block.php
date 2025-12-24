@@ -72,7 +72,7 @@ function get_horarios_linhas_urbs() {
 			}
 
 			$linhas = $data->data;
-			set_transient( $cache_key, $linhas, DAY_IN_SECONDS );
+			set_transient( $cache_key, $linhas, YEAR_IN_SECONDS );
 		}
 	} catch (Exception $e) {
 		error_log( $e->getMessage() );
@@ -110,7 +110,7 @@ function get_info_linhas_completas_urbs( $request ) {
 			}
 
 			$infoLinhasCompletas = $data->data;
-			set_transient( $cache_key, $infoLinhasCompletas, DAY_IN_SECONDS );
+			set_transient( $cache_key, $infoLinhasCompletas, YEAR_IN_SECONDS );
 		}
 	} catch (Exception $e) {
 		error_log( $e->getMessage() );
@@ -148,7 +148,7 @@ function get_horarios_pontos_urbs( $request ) {
             }
 
             $horarios = $data->data;
-            set_transient( $cache_key, $horarios, DAY_IN_SECONDS );
+            set_transient( $cache_key, $horarios, YEAR_IN_SECONDS );
         }
     } catch (Exception $e) {
         error_log( $e->getMessage() );

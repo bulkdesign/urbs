@@ -83,6 +83,10 @@
     margin-bottom: 0px;
 }
 
+.horario-de-onibus .choices:is(.dia-choices) {
+   z-index: 9;
+}
+
 .horario-de-onibus .choices[data-type*=select-one] {
     width: 100%;
 }
@@ -92,6 +96,18 @@
     font: var(--font-body-small) !important;
     border: none !important;
     padding: 1rem !important;
+}
+
+@media (max-width: 767px) {
+    .horario-de-onibus .horario-de-onibus-linha-info .linha-info-detalhes {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .horario-de-onibus .horario-de-onibus-lista {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }
 
 @media (min-width: 768px) {

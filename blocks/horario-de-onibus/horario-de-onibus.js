@@ -199,6 +199,9 @@
                 itemSelectText: 'Clique para selecionar',
                 shouldSort: false,
                 searchFields: ['label'],
+                classNames: {
+                    containerOuter: ['choices', 'dia-choices']
+                },
                 fuseOptions: {
                     threshold: 0.3,
                     distance: 100
