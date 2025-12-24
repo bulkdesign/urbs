@@ -34,6 +34,7 @@
     display: grid;
     padding: 0;
     row-gap: calc(var(--item-row-gap)* 2);
+    overflow-wrap: anywhere;
 }
 
 .footer-urbs-main ul li {
