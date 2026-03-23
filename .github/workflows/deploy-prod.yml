@@ -1,28 +1,32 @@
-name: Build and Deploy for Production
+name: Deploy URBS (Bulk Theme)
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    branches: [ main ]
+
 jobs:
   deploy:
-    name: Deploy Production
-    runs-on: ubuntu-latest
-    environment: ${{ github.ref_name }}
-    env:
-      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-      REMOTE_USER: ${{ secrets.REMOTE_USER }}
-      REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
-      TARGET: ${{ secrets.REMOTE_PATH }}
-      EXCLUDE: "/.git/, /node_modules/, .env"
+    runs-on: self-hosted  # Direciona para o Runner que instalamos no Servidor 1
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Deploy to remote server
-        uses: easingthemes/ssh-deploy@main
-        with:
-          args: "-avz --delete"
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Sincronizar arquivos com a pasta do Tema
+        run: |
+          # Sincroniza o conteúdo do repositório com a pasta final do WordPress
+          # O --delete garante que arquivos deletados no Git também sumam do servidor
+          sudo rsync -avz --delete ./ /var/www/html/wp-content/themes/urbs/
+          
+      - name: Corrigir Permissões (Nginx/WWW-DATA)
+        run: |
+          # Garante que o servidor web continue sendo o dono dos arquivos
+          sudo chown -R www-data:www-data /var/www/html/wp-content/themes/urbs
+          
+          # Ajusta permissões padrão de segurança do WordPress
+          sudo find /var/www/html/wp-content/themes/urbs -type d -exec chmod 755 {} \;
+          sudo find /var/www/html/wp-content/themes/urbs -type f -exec chmod 644 {} \;
+
+      - name: Limpar Cache (Opcional)
+        run: |
+          echo "Deploy finalizado com sucesso no Servidor 1"
