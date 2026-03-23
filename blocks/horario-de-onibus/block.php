@@ -22,20 +22,15 @@ function child_theme_block_horario_de_onibus() {
                 'anchor' => true,
             ),
             'enqueue_assets' => function() {
-                // 1. Registra o script base
-                wp_register_script( 'urbs-api-config', false, array(), null, true );
-                
-                // 2. Injeta o objeto global
-                wp_localize_script( 'urbs-api-config', 'UrbsAPI', array(
-                    'linhasUrl'         => esc_url_raw( rest_url( 'urbs/v1/linhas' ) ),
-                    'infoLinhasBaseUrl' => esc_url_raw( rest_url( 'urbs/v1/info-linhas-completas/' ) ),
-                    'horariosPontosUrl' => esc_url_raw( rest_url( 'urbs/v1/horarios-pontos' ) ),
-                ) );
-                
-                // 3. Enfileira ele
-                wp_enqueue_script( 'urbs-api-config' );
-                
-                // 4. Choices
+                // 1. Enqueue Choices.js CSS
+                wp_enqueue_style(
+                    'choices-js',
+                    'https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css',
+                    array(),
+                    '10.2.0'
+                );
+
+                // 2. Enqueue Choices.js script
                 wp_enqueue_script(
                     'choices-js',
                     'https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js',
@@ -43,15 +38,15 @@ function child_theme_block_horario_de_onibus() {
                     '10.2.0',
                     true
                 );
+
+                // 3. Injeta as variáveis diretamente ANTES do choices-js
+                $api_script = "var UrbsAPI = {
+                    linhasUrl: '" . esc_url_raw( rest_url( 'urbs/v1/linhas' ) ) . "',
+                    infoLinhasBaseUrl: '" . esc_url_raw( rest_url( 'urbs/v1/info-linhas-completas/' ) ) . "',
+                    horariosPontosUrl: '" . esc_url_raw( rest_url( 'urbs/v1/horarios-pontos' ) ) . "'
+                };";
                 
-                // 5. Main script
-                wp_enqueue_script(
-                    'meu-script',
-                    get_stylesheet_directory_uri() . '/js/app.js',
-                    array( 'urbs-api-config', 'choices-js' ),
-                    '1.0',
-                    true
-                );
+                wp_add_inline_script( 'choices-js', $api_script, 'before' );
             },
         )
     );
