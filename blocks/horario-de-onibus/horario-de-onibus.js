@@ -12,16 +12,16 @@
             let linhasData = [];
 
             try {
-                const linhasEndpoint = await fetch(UrbsAPI.linhasUrl);
+                // URL FIXA COM /portal
+                const linhasEndpoint = await fetch('/portal/wp-json/urbs/v1/linhas');
                 if (!linhasEndpoint.ok) {
                     throw new Error(`HTTP error! status: ${linhasEndpoint.status}`);
                 }
                 linhasData = await linhasEndpoint.json();
             } catch (error) {
                 console.error('Error fetching linhas:', error);
-                // FEEDBACK VISUAL DE ERRO
                 const containerInfo = horario.querySelector('.horario-de-onibus-linha-info') || horario;
-                containerInfo.innerHTML = '<p class="erro-api" style="color: #842029; background-color: #f8d7da; padding: 10px; border-radius: 4px; border: 1px solid #f5c2c7; text-align: center;">Não foi possível carregar as linhas de ônibus no momento. Por favor, recarregue a página ou tente novamente mais tarde.</p>';
+                containerInfo.innerHTML = '<p class="erro-api" style="color: #842029; margin-bottom: 0; text-align: center;">Não foi possível carregar as linhas de ônibus no momento. Por favor, recarregue a página ou tente novamente mais tarde.</p>';
                 return;
             }
 
@@ -35,7 +35,7 @@
                 linhasSelect.appendChild(linhasOption);
             });
 
-            // Initialize Choices.js on the linhas select
+            // Initialize Choices.js
             const linhasChoices = new Choices(linhasSelect, {
                 searchEnabled: true,
                 searchPlaceholderValue: 'DIGITE O NOME DE UMA LINHA...',
@@ -60,7 +60,8 @@
                 linhaInfo.innerHTML = '<p>Carregando informações...</p>';
 
                 try {
-                    const infoLinhasCompletasEndpoint = await fetch(`${UrbsAPI.infoLinhasBaseUrl}${codigoLinha}`);
+                    // URL FIXA COM /portal
+                    const infoLinhasCompletasEndpoint = await fetch(`/portal/wp-json/urbs/v1/info-linhas-completas/${codigoLinha}`);
 
                     if (!infoLinhasCompletasEndpoint.ok) {
                         throw new Error(`HTTP error! status: ${infoLinhasCompletasEndpoint.status}`);
@@ -75,22 +76,18 @@
                         return;
                     }
 
-                    // Display main line information
                     const infoContainer = document.createElement('div');
                     infoContainer.className = 'linha-info-detalhes';
 
-                    // Add color indicator
                     if (infoLinhasCompletas.cor) {
                         const linhaCor = infoLinhasCompletas.nome_cor.toLowerCase().replace(' ', '-');
                         linhaInfo.setAttribute('data-linha-cor', linhaCor);
                     }
 
-                    // Line name and code
                     const linhaHeader = document.createElement('h4');
                     linhaHeader.textContent = `${infoLinhasCompletas.nome} - Linha ${infoLinhasCompletas.codigo}`;
                     infoContainer.appendChild(linhaHeader);
 
-                    // Line details
                     const detalhes = [
                         { label: 'Categoria', value: infoLinhasCompletas.categoria_servico },
                         { label: 'Tipo de Linha', value: infoLinhasCompletas.tipo_linha },
@@ -111,7 +108,6 @@
 
                     linhaInfo.appendChild(infoContainer);
 
-                    // Display bus stops (pontos)
                     if (infoLinhasCompletas.pontos && infoLinhasCompletas.pontos.length > 0) {
                         const pontosHeader = document.createElement('h5');
                         pontosHeader.textContent = 'Pontos de Parada';
@@ -130,7 +126,6 @@
                     }
                 } catch (error) {
                     console.error('Error fetching info linhas completas:', error);
-                    // FEEDBACK VISUAL DE ERRO
                     linhaInfo.innerHTML = '<p class="erro-api" style="color: #842029;">Erro ao carregar os detalhes desta linha. Tente novamente.</p>';
                 }
             };
@@ -145,25 +140,23 @@
                 });
             };
 
-            // Horários dos Pontos - Listen to Choices.js change event
+            // Horários dos Pontos
             linhasSelect.addEventListener('change', async (linha) => {
                 const linhaSelecionada = linha.target.value;
 
                 if (!linhaSelecionada) return;
 
-                // Fetch line info
                 exibirLinhaInfo(linhaSelecionada);
 
-                // Fetch schedules
                 try {
-                    const horarioPontosEndpoint = await fetch(`${UrbsAPI.horariosPontosUrl}?codigo_linha=${linhaSelecionada}`);
+                    // URL FIXA COM /portal
+                    const horarioPontosEndpoint = await fetch(`/portal/wp-json/urbs/v1/horarios-pontos?codigo_linha=${linhaSelecionada}`);
                     if (!horarioPontosEndpoint.ok) {
                         throw new Error(`HTTP error! status: ${horarioPontosEndpoint.status}`);
                     }
                     horarioData = await horarioPontosEndpoint.json();
                 } catch (error) {
                     console.error('Error fetching horarios:', error);
-                    // FEEDBACK VISUAL DE ERRO
                     listaHorarios.innerHTML = '<li style="color: #842029; width: 100%;">Erro ao buscar os horários desta linha.</li>';
                     return;
                 }
@@ -196,7 +189,6 @@
                 exibirHorarios(filteredData);
             });
 
-            // Initialize Choices.js on the days select
             const diasChoices = new Choices(diaSelect, {
                 searchEnabled: true,
                 searchPlaceholderValue: 'Digite para buscar...',
