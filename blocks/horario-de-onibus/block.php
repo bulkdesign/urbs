@@ -22,7 +22,7 @@ function child_theme_block_horario_de_onibus() {
                 'anchor' => true,
             ),
             'enqueue_assets' => function() {
-                // Enqueue Choices.js CSS
+                // 1. Enqueue Choices.js CSS
                 wp_enqueue_style(
                     'choices-js',
                     'https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css',
@@ -30,7 +30,7 @@ function child_theme_block_horario_de_onibus() {
                     '10.2.0'
                 );
 
-                // Enqueue Choices.js script
+                // 2. Enqueue Choices.js script (carrega no footer)
                 wp_enqueue_script(
                     'choices-js',
                     'https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js',
@@ -39,8 +39,12 @@ function child_theme_block_horario_de_onibus() {
                     true
                 );
 
-                // Passa as URLs dinâmicas do WordPress para o JavaScript
-                wp_localize_script( 'choices-js', 'UrbsAPI', array(
+                // 3. Carrega a variável que vai ler a API
+                wp_register_script( 'urbs-api-config', false );
+                wp_enqueue_script( 'urbs-api-config' );
+
+                // 4. Pendura o objeto UrbsAPI no nosso veículo
+                wp_localize_script( 'urbs-api-config', 'UrbsAPI', array(
                     'linhasUrl'         => esc_url_raw( rest_url( 'urbs/v1/linhas' ) ),
                     'infoLinhasBaseUrl' => esc_url_raw( rest_url( 'urbs/v1/info-linhas-completas/' ) ),
                     'horariosPontosUrl' => esc_url_raw( rest_url( 'urbs/v1/horarios-pontos' ) ),
