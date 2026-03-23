@@ -1,10 +1,10 @@
 {
     "key": "group_64c1588ed5997_licitacoes",
-    "title": "Block: Filtro de Licitações",
+    "title": "Bloco: Filtro de Licitações",
     "fields": [
         {
             "key": "field_64c1588fed707_licitacoes",
-            "label": "Title",
+            "label": "Título",
             "name": "title",
             "aria-label": "",
             "type": "text",
@@ -24,7 +24,7 @@
         },
         {
             "key": "field_64ed15534015d_licitacoes",
-            "label": "Hide Title",
+            "label": "Ocultar Título",
             "name": "hide_title",
             "aria-label": "",
             "type": "true_false",
@@ -44,7 +44,7 @@
         },
         {
             "key": "field_64c158a4ed708_licitacoes",
-            "label": "Post Types",
+            "label": "Tipos de Post",
             "name": "post_types",
             "aria-label": "",
             "type": "select",
@@ -67,7 +67,7 @@
         },
         {
             "key": "field_64c158b2ed709_licitacoes",
-            "label": "Taxonomies to Filter",
+            "label": "Taxonomias para Filtrar",
             "name": "taxonomies",
             "aria-label": "",
             "type": "select",
@@ -90,7 +90,7 @@
         },
         {
             "key": "field_64c158c1ed70a_licitacoes",
-            "label": "Posts per Page",
+            "label": "Posts por Página",
             "name": "posts_per_page",
             "aria-label": "",
             "type": "number",

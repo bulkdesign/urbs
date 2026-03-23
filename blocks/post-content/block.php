@@ -12,8 +12,8 @@ function child_theme_block_post_content() {
 	theme_declare_block(
 		array(
 			'name'        => 'post-content',
-			'title'       => __( 'Post Content', 'bulk' ),
-			'description' => __( 'Displays the content of a post', 'bulk' ),
+			'title'       => __( 'Conteúdo do Post', 'bulk' ),
+			'description' => __( 'Exibe o conteúdo de um post.', 'bulk' ),
 			'icon'        => 'admin-post',
 			'mode'        => 'edit',
 			'supports'    => array(

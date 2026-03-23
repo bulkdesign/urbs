@@ -12,8 +12,8 @@ function child_theme_block_quick_links_urbs() {
 	theme_declare_block(
 		array(
 			'name'        => 'quick-links-urbs',
-			'title'       => __( 'Quick Links URBS', 'bulk' ),
-			'description' => __( 'Block to select a few links you want to display, with the addition of a logo.', 'bulk' ),
+			'title'       => __( 'Links Rápidos URBS', 'bulk' ),
+			'description' => __( 'Bloco para selecionar alguns links para exibir, com a adição de um logotipo.', 'bulk' ),
 			'icon'        => 'ellipsis',
 			'mode'        => 'edit',
 			'supports'    => array(

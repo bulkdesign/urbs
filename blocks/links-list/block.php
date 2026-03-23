@@ -12,8 +12,8 @@ function child_theme_block_links_list() {
 	theme_declare_block(
 		array(
 			'name'        => 'links-list',
-			'title'       => __( 'Links List', 'mm' ),
-			'description' => __( 'Display a list of links with an optional header', 'bulk' ),
+			'title'       => __( 'Lista de Links', 'mm' ),
+			'description' => __( 'Exibe uma lista de links com um cabeçalho opcional.', 'bulk' ),
 			'icon'        => 'list-view',
 			'mode'        => 'edit',
 			'align'       => 'wide',

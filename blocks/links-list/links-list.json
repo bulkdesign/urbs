@@ -101,7 +101,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Add Link",
+            "button_label": "Adicionar Link",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -190,7 +190,7 @@
                 "1fullycenter": "1 coluna (texto ao centro)",
                 "1left": "1 coluna (alinhado à esquerda)",
                 "2": "2 colunas",
-                "2sidebar": "2 columns (Sidebar)"
+                "2sidebar": "2 colunas (Lateral)"
             },
             "default_value": 2,
             "return_format": "value",

@@ -13,7 +13,7 @@ function child_theme_block_boletins_urbs() {
 		array(
 			'name'        => 'boletins-urbs',
 			'title'       => __( 'Boletins', 'bulk' ),
-			'description' => __( 'Displays all the boletins published by URBS.', 'bulk' ),
+			'description' => __( 'Exibe todos os boletins publicados pela URBS.', 'bulk' ),
 			'icon'        => 'info-outline',
 			'mode'        => 'edit',
 			'supports'    => array(

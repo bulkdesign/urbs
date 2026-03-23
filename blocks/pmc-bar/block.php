@@ -12,8 +12,8 @@ function child_theme_block_pmc_bar() {
 	theme_declare_block(
 		array(
 			'name'        => 'pmc-bar',
-			'title'       => __( 'PMC Bar', 'bulk' ),
-			'description' => __( 'A bar to be displayed above the header', 'bulk' ),
+			'title'       => __( 'Barra PMC', 'bulk' ),
+			'description' => __( 'Uma barra exibida acima do cabeçalho.', 'bulk' ),
 			'icon'        => 'minus',
 			'mode'        => 'edit',
 			'supports'    => array(

@@ -12,8 +12,8 @@ function child_theme_block_service_cards() {
 	theme_declare_block(
 		array(
 			'name'        => 'service-cards',
-			'title'       => __( 'Service Cards', 'bulk' ),
-			'description' => __( 'Cards with option to add icon, title and link.', 'bulk' ),
+			'title'       => __( 'Cards de Serviços', 'bulk' ),
+			'description' => __( 'Cards com opção de adicionar ícone, título e link.', 'bulk' ),
 			'icon'        => 'plus',
 			'mode'        => 'edit',
 			'supports'    => array(

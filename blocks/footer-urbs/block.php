@@ -12,8 +12,8 @@ function child_theme_block_footer_urbs() {
 	theme_declare_block(
 		array(
 			'name'        => 'footer-urbs',
-			'title'       => __( 'Footer URBS', 'bulk' ),
-			'description' => __( 'A custom footer for the URBS website.', 'bulk' ),
+			'title'       => __( 'Rodapé URBS', 'bulk' ),
+			'description' => __( 'Um rodapé personalizado para o site da URBS.', 'bulk' ),
 			'icon'        => 'minus',
 			'mode'        => 'edit',
 			'supports'    => array(

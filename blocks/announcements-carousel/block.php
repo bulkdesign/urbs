@@ -12,8 +12,8 @@ function child_theme_block_announcements_carousel() {
 	theme_declare_block(
 		array(
 			'name'        => 'announcements-carousel',
-			'title'       => __( 'Announcements Carousel', 'bulk' ),
-			'description' => __( 'A simple carousel for images annonucements.', 'bulk' ),
+			'title'       => __( 'Carrossel de Avisos', 'bulk' ),
+			'description' => __( 'Um carrossel simples para imagens de avisos.', 'bulk' ),
 			'icon'        => 'cover-image',
 			'mode'        => 'edit',
 			'supports'    => array(

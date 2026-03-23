@@ -13,7 +13,7 @@ function child_theme_licitacoes_filter() {
 		array(
 			'name'        => 'licitacoes-filter',
 			'title'       => __( 'Filtro de Licitações', 'bulk' ),
-			'description' => __( 'Displays a list of posts and a sidebar with filters', 'bulk' ),
+			'description' => __( 'Exibe uma lista de posts e uma barra lateral com filtros.', 'bulk' ),
 			'icon'        => 'admin-post',
 			'mode'        => 'edit',
 			'supports'    => array(

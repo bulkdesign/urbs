@@ -21,7 +21,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Add Slide",
+            "button_label": "Adicionar Slide",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -145,10 +145,10 @@
                                 "id": ""
                             },
                             "choices": {
-                                "black": "Black",
-                                "grey": "Grey",
-                                "yellow": "Yellow",
-                                "red": "Red"
+                                "black": "Preto",
+                                "grey": "Cinza",
+                                "yellow": "Amarelo",
+                                "red": "Vermelho"
                             },
                             "default_value": false,
                             "return_format": "value",

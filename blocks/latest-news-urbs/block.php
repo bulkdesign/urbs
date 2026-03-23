@@ -12,8 +12,8 @@ function child_theme_block_latest_news_urbs() {
 	theme_declare_block(
 		array(
 			'name'        => 'latest-news-urbs',
-			'title'       => __( 'Latest News', 'bulk' ),
-			'description' => __( 'Most recent article and a list of other articles', 'bulk' ),
+			'title'       => __( 'Últimas Notícias', 'bulk' ),
+			'description' => __( 'Artigo mais recente e uma lista de outros artigos.', 'bulk' ),
 			'icon'        => 'info-outline',
 			'mode'        => 'edit',
 			'supports'    => array(

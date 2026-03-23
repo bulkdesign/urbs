@@ -111,10 +111,10 @@
                 "id": ""
             },
             "choices": {
-                "light": "Light",
-                "medium": "Medium",
-                "dark": "Dark",
-                "transparent": "Transparent"
+                "light": "Claro",
+                "medium": "Médio",
+                "dark": "Escuro",
+                "transparent": "Transparente"
             },
             "default_value": false,
             "return_format": "value",

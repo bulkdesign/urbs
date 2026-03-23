@@ -13,7 +13,7 @@ function child_theme_block_equipamentos_urbs() {
 		array(
 			'name'        => 'equipamentos-urbs',
 			'title'       => __( 'Equipamentos', 'bulk' ),
-			'description' => __( 'Manually added equipments from URBS.', 'bulk' ),
+			'description' => __( 'Equipamentos adicionados manualmente pela URBS.', 'bulk' ),
 			'icon'        => 'slides',
 			'mode'        => 'edit',
 			'supports'    => array(

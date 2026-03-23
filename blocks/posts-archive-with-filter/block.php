@@ -1,0 +1,63 @@
+<?php
+/**
+ * Declares a block
+ *
+ * @package bulk
+ */
+
+/**
+ * Function to be used in the action callback to declare this block.
+ */
+function theme_block_posts_archive_with_filter() {
+	theme_declare_block(
+		array(
+			'name'        => 'posts-archive-with-filter',
+			'title'       => __( 'Arquivo de Posts com Filtro', 'bulk' ),
+			'description' => __( 'Exibe uma lista de posts e uma barra lateral com filtros.', 'bulk' ),
+			'icon'        => 'admin-post',
+			'mode'        => 'edit',
+			'supports'    => array(
+				'align'  => false,
+				'mode'   => false,
+				'anchor' => true,
+			),
+            'post_types'  => array( 'page', 'template' ),
+		)
+	);
+
+	function theme_block_posts_archive_with_filter_query_vars( $query_vars ){
+		$query_vars[] = 'filter_block';
+		return $query_vars;
+	}
+	add_filter( 'query_vars', 'theme_block_posts_archive_with_filter_query_vars' );
+	
+    function theme_block_posts_archive_with_filter_load_post_types( $field ) {
+		$post_types = get_post_types( array(), 'objects');
+
+		if ( ! empty( $post_types ) ) {
+			foreach ( $post_types as $current_post_type ) {
+				if ( $current_post_type->exclude_from_search || $current_post_type->name === 'attachment' ) continue;
+				$field['choices'][ $current_post_type->name ] = $current_post_type->label;
+			}
+		}
+
+        return $field;
+    }
+    add_filter( 'acf/prepare_field/key=field_64c158a4ed708', 'theme_block_posts_archive_with_filter_load_post_types' );
+	
+    function theme_block_posts_archive_with_filter_load_taxonomies( $field ) {
+		$taxonomies = get_taxonomies( array(), 'objects');
+
+		if ( ! empty( $taxonomies ) ) {
+			foreach ( $taxonomies as $current_taxonomy ) {
+				if ( ! $current_taxonomy->publicly_queryable || $current_taxonomy->name === 'post_format' ) continue;
+				$field['choices'][ $current_taxonomy->name ] = $current_taxonomy->label;
+			}
+		}
+
+        return $field;
+    }
+    add_filter( 'acf/prepare_field/key=field_64c158b2ed709', 'theme_block_posts_archive_with_filter_load_taxonomies' );
+}
+
+add_action( 'theme_declare_block', 'theme_block_posts_archive_with_filter', 60 );

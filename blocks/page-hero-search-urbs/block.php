@@ -12,8 +12,8 @@ function child_theme_block_page_hero_search_urbs() {
 	theme_declare_block(
 		array(
 			'name'        => 'page-hero-search-urbs',
-			'title'       => __( 'Page Hero Search URBS', 'bulk' ),
-			'description' => __( 'A hero with a search bar.', 'bulk' ),
+			'title'       => __( 'Banner com Busca URBS', 'bulk' ),
+			'description' => __( 'Um banner com uma barra de busca.', 'bulk' ),
 			'icon'        => 'cover-image',
 			'mode'        => 'edit',
 			'align'       => 'full',

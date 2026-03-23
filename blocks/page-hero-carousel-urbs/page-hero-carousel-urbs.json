@@ -21,7 +21,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Add Banner",
+            "button_label": "Adicionar Banner",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -170,12 +170,12 @@
                         "layout_630e70b6747ab": {
                             "key": "layout_630e70b6747ab",
                             "name": "text",
-                            "label": "Text",
+                            "label": "Texto",
                             "display": "block",
                             "sub_fields": [
                                 {
                                     "key": "field_8080b9018a92c",
-                                    "label": "Text",
+                                    "label": "Texto",
                                     "name": "text",
                                     "aria-label": "",
                                     "type": "text",
@@ -226,7 +226,7 @@
                     },
                     "min": "",
                     "max": "",
-                    "button_label": "Add",
+                    "button_label": "Adicionar",
                     "parent_repeater": "field_8080b926a8a1c"
                 },
                 {
@@ -462,10 +462,10 @@
                 "id": ""
             },
             "choices": {
-                "transparent": "Transparent",
-                "light": "Light",
-                "medium": "Medium",
-                "dark": "Dark"
+                "transparent": "Transparente",
+                "light": "Claro",
+                "medium": "Médio",
+                "dark": "Escuro"
             },
             "default_value": false,
             "return_format": "value",

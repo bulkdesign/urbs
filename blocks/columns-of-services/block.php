@@ -12,8 +12,8 @@ function child_theme_block_columns_of_services() {
 	theme_declare_block(
 		array(
 			'name'        => 'columns-of-services',
-			'title'       => __( 'Columns of Services', 'bulk' ),
-			'description' => __( 'Services split into two columns.', 'bulk' ),
+			'title'       => __( 'Colunas de Serviços', 'bulk' ),
+			'description' => __( 'Serviços divididos em duas colunas.', 'bulk' ),
 			'icon'        => 'plus',
 			'mode'        => 'edit',
 			'supports'    => array(

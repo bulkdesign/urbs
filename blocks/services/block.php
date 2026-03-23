@@ -12,8 +12,8 @@ function child_theme_block_services() {
 	theme_declare_block(
 		array(
 			'name'        => 'services',
-			'title'       => __( 'Services', 'bulk' ),
-			'description' => __( 'Featured services', 'bulk' ),
+			'title'       => __( 'Serviços', 'bulk' ),
+			'description' => __( 'Serviços em destaque.', 'bulk' ),
 			'icon'        => 'plus',
 			'mode'        => 'edit',
 			'supports'    => array(

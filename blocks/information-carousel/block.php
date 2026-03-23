@@ -12,8 +12,8 @@ function child_theme_block_information_carousel() {
 	theme_declare_block(
 		array(
 			'name'        => 'information-carousel',
-			'title'       => __( 'Information Carousel', 'bulk' ),
-			'description' => __( 'A carousel for more important information.', 'bulk' ),
+			'title'       => __( 'Carrossel de Informações', 'bulk' ),
+			'description' => __( 'Um carrossel para informações mais importantes.', 'bulk' ),
 			'icon'        => 'cover-image',
 			'mode'        => 'edit',
 			'supports'    => array(

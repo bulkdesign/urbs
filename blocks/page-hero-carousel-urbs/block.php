@@ -12,8 +12,8 @@ function child_theme_block_page_hero_carousel_urbs() {
 	theme_declare_block(
 		array(
 			'name'        => 'page-hero-carousel-urbs',
-			'title'       => __( 'Page Hero Carousel URBS', 'bulk' ),
-			'description' => __( 'A hero with a carousel for pages with a search bar.', 'bulk' ),
+			'title'       => __( 'Banners Rotativos URBS', 'bulk' ),
+			'description' => __( 'Um banner com carrossel para páginas.', 'bulk' ),
 			'icon'        => 'cover-image',
 			'mode'        => 'edit',
 			'align'       => 'full',

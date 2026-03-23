@@ -13,7 +13,7 @@ function child_theme_block_horario_de_onibus() {
 		array(
 			'name'        => 'horario-de-onibus',
 			'title'       => __( 'Horário de Ônibus', 'bulk' ),
-			'description' => __( 'Displays the bus lines schedule.', 'bulk' ),
+			'description' => __( 'Exibe a programação das linhas de ônibus.', 'bulk' ),
 			'icon'        => 'calendar-alt',
 			'mode'        => 'edit',
 			'supports'    => array(

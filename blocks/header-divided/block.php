@@ -12,8 +12,8 @@ function child_theme_block_header_divided() {
 	theme_declare_block(
 		array(
 			'name'        => 'header-divided',
-			'title'       => __( 'Header Divided', 'bulk' ),
-			'description' => __( 'A header with logo and menu on both sides', 'bulk' ),
+			'title'       => __( 'Cabeçalho Dividido', 'bulk' ),
+			'description' => __( 'Um cabeçalho com logotipo e menu em cada lado.', 'bulk' ),
 			'icon'        => 'minus',
 			'mode'        => 'edit',
 			'supports'    => array(

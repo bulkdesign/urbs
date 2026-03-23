@@ -1,10 +1,10 @@
 {
     "key": "group_659ffd9b901aa",
-    "title": "Block: Search",
+    "title": "Bloco: Busca",
     "fields": [
         {
             "key": "field_659ffd9b75e38",
-            "label": "Icon",
+            "label": "Ícone",
             "name": "icon",
             "aria-label": "",
             "type": "image",
@@ -29,7 +29,7 @@
         },
         {
             "key": "field_659ffddf75e39",
-            "label": "Title",
+            "label": "Título",
             "name": "title",
             "aria-label": "",
             "type": "text",
@@ -69,7 +69,7 @@
         },
         {
             "key": "field_659ffdfc75e3b",
-            "label": "Button Text",
+            "label": "Texto do Botão",
             "name": "submit_text",
             "aria-label": "",
             "type": "text",

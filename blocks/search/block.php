@@ -12,8 +12,8 @@ function child_theme_block_search() {
 	theme_declare_block(
 		array(
 			'name'        => 'search',
-			'title'       => __( 'Search', 'bulk' ),
-			'description' => __( 'Search bar module to be used on pages.', 'bulk' ),
+			'title'       => __( 'Busca', 'bulk' ),
+			'description' => __( 'Módulo de barra de busca para uso em páginas.', 'bulk' ),
 			'icon'        => 'search',
 			'mode'        => 'edit',
 			'supports'    => array(
