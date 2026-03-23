@@ -1,0 +1,454 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Bulk Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-04 08:23+0000\n"
+"PO-Revision-Date: 2024-03-04 09:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: Português do Brasil\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.6; wp-6.4.3\n"
+"X-Domain: bulk"
+
+#: inc/helper.php:71
+#, php-format
+msgid "%s (open in a new tab)"
+msgstr "%s (abre em uma nova aba)"
+
+#: blocks/single-post-content/single-post-content.php:42
+#, php-format
+msgid "%s min read"
+msgstr "%s min de leitura"
+
+#: blocks/header-simple/block.php:50 blocks/footer-two/footer-two.php:114
+#: blocks/footer-one/footer-one.php:95
+#: blocks/instagram-gallery/instagram-gallery.php:44
+msgid "(Opens in a new tab)"
+msgstr "(Abre numa nova aba)"
+
+#: blocks/footer-one/block.php:16
+msgid ""
+"A footer with content column, two link columns, social media column and "
+"copyright row."
+msgstr ""
+"Um rodapé com o conteúdo da coluna, duas colunas de link, coluna de mídias "
+"sociais e linha de direitos autorais."
+
+#: blocks/footer-two/block.php:16
+msgid ""
+"A footer with logo, text in multiple columns, different content columns, "
+"contact information and social media column, and copyright row with a menu."
+msgstr ""
+"Um rodapé com logotipo, texto em várias colunas, um conteúdo diferente "
+"colunas, informações de contato e coluna de mídias sociais, e linha de "
+"direitos autorais com um menu."
+
+#: blocks/header-simple/block.php:16
+msgid "A header with logo and menu"
+msgstr "Um cabeçalho com o logotipo e o menu"
+
+#: blocks/page-hero/block.php:16
+msgid "A hero for pages"
+msgstr "Um banner para páginas"
+
+#: blocks/page-hero-carousel/block.php:16
+msgid "A hero with a carousel for pages"
+msgstr "Um banner rotativo para as páginas"
+
+#: blocks/cookies-disclaimer/block.php:16
+msgid "A warning about cookies that can be dismissed"
+msgstr "Um aviso sobre os cookies que podem ser ignorados"
+
+#: blocks/faq-accordion/block.php:16
+msgid "Accordion with FAQ"
+msgstr "Acordeão com perguntas frequentes"
+
+#: functions.php:103 functions.php:104
+msgid "API Keys"
+msgstr "Chaves de API"
+
+#: blocks/posts-archive-with-filter/posts-archive-with-filter.php:133
+msgid "Apply"
+msgstr "Aplicar"
+
+#: 404.php:22
+msgid "Back to Homepage"
+msgstr "Voltar para a página inicial"
+
+#. Author of the theme
+msgid "Bulk Design"
+msgstr "Bulk Design"
+
+#. Description of the theme
+msgid "Bulk Design's WordPress Theme"
+msgstr "Tema do WordPress da Bulk Design"
+
+#. Name of the theme
+msgid "Bulk Theme"
+msgstr "Bulk Theme"
+
+#: blocks/advanced-call-to-action/block.php:15
+msgid "Call to Action (Advanced)"
+msgstr "Chamada para Ação (Avançado)"
+
+#: blocks/cards-with-hover-content/block.php:16
+msgid "Cards where more content is displayed on hover or click"
+msgstr "Cartões de onde mais conteúdo é exibido no hover ou clique"
+
+#: blocks/cards-with-hover-content/block.php:15
+msgid "Cards With Hover Content"
+msgstr "Cards com conteúdo ao passar o mouse (hover)"
+
+#: blocks/posts-archive-with-filter/posts-archive-with-filter.php:92
+#, php-format
+msgid "Clear All %s"
+msgstr "Limpar todos %s"
+
+#: blocks/header-simple/header-simple.php:47
+#: blocks/header-simple/header-simple.php:74
+msgid "Close search form"
+msgstr "Fechar o formulário de pesquisa"
+
+#: blocks/columns-with-content/block.php:15
+msgid "Columns With Content"
+msgstr "Colunas Com Conteúdo"
+
+#: blocks/contact-information/block.php:15
+msgid "Contact Information"
+msgstr "Informações De Contato"
+
+#: blocks/template-content/block.php:15
+msgid "Content"
+msgstr "Conteúdo"
+
+#: blocks/content-in-columns/block.php:15
+msgid "Content in Columns"
+msgstr "Conteúdo em Colunas"
+
+#: blocks/content-with-media/block.php:16
+msgid "Content on one side and a media on the other"
+msgstr "O conteúdo de um lado e uma mídia em outra"
+
+#: blocks/content-with-media/block.php:15
+msgid "Content With Media"
+msgstr "Conteúdo Com Mídia"
+
+#: blocks/cookies-disclaimer/block.php:15
+msgid "Cookies Disclaimer"
+msgstr "Os Cookies De Isenção De Responsabilidade"
+
+#: blocks/single-post-content/single-post-content.php:50
+#: blocks/single-post-content/single-post-content.php:109
+msgid "Copy to clipboard"
+msgstr "Copiar para área de transferência"
+
+#: blocks/cookies-disclaimer/cookies-disclaimer.php:11
+msgid "Disclaimer"
+msgstr "Aviso"
+
+#: blocks/newsletter-signup-basic/block.php:16
+msgid "Display a text on the left and a newsletter signup on the right"
+msgstr "Exibir um texto à esquerda e uma inscrição de newsletter na direita"
+
+#: blocks/contact-information/block.php:16
+msgid "Display contact information in various ways"
+msgstr "Exibir informações de contato de várias maneiras"
+
+#: blocks/content-in-columns/block.php:16
+msgid "Display content in columns with an optional header"
+msgstr "Exibir o conteúdo em colunas com um cabeçalho opcional"
+
+#: blocks/advanced-call-to-action/block.php:16
+msgid "Display content with an optional media"
+msgstr "Mostrar conteúdo com uma mídia opcional"
+
+#: blocks/template-content/block.php:16
+msgid "Display the page content"
+msgstr "Exibir o conteúdo da página"
+
+#: blocks/columns-with-content/block.php:16
+msgid "Display up to 3 columns with each having title, content and buttons."
+msgstr "Exibir até 3 colunas, com cada um tendo o título, conteúdo e botões."
+
+#: blocks/faq-text/block.php:16
+msgid "Displays a FAQ as plain text"
+msgstr "Apresenta um FAQ como texto sem formatação"
+
+#: blocks/instagram-gallery/block.php:16
+msgid "Displays a Instagram Gallery from a shortcode"
+msgstr "Apresenta um Instagram Galeria a partir de um shortcode"
+
+#: blocks/posts-archive-with-filter/block.php:16
+msgid "Displays a list of posts and a sidebar with filters"
+msgstr "Exibe uma lista de posts e uma barra lateral com filtros"
+
+#: blocks/title-and-content/block.php:16
+msgid "Displays a title with content on the side"
+msgstr "Apresenta um título com o conteúdo do lado"
+
+#: blocks/logos-carousel/block.php:16
+msgid "Displays logos in a carousel with text"
+msgstr "Apresenta logotipos em um carrossel com texto"
+
+#: blocks/logos-grid/block.php:16
+msgid "Displays logos in a grid with text"
+msgstr "Apresenta logotipos em uma grade com texto"
+
+#: blocks/photos-carousel/block.php:16
+msgid "Displays photos in a carousel with optional text"
+msgstr "Exibe fotos em um carrossel com texto opcional"
+
+#: blocks/single-post-content/block.php:16
+msgid "Displays the content of a post"
+msgstr "Exibe o conteúdo de um post"
+
+#. Name of the template
+msgid "Empty canvas"
+msgstr "Tela em branco"
+
+#: blocks/faq-accordion/block.php:15
+msgid "FAQ Accordion"
+msgstr "FAQ Acordeão"
+
+#: blocks/faq-text/block.php:15
+msgid "FAQ Text"
+msgstr "Perguntas mais frequentes (FAQ)"
+
+#: blocks/posts-archive-with-filter/posts-archive-with-filter.php:68
+msgid "Filters"
+msgstr "Filtros"
+
+#: inc/template-sections.php:68 inc/template-sections.php:69
+msgid "Footer"
+msgstr "Rodapé"
+
+#: blocks/footer-one/block.php:15
+msgid "Footer One"
+msgstr "Rodapé Um"
+
+#: blocks/footer-two/block.php:15
+msgid "Footer Two"
+msgstr "Rodapé Dois"
+
+#: inc/blocks.php:289 inc/template-sections.php:67 inc/template-sections.php:73
+msgid "Footers"
+msgstr "Rodapés"
+
+#: header.php:24
+msgid "Go to content"
+msgstr "Ir para o conteúdo"
+
+#: inc/template-sections.php:20 inc/template-sections.php:21
+msgid "Header"
+msgstr "Cabeçalho"
+
+#: blocks/header-simple/block.php:15
+msgid "Header Simple"
+msgstr "Cabeçalho Simples"
+
+#: inc/blocks.php:285 inc/template-sections.php:19 inc/template-sections.php:25
+msgid "Headers"
+msgstr "Cabeçalhos"
+
+#. URI of the theme
+#. Author URI of the theme
+msgid "https://bulkdesign.com.br"
+msgstr "https://bulkdesign.com.br"
+
+#: blocks/instagram-gallery/block.php:15
+msgid "Instagram Gallery"
+msgstr "Galeria do Instagram"
+
+#: blocks/logos-carousel/block.php:15
+msgid "Logos Carousel"
+msgstr "Carrossel de Logos"
+
+#: blocks/logos-grid/block.php:15
+msgid "Logos Grid"
+msgstr "Grade de Logos"
+
+#: blocks/header-simple/header-simple.php:35
+#: blocks/header-simple/header-simple.php:62
+msgid "Menu"
+msgstr "Menu"
+
+#: blocks/newsletter-signup-basic/block.php:15
+msgid "Newsletter Signup (Basic)"
+msgstr "Newsletter (Básico)"
+
+#: blocks/cards-with-hover-content/cards-with-hover-content.php:135
+msgid "Next Card"
+msgstr "Próximo Card"
+
+#: blocks/photos-carousel/photos-carousel.php:103
+#: blocks/logos-carousel/logos-carousel.php:97
+#: blocks/logos-carousel/logos-carousel.php:97
+msgid "Next Logo"
+msgstr "Próximo Logo"
+
+#: blocks/page-hero-carousel/page-hero-carousel.php:23
+msgid "Next Slide"
+msgstr "Próximo Slide"
+
+#: blocks/testimonials/testimonials.php:96
+msgid "Next Testimonial"
+msgstr "Próximo Depoimento"
+
+#: blocks/posts-archive-with-filter/posts-archive-with-filter.php:209
+msgid "No content matching your selection was found. Please try again."
+msgstr ""
+"Nenhum conteúdo correspondente a sua selecção foi encontrado. Por favor, "
+"tente novamente."
+
+#: blocks/posts-archive-with-filter/posts-archive-with-filter.php:208
+msgid "Nothing found"
+msgstr "Nada encontrado"
+
+#: blocks/page-hero/block.php:15
+msgid "Page Hero"
+msgstr "Banner"
+
+#: blocks/page-hero-carousel/block.php:15
+msgid "Page Hero Carousel"
+msgstr "Banner Rotativo"
+
+#: 404.php:15
+msgid "Page not found"
+msgstr "Página não encontrada"
+
+#: blocks/posts-archive-with-filter/posts-archive-with-filter.php:188
+msgid "Pagination"
+msgstr "Paginação"
+
+#: blocks/photos-carousel/block.php:15
+msgid "Photos Carousel"
+msgstr "Carrossel de Fotos"
+
+#: blocks/content-with-media/content-with-media.php:39
+msgid "Play Video"
+msgstr "Reproduzir Vídeo"
+
+#: blocks/posts-archive-with-filter/block.php:15
+msgid "Posts Archive With Filter"
+msgstr "Lista de Posts com Filtros"
+
+#: blocks/cards-with-hover-content/cards-with-hover-content.php:132
+msgid "Previous Card"
+msgstr "Card Anterior"
+
+#: blocks/photos-carousel/photos-carousel.php:100
+#: blocks/logos-carousel/logos-carousel.php:94
+#: blocks/logos-carousel/logos-carousel.php:94
+msgid "Previous Logo"
+msgstr "Logo Anterior"
+
+#: blocks/page-hero-carousel/page-hero-carousel.php:20
+msgid "Previous Slide"
+msgstr "Slide Anterior"
+
+#: blocks/testimonials/testimonials.php:93
+msgid "Previous Testimonial"
+msgstr "Depoimento Anterior"
+
+#: template-parts/post.php:26
+msgid "Read More"
+msgstr "Leia Mais"
+
+#: blocks/header-simple/header-simple.php:30
+#: blocks/header-simple/header-simple.php:43
+#: blocks/header-simple/header-simple.php:46
+#: blocks/header-simple/header-simple.php:57
+#: blocks/header-simple/header-simple.php:70
+#: blocks/header-simple/header-simple.php:73
+msgid "Search"
+msgstr "Pesquisa"
+
+#: blocks/posts-archive-with-filter/posts-archive-with-filter.php:35
+#, php-format
+msgid "Search for: %s"
+msgstr "Resultados para: %s"
+
+#: blocks/section-background/block.php:15
+msgid "Section Background"
+msgstr "Cor de Fundo"
+
+#: blocks/section-background/block.php:16
+msgid "Set the background color of a section"
+msgstr "Definir a cor de plano de fundo de uma área"
+
+#: blocks/single-post-content/single-post-content.php:71
+#: blocks/single-post-content/single-post-content.php:130
+msgid "Share on Facebook"
+msgstr "Compartilhar no Facebook"
+
+#: blocks/single-post-content/single-post-content.php:61
+#: blocks/single-post-content/single-post-content.php:120
+msgid "Share on LinkedIn"
+msgstr "Compartilhar no LinkedIn"
+
+#: blocks/single-post-content/single-post-content.php:66
+#: blocks/single-post-content/single-post-content.php:125
+msgid "Share on X"
+msgstr "Compartilhar no X"
+
+#: blocks/single-post-content/single-post-content.php:104
+msgid "Share this article"
+msgstr "Compartilhe este artigo"
+
+#: blocks/single-post-content/single-post-content.php:56
+#: blocks/single-post-content/single-post-content.php:115
+msgid "Share via Email"
+msgstr "Compartilhe por E-mail"
+
+#: blocks/single-post-content/block.php:15
+msgid "Single Post Content"
+msgstr "Página do Post"
+
+#: blocks/posts-archive-with-filter/posts-archive-with-filter.php:71
+msgid "Skip filters"
+msgstr "Ignorar filtros"
+
+#: inc/blocks.php:293
+msgid "Templates"
+msgstr "Modelos"
+
+#: blocks/testimonials/block.php:15
+msgid "Testimonials"
+msgstr "Depoimentos"
+
+#: blocks/testimonials/block.php:16
+msgid "Testimonials grid or carousel"
+msgstr "Grade ou Carrossel de Depoimentos"
+
+#: 404.php:18
+msgid ""
+"That page doesn't exist or has been moved — please check the URL and try "
+"again."
+msgstr ""
+"Essa página não existe ou foi movida — por favor verifique a URL e tente "
+"novamente."
+
+#: inc/blocks.php:281
+msgid "Theme Blocks"
+msgstr "Blocos do Tema"
+
+#: blocks/title-and-content/block.php:15
+msgid "Title And Content"
+msgstr "Título e Conteúdo"
+
+#: blocks/header-simple/block.php:46
+msgid "Toggle submenu"
+msgstr "Alternar submenu"
+
+#: blocks/page-hero-carousel/page-hero-carousel.php:52
+#: blocks/page-hero-carousel/page-hero-carousel.php:54
+#: blocks/page-hero/page-hero.php:29 blocks/page-hero/page-hero.php:31
+#: blocks/content-in-columns/content-in-columns.php:29
+#: blocks/content-in-columns/content-in-columns.php:31
+msgid "Video"
+msgstr "Vídeo"

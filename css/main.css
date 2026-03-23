@@ -1,302 +1,1002 @@
-:root {
-	/* CONFIGURABLE SETTINGS */
-	/* COLORS */
-	--color-white: #ffffff;
-	--color-light-grey: #ececec;
-	--color-light-grey-2: #e8e8e8;
-	--color-grey-1: #bebebe;
-	--color-grey: #586877;
-	--color-grey-2: #555555;
-	--color-darker-grey: #46535f;
-	--color-black: #000000;
-	--color-red: #d73f32;
-	--color-darker-red: #bf382c;
-	--color-yellow: #e19f2f;
-	--color-darker-yellow: #b47f26;
-	--color-light-blue: #6593bc;
-	--color-darker-blue: #265286;
-	--color-green: #1db53a;
-	--color-darker-green: #137124;
+:root{
+    /* CONFIGURABLE SETTINGS */
+        /* BACKGROUND */
+        --light-background-color: #FFFFFF;
+        --medium-background-color: #F3F3F3;
+        --dark-background-color: #121212;
 
-	--title-color: var(--color-grey);
-	--link-color: var(--color-yellow);
-	--hover-link-color: var(--color-red);
+        --color-white: var(--light-background-color);
+        --color-offwhite: var(--medium-background-color);
+        --color-dark: var(--dark-background-color);
+        --color-black: #000000;
 
-	/* BACKGROUND */
-	--grey-color: var(--color-grey);
-	--red-color: var(--color-red);
-	--yellow-color: var(--color-yellow);
-	--green-color: var(--color-green);
+        /* TEXT */
+            /* PRIMARY FONT */
+            --primary-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            --primary-line-height: 1.5;
+            --primary-letter-spacing: 0.01em;
+            --primary-font-weight: 400;
 
-	/* COLOR SCHEMES */
-	[data-color-scheme|="light"] {
-		--title-color: var(--color-grey);
-	}
+            /* SECONDARY FONT */
+            --secondary-font: var(--primary-font);
+            --secondary-line-height: var(--primary-line-height);
+            --secondary-letter-spacing: var(--primary-letter-spacing);
+            --secondary-font-weight: 700;
 
-	[data-color-scheme="medium"] {
-		--title-color: var(--color-grey);
-		--background-color: var(--color-light-grey-2);
-		--background-shadow: var(--color-grey-1);
-	}
+            /* FONT SIZES */
+            --base-font-size: 1.8rem;
+            --font-multiplier: 1.125;
 
-	[data-color-scheme="grey"] {
-		--title-color: var(--color-white);
-		--background-color: var(--grey-color);
-		--background-shadow: var(--color-darker-grey);
-	}
+            /* LIGHT BACKGROUND COLORS */
+            --light-background-text-color: #121212;
+            --light-background-title-color: #121212;
+            --light-background-eyebrow-color: #121212;
+            --light-background-link-color: #003A8F;
+            --light-background-hover-link-color: #80B0F9;
+            --light-background-accent-color: #888888;
 
-	[data-color-scheme="red"] {
-		--title-color: var(--color-white);
-		--background-color: var(--red-color);
-		--background-shadow: var(--color-darker-red);
-	}
+            /* DARK BACKGROUND COLORS */
+            --dark-background-text-color: #FFFFFF;
+            --dark-background-title-color: #FFFFFF;
+            --dark-background-eyebrow-color: #FFFFFF;
+            --dark-background-link-color: #80B0F9;
+            --dark-background-hover-link-color: #0062F3;
+            --dark-background-accent-color: #888888;
 
-	[data-color-scheme="yellow"] {
-		--title-color: var(--color-white);
-		--background-color: var(--yellow-color);
-		--background-shadow: var(--color-darker-yellow);
-	}
+        /* PRIMARY BUTTON */
+            /* STYLE */
+            --primary-button-border-width: 0.1rem;
+            --primary-button-border-style: solid;
+            --primary-button-border-radius: 0;
+            --primary-button-vertical-padding: 0.6666em;
+            --primary-button-horizontal-padding: 1.2222em;
 
-	[data-color-scheme="green"] {
-		--title-color: var(--color-white);
-		--background-color: var(--green-color);
-		--background-shadow: var(--color-darker-green);
-	}
+            /* LIGHT BACKGROUND COLORS */
+            --light-background-primary-button-border-color: #121212;
+            --light-background-primary-button-background-color: #121212;
+            --light-background-primary-button-text-color: #FFFFFF;
+            --light-background-primary-button-box-shadow: none;
+            --light-background-primary-button-hover-border-color: #595959;
+            --light-background-primary-button-hover-background-color: #595959;
+            --light-background-primary-button-hover-text-color: #FFFFFF;
+            --light-background-primary-button-hover-box-shadow: none;
 
-	/* PRIMARY BUTTON */
-	/* DEFAULT STYLE */
-	:is(
-			.primary-button,
-			.secondary-button,
-			.wp-block-button:not(.is-style-outline) > .wp-element-button
-		) {
-		border-radius: calc(var(--element-border-radius) * 2);
-	}
+            /* DARK BACKGROUND COLORS */
+            --dark-background-primary-button-border-color: #FFFFFF;
+            --dark-background-primary-button-background-color: #FFFFFF;
+            --dark-background-primary-button-text-color: #121212;
+            --dark-background-primary-button-box-shadow: none;
+            --dark-background-primary-button-hover-border-color: #595959;
+            --dark-background-primary-button-hover-background-color: #595959;
+            --dark-background-primary-button-hover-text-color: #FFFFFF;
+            --dark-background-primary-button-hover-box-shadow: none;
 
-	:is(
-			.primary-button,
-			.wp-block-button:not(.is-style-outline) > .wp-element-button
-		) {
-		color: var(--color-white);
-		background-color: var(--color-grey);
-		border-color: var(--color-grey);
-		text-align: center;
-	}
+        /* SECONDARY BUTTON */
+            /* STYLE */
+            --secondary-button-border-width: 0.1rem;
+            --secondary-button-border-style: solid;
+            --secondary-button-border-radius: 0;
+            --secondary-button-vertical-padding: 0.6666em;
+            --secondary-button-horizontal-padding: 1.2222em;
 
-	:is(
-			.primary-button,
-			.wp-block-button:not(.is-style-outline) > .wp-element-button
-		):is(:active, :hover, :focus) {
-		background-color: var(--color-red);
-		border-color: var(--color-red);
-	}
+            /* LIGHT BACKGROUND COLORS */
+            --light-background-secondary-button-border-color: #121212;
+            --light-background-secondary-button-background-color: transparent;
+            --light-background-secondary-button-text-color: #121212;
+            --light-background-secondary-button-box-shadow: none;
+            --light-background-secondary-button-hover-border-color: #121212;
+            --light-background-secondary-button-hover-background-color: #121212;
+            --light-background-secondary-button-hover-text-color: #FFFFFF;
+            --light-background-secondary-button-hover-box-shadow: none;
 
-	/* LIGHT BACKGROUND COLORS */
-	:is([data-color-scheme="light"], [data-color-scheme="yellow"])
-		:is(
-			.primary-button,
-			.wp-block-button:not(.is-style-outline) > .wp-element-button
-		) {
-		color: var(--color-white);
-		background-color: var(--color-grey);
-		border-color: var(--color-grey);
-	}
+            /* DARK BACKGROUND COLORS */
+            --dark-background-secondary-button-border-color: #FFFFFF;
+            --dark-background-secondary-button-background-color: transparent;
+            --dark-background-secondary-button-text-color: #FFFFFF;
+            --dark-background-secondary-button-box-shadow: none;
+            --dark-background-secondary-button-hover-border-color: #FFFFFF;
+            --dark-background-secondary-button-hover-background-color: #FFFFFF;
+            --dark-background-secondary-button-hover-text-color: #121212;
+            --dark-background-secondary-button-hover-box-shadow: none;
 
-	:is([data-color-scheme|="light"], [data-color-scheme="yellow"])
-		:is(
-			.primary-button,
-			.wp-block-button:not(.is-style-outline) > .wp-element-button
-		):is(:active, :hover, :focus) {
-		background-color: var(--color-darker-grey);
-		border-color: var(--color-darker-grey);
-	}
+        /* FORMS */
+            --form-input-border-style: solid;
+            --form-input-border-width: 0.1rem;
+            --form-input-border-radius: 0;
+            --light-background-form-input-border-color: #121212;
+            --light-background-form-input-background-color: transparent;
+            --light-background-form-input-option-background-color: #FFFFFF;
+            --light-background-form-input-text-color: #121212;
+            --light-background-form-input-placeholder-text-color: #595959;
+            --light-background-form-input-hover-border-color: var(--light-background-form-input-border-color);
+            --light-background-form-input-hover-background-color: var(--light-background-form-input-background-color);
+            --light-background-form-input-hover-text-color: var(--light-background-form-input-text-color);
+            --light-background-form-input-focus-border-color: #595959;
+            --light-background-form-input-focus-background-color: transparent;
+            --light-background-form-input-focus-text-color: #121212;
+            --light-background-form-input-autofill-border-color: #595959;
+            --light-background-form-input-autofill-background-color: #F3F3F3;
+            --light-background-form-input-autofill-text-color: #121212;
+            --light-background-form-input-label-color: #595959;
+            --light-background-form-input-notice-color: #121212;
+            --dark-background-form-input-border-color: #FFFFFF;
+            --dark-background-form-input-background-color: transparent;
+            --dark-background-form-input-option-background-color: #121212;
+            --dark-background-form-input-text-color: #FFFFFF;
+            --dark-background-form-input-placeholder-text-color: #F3F3F3;
+            --dark-background-form-input-hover-border-color: var(--dark-background-form-input-border-color);
+            --dark-background-form-input-hover-background-color: var(--dark-background-form-input-background-color);
+            --dark-background-form-input-hover-text-color: var(--dark-background-form-input-text-color);
+            --dark-background-form-input-focus-border-color: #F3F3F3;
+            --dark-background-form-input-focus-background-color: transparent;
+            --dark-background-form-input-focus-text-color: #FFFFFF;
+            --dark-background-form-input-autofill-border-color: #F3F3F3;
+            --dark-background-form-input-autofill-background-color: #595959;
+            --dark-background-form-input-autofill-text-color: #F3F3F3;
+            --dark-background-form-input-label-color: #F3F3F3;
+            --dark-background-form-input-notice-color: #FFFFFF;
 
-	/* DARK */
-	:is(
-			[data-color-scheme="dark"],
-			[data-color-scheme="grey"],
-			[data-color-scheme="red"]
-		)
-		:is(
-			.primary-button,
-			.wp-block-button:not(.is-style-outline) > .wp-element-button
-		) {
-		color: var(--color-white);
-		background-color: var(--color-grey);
-		border-color: transparent;
-	}
+        /* EYEBROW */
+            --eyebrow-font-family: var(--primary-font);
+            --eyebrow-letter-spacing: var(--primary-letter-spacing);
+            --eyebrow-line-height: var(--primary-line-height);
+            --eyebrow-font-size: var(--base-font-size);
+            --eyebrow-font-weight: 700;
+            --eyebrow-text-transform: uppercase;
+            --eyebrow-font-style: normal;
 
-	:is(
-			[data-color-scheme="dark"],
-			[data-color-scheme="grey"],
-			[data-color-scheme="red"]
-		)
-		:is(
-			.primary-button,
-			.wp-block-button:not(.is-style-outline) > .wp-element-button
-		):is(:active, :hover, :focus) {
-		background-color: var(--color-red);
-		border-color: transparent;
-	}
 
-	/* SECONDARY BUTTON */
-	/* STYLE */
+        /* MARGINS */
+            --block-margin: 4.8rem;
+            --column-gap: 2.4rem;
+            --row-gap: 2.4rem;
+            --item-column-gap: 1.6rem;
+            --item-row-gap: 0.8rem;
 
-	/* LIGHT BACKGROUND COLORS */
-	:is([data-color-scheme="light"], [data-color-scheme="yellow"])
-		:is(
-			.secondary-button,
-			.wp-block-button:is(.is-style-outline) > .wp-element-button
-		) {
-		color: var(--color-grey);
-		border-color: var(--color-grey);
-	}
+        /* MISCELANEOUS */
+            --default-block-width: 80rem;
+            --page-padding: 1.6rem;
+            --container-width: 100%;
+            --element-box-shadow-light-background: none;
+            --element-box-shadow-medium-background: none;
+            --element-box-shadow-dark-background: none;
+            --element-border-radius: 0;
+            --admin-bar-height: 0rem;
+            --wide-width: calc(var(--container-width) - (var(--page-padding) * 2));
+            --full-width: calc(100% - (var(--page-padding) * 2));
 
-	:is([data-color-scheme="light"], [data-color-scheme="yellow"])
-		:is(
-			.secondary-button,
-			.wp-block-button:is(.is-style-outline) > .wp-element-button
-		):is(:active, :hover, :focus) {
-		background-color: var(--color-grey);
-		color: var(--color-white);
-		border-color: var(--color-grey);
-	}
 
-	/* DARK */
-	:is(
-			[data-color-scheme="dark"],
-			[data-color-scheme="grey"],
-			[data-color-scheme="red"]
-		)
-		:is(
-			.secondary-button,
-			.wp-block-button:is(.is-style-outline) > .wp-element-button
-		) {
-		color: var(--color-white);
-		border-color: var(--color-white);
-	}
+    /* TOOLS*/
+        /* FONT SIZES */
+            /* CALCULATIONS */
+            --font-multiplier-pow-1: var(--font-multiplier);
+            --font-multiplier-pow-2: calc(var(--font-multiplier-pow-1) * var(--font-multiplier));
+            --font-multiplier-pow-3: calc(var(--font-multiplier-pow-2) * var(--font-multiplier));
+            --font-multiplier-pow-4: calc(var(--font-multiplier-pow-3) * var(--font-multiplier));
+            --font-multiplier-pow-5: calc(var(--font-multiplier-pow-4) * var(--font-multiplier));
+            --font-multiplier-pow-6: calc(var(--font-multiplier-pow-5) * var(--font-multiplier));
+            --font-multiplier-pow-7: calc(var(--font-multiplier-pow-6) * var(--font-multiplier));
+            --font-multiplier-pow-8: calc(var(--font-multiplier-pow-7) * var(--font-multiplier));
 
-	:is(
-			[data-color-scheme="dark"],
-			[data-color-scheme="grey"],
-			[data-color-scheme="red"]
-		)
-		:is(
-			.secondary-button,
-			.wp-block-button:is(.is-style-outline) > .wp-element-button
-		):is(:active, :hover, :focus) {
-		background-color: var(--color-grey);
-		color: var(--color-white);
-		border-color: var(--color-white);
-	}
+            /* FONT: +8 */
+            --font-headline-0: var(--secondary-font-weight) calc(var(--base-font-size) * var(--font-multiplier-pow-8)) / var(--secondary-line-height) var(--secondary-font);
 
-	/* FORMS */
+            /* FONT: +7 */
+            --font-headline-1: var(--secondary-font-weight) calc(var(--base-font-size) * var(--font-multiplier-pow-7)) / var(--secondary-line-height) var(--secondary-font);
 
-	/* EYEBROW */
+            /* FONT: +6 */
+            --font-headline-2: var(--secondary-font-weight) calc(var(--base-font-size) * var(--font-multiplier-pow-6)) / var(--secondary-line-height) var(--secondary-font);
 
-	/* MARGINS */
-	--item-row-gap: calc(var(--row-gap) / 2);
+            /* FONT: +5 */
+            --font-headline-3: var(--secondary-font-weight) calc(var(--base-font-size) * var(--font-multiplier-pow-5)) / var(--secondary-line-height) var(--secondary-font);
 
-	/* MISCELANEOUS */
-	--element-border-radius: 2rem;
+            /* FONT: +4 */
+            --font-headline-4: var(--secondary-font-weight) calc(var(--base-font-size) * var(--font-multiplier-pow-4)) / var(--secondary-line-height) var(--secondary-font);
+
+            /* FONT: +3 */
+            --font-headline-5: var(--secondary-font-weight) calc(var(--base-font-size) * var(--font-multiplier-pow-3)) / var(--secondary-line-height) var(--secondary-font);
+
+            /* FONT: +2 */
+            --font-headline-6: var(--secondary-font-weight) calc(var(--base-font-size) * var(--font-multiplier-pow-2)) / var(--secondary-line-height) var(--secondary-font);
+            --font-elevated-1: var(--primary-font-weight) calc(var(--base-font-size) * var(--font-multiplier-pow-2)) / var(--primary-line-height) var(--primary-font);
+
+            /* FONT: +1 */
+            --font-headline-7: var(--secondary-font-weight) calc(var(--base-font-size) * var(--font-multiplier-pow-1)) / var(--secondary-line-height) var(--secondary-font);
+            --font-elevated-2: var(--primary-font-weight) calc(var(--base-font-size) * var(--font-multiplier-pow-1)) / var(--primary-line-height) var(--primary-font);
+
+            /* FONT:  0 */
+            --font-headline-8: var(--secondary-font-weight) var(--base-font-size) / var(--secondary-line-height) var(--secondary-font);
+            --font-body: var(--primary-font-weight) var(--base-font-size) / var(--primary-line-height) var(--primary-font);
+
+            /* FONT: -1 */
+            --font-body-small: var(--primary-font-weight) calc(var(--base-font-size) / var(--font-multiplier-pow-1)) / var(--primary-line-height) var(--primary-font);
+
+            /* FONT: -2 */
+            --font-body-xsmall: var(--primary-font-weight) calc(var(--base-font-size) / var(--font-multiplier-pow-2)) / var(--primary-line-height) var(--primary-font);
+
+        /* PRIMARY BUTTON */
+            /* STYLE */
+            --primary-button-padding: var(--primary-button-vertical-padding) var(--primary-button-horizontal-padding);
+
+        /* SECONDARY BUTTON */
+            /* STYLE */
+            --secondary-button-padding: var(--secondary-button-vertical-padding) var(--secondary-button-horizontal-padding);
+
+        /* ACTIVE COLORS */
+            /* BACKGROUND */
+            --background-color: var(--light-background-color);
+
+            /* BOX SHADOW */
+            --element-box-shadow: var(--element-box-shadow-light-background);
+
+            /* TEXT COLORS */
+            --text-color: var(--light-background-text-color);
+            --title-color: var(--light-background-title-color);
+            --eyebrow-color: var(--light-background-eyebrow-color);
+            --link-color: var(--light-background-link-color);
+            --hover-link-color: var(--light-background-hover-link-color);
+            --accent-color: var(--light-background-accent-color);
+
+            /* PRIMARY BUTTON */
+            --primary-button-border-color: var(--light-background-primary-button-border-color);
+            --primary-button-background-color: var(--light-background-primary-button-background-color);
+            --primary-button-text-color: var(--light-background-primary-button-text-color);
+            --primary-button-box-shadow: var(--light-background-primary-button-box-shadow);
+            --primary-button-hover-border-color: var(--light-background-primary-button-hover-border-color);
+            --primary-button-hover-background-color: var(--light-background-primary-button-hover-background-color);
+            --primary-button-hover-text-color: var(--light-background-primary-button-hover-text-color);
+            --primary-button-hover-box-shadow: var(--light-background-primary-button-hover-box-shadow);
+
+            /* SECONDARY BUTTON */
+            --secondary-button-border-color: var(--light-background-secondary-button-border-color);
+            --secondary-button-background-color: var(--light-background-secondary-button-background-color);
+            --secondary-button-text-color: var(--light-background-secondary-button-text-color);
+            --secondary-button-box-shadow: var(--light-background-secondary-button-box-shadow);
+            --secondary-button-hover-border-color: var(--light-background-secondary-button-hover-border-color);
+            --secondary-button-hover-background-color: var(--light-background-secondary-button-hover-background-color);
+            --secondary-button-hover-text-color: var(--light-background-secondary-button-hover-text-color);
+            --secondary-button-hover-box-shadow: var(--light-background-secondary-button-hover-box-shadow);
+
+            /* FORMS */
+            --form-input-border-color: var(--light-background-form-input-border-color);
+            --form-input-background-color: var(--light-background-form-input-background-color);
+            --form-input-option-background-color: var(--light-background-form-input-option-background-color);
+            --form-input-text-color: var(--light-background-form-input-text-color);
+            --form-input-placeholder-text-color: var(--light-background-form-input-placeholder-text-color);
+            --form-input-hover-border-color: var(--light-background-form-input-hover-border-color);
+            --form-input-hover-background-color: var(--light-background-form-input-hover-background-color);
+            --form-input-hover-text-color: var(--light-background-form-input-hover-text-color);
+            --form-input-focus-border-color: var(--light-background-form-input-focus-border-color);
+            --form-input-focus-background-color: var(--light-background-form-input-focus-background-color);
+            --form-input-focus-text-color: var(--light-background-form-input-focus-text-color);
+            --form-input-autofill-border-color: var(--light-background-form-input-autofill-border-color);
+            --form-input-autofill-background-color: var(--light-background-form-input-autofill-background-color);
+            --form-input-autofill-text-color: var(--light-background-form-input-autofill-text-color);
+            --form-input-label-color: var(--light-background-form-input-label-color);
+            --form-input-notice-color: var(--light-background-form-input-notice-color);
+
 }
 
-@media (min-width: 768px) {
-	:root {
-		/* CONFIGURABLE SETTINGS */
-		/* FONT SIZES */
-		--font-multiplier: 1.1;
-		/* MISCELANEOUS */
-		--container-width: 72rem;
-	}
+@media (min-width: 768px){
+    :root{
+        /* CONFIGURABLE SETTINGS */
+            /* TEXT */
+                /* FONT SIZES */
+		        --font-multiplier: 1.2;
+            /* MISCELANEOUS */
+                --container-width: 72rem;
+    }
 }
 
-@media (min-width: 992px) {
-	:root {
-		/* CONFIGURABLE SETTINGS */
-		/* FONT SIZES */
-		--font-multiplier: 1.2;
-		/* MARGINS */
-		--block-margin: 9.6rem;
-		--column-gap: 4.8rem;
-		--row-gap: 4.8rem;
-		/* MISCELANEOUS */
-		--container-width: 96rem;
-	}
+@media (min-width: 992px){
+    :root{
+        /* CONFIGURABLE SETTINGS */
+            /* MARGINS */
+                --block-margin: 9.6rem;
+                --column-gap: 4.8rem;
+                --row-gap: 4.8rem;
+            /* MISCELANEOUS */
+                --container-width: 96rem;
+    }
 }
 
-@media (min-width: 1200px) {
-	:root {
-		/* CONFIGURABLE SETTINGS */
-		/* FONT SIZES */
-		--font-multiplier: 1.2;
-		/* MISCELANEOUS */
-		--container-width: 117rem;
-	}
+@media (min-width: 1200px){
+    :root{
+        /* CONFIGURABLE SETTINGS */
+            /* TEXT */
+                /* FONT SIZES */
+		        --font-multiplier: 1.25;
+            /* MISCELANEOUS */
+                --container-width: 117rem;        
+    }
 }
 
-.urbs-separator {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: repeat(3, 1fr);
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--admin-bar-height) + var(--header-height) + var(--item-row-gap));
 }
 
-.urbs-separator-yellow,
-.urbs-separator-red,
-.urbs-separator-grey {
-	width: 100%;
-	max-width: 100%;
-	grid-column: 1;
-	height: 0.8rem;
-}
-
-.urbs-separator-yellow {
-	background: var(--color-yellow);
-	grid-row: 1;
-}
-
-.urbs-separator-red {
-	background: var(--color-red);
-	grid-row: 2;
-}
-
-.urbs-separator-grey {
-	background: var(--color-grey);
-	grid-row: 3;
-}
-
-body .cls-1 {
-	fill: currentColor;
-}
-
-.blocks-container {
-	margin: 0 auto;
-	-webkit-transform: translate3d(0, 0, 0);
-}
-
-.blocks-container > :is(div, section):is(:last-child) {
-	margin: var(--block-margin) auto;
-}
-
+/* BLOCKS WIDTH */
 .blocks-container > * {
+	max-width: min(var(--default-block-width), var(--full-width));
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.blocks-container > .alignwide {
 	max-width: var(--wide-width);
 }
 
-main > .blocks-container:last-child > *:last-child {
-	margin-bottom: var(--block-margin);
-}
-
 .blocks-container > .alignfull {
-	max-width: 100%;
-	-webkit-transform: translate3d(0, 0, 0);
+	max-width: var(--full-width);
 }
 
-.blocks-container > p:is(.has-background) {
-	border-radius: var(--element-border-radius);
+main > .blocks-container > *:first-child:not(.breadcrumbs) {
+    margin-top: 0;
 }
 
-@media (min-width: 768px) {
-	.blocks-container > :is(div, section):is(:last-child) {
-		margin: 0 auto var(--block-margin);
-	}
+
+/* COLOR SCHEMES */
+[data-color-scheme|="light"]{
+    /* BACKGROUND */
+    --background-color: var(--light-background-color);
+
+    /* BOX SHADOW */
+    --element-box-shadow: var(--element-box-shadow-light-background);
+}
+
+[data-color-scheme|="medium"]{
+    /* BACKGROUND */
+    --background-color: var(--medium-background-color);
+
+    /* BOX SHADOW */
+    --element-box-shadow: var(--element-box-shadow-medium-background);
+}
+
+[data-color-scheme|="light"],
+[data-color-scheme|="medium"]{
+    /* TEXT COLORS */
+    --text-color: var(--light-background-text-color);
+    --title-color: var(--light-background-title-color);
+    --eyebrow-color: var(--light-background-eyebrow-color);
+    --link-color: var(--light-background-link-color);
+    --hover-link-color: var(--light-background-hover-link-color);
+    --accent-color: var(--light-background-accent-color);
+
+    /* PRIMARY BUTTON */
+    --primary-button-border-color: var(--light-background-primary-button-border-color);
+    --primary-button-background-color: var(--light-background-primary-button-background-color);
+    --primary-button-text-color: var(--light-background-primary-button-text-color);
+    --primary-button-box-shadow: var(--light-background-primary-button-box-shadow);
+    --primary-button-hover-border-color: var(--light-background-primary-button-hover-border-color);
+    --primary-button-hover-background-color: var(--light-background-primary-button-hover-background-color);
+    --primary-button-hover-text-color: var(--light-background-primary-button-hover-text-color);
+    --primary-button-hover-box-shadow: var(--light-background-primary-button-hover-box-shadow);
+
+    /* SECONDARY BUTTON */
+    --secondary-button-border-color: var(--light-background-secondary-button-border-color);
+    --secondary-button-background-color: var(--light-background-secondary-button-background-color);
+    --secondary-button-text-color: var(--light-background-secondary-button-text-color);
+    --secondary-button-box-shadow: var(--light-background-secondary-button-box-shadow);
+    --secondary-button-hover-border-color: var(--light-background-secondary-button-hover-border-color);
+    --secondary-button-hover-background-color: var(--light-background-secondary-button-hover-background-color);
+    --secondary-button-hover-text-color: var(--light-background-secondary-button-hover-text-color);
+    --secondary-button-hover-box-shadow: var(--light-background-secondary-button-hover-box-shadow);
+
+    /* FORMS */
+    --form-input-border-color: var(--light-background-form-input-border-color);
+    --form-input-background-color: var(--light-background-form-input-background-color);
+    --form-input-option-background-color: var(--light-background-form-input-option-background-color);
+    --form-input-text-color: var(--light-background-form-input-text-color);
+    --form-input-placeholder-text-color: var(--light-background-form-input-placeholder-text-color);
+    --form-input-hover-border-color: var(--light-background-form-input-hover-border-color);
+    --form-input-hover-background-color: var(--light-background-form-input-hover-background-color);
+    --form-input-hover-text-color: var(--light-background-form-input-hover-text-color);
+    --form-input-focus-border-color: var(--light-background-form-input-focus-border-color);
+    --form-input-focus-background-color: var(--light-background-form-input-focus-background-color);
+    --form-input-focus-text-color: var(--light-background-form-input-focus-text-color);
+    --form-input-autofill-border-color: var(--light-background-form-input-autofill-border-color);
+    --form-input-autofill-background-color: var(--light-background-form-input-autofill-background-color);
+    --form-input-autofill-text-color: var(--light-background-form-input-autofill-text-color);
+    --form-input-label-color: var(--light-background-form-input-label-color);
+    --form-input-notice-color: var(--light-background-form-input-notice-color);
+
+    /* BODY STYLES*/
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+[data-color-scheme|="dark"]{
+    /* BACKGROUND */
+    --background-color: var(--dark-background-color);
+
+    /* BOX SHADOW */
+    --element-box-shadow: var(--element-box-shadow-dark-background);
+
+    /* TEXT COLORS */
+    --text-color: var(--dark-background-text-color);
+    --title-color: var(--dark-background-title-color);
+    --eyebrow-color: var(--dark-background-eyebrow-color);
+    --link-color: var(--dark-background-link-color);
+    --hover-link-color: var(--dark-background-hover-link-color);
+    --accent-color: var(--dark-background-accent-color);
+
+    /* PRIMARY BUTTON */
+    --primary-button-border-color: var(--dark-background-primary-button-border-color);
+    --primary-button-background-color: var(--dark-background-primary-button-background-color);
+    --primary-button-text-color: var(--dark-background-primary-button-text-color);
+    --primary-button-box-shadow: var(--dark-background-primary-button-box-shadow);
+    --primary-button-hover-border-color: var(--dark-background-primary-button-hover-border-color);
+    --primary-button-hover-background-color: var(--dark-background-primary-button-hover-background-color);
+    --primary-button-hover-text-color: var(--dark-background-primary-button-hover-text-color);
+    --primary-button-hover-box-shadow: var(--dark-background-primary-button-hover-box-shadow);
+
+    /* SECONDARY BUTTON */
+    --secondary-button-border-color: var(--dark-background-secondary-button-border-color);
+    --secondary-button-background-color: var(--dark-background-secondary-button-background-color);
+    --secondary-button-text-color: var(--dark-background-secondary-button-text-color);
+    --secondary-button-box-shadow: var(--dark-background-secondary-button-box-shadow);
+    --secondary-button-hover-border-color: var(--dark-background-secondary-button-hover-border-color);
+    --secondary-button-hover-background-color: var(--dark-background-secondary-button-hover-background-color);
+    --secondary-button-hover-text-color: var(--dark-background-secondary-button-hover-text-color);
+    --secondary-button-hover-box-shadow: var(--dark-background-secondary-button-hover-box-shadow);
+
+    /* FORMS */
+    --form-input-border-color: var(--dark-background-form-input-border-color);
+    --form-input-background-color: var(--dark-background-form-input-background-color);
+    --form-input-option-background-color: var(--dark-background-form-input-option-background-color);
+    --form-input-text-color: var(--dark-background-form-input-text-color);
+    --form-input-placeholder-text-color: var(--dark-background-form-input-placeholder-text-color);
+    --form-input-hover-border-color: var(--dark-background-form-input-hover-border-color);
+    --form-input-hover-background-color: var(--dark-background-form-input-hover-background-color);
+    --form-input-hover-text-color: var(--dark-background-form-input-hover-text-color);
+    --form-input-focus-border-color: var(--dark-background-form-input-focus-border-color);
+    --form-input-focus-background-color: var(--dark-background-form-input-focus-background-color);
+    --form-input-focus-text-color: var(--dark-background-form-input-focus-text-color);
+    --form-input-autofill-border-color: var(--dark-background-form-input-autofill-border-color);
+    --form-input-autofill-background-color: var(--dark-background-form-input-autofill-background-color);
+    --form-input-autofill-text-color: var(--dark-background-form-input-autofill-text-color);
+    --form-input-label-color: var(--dark-background-form-input-label-color);
+    --form-input-notice-color: var(--dark-background-form-input-notice-color);
+
+    /* BODY STYLES*/
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+/* STYLES */
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font: var(--font-body);
+    font-size: var(--base-font-size);
+	letter-spacing: var(--primary-letter-spacing);
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+body.admin-bar {
+	--admin-bar-height: var(--wp-admin--admin-bar--height);
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+svg{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a{
+    transition: all 0.3s ease;
+    text-decoration: underline;
+    color: var(--link-color);
+}
+
+a:is(:hover, :focus, :active){
+    color: var(--hover-link-color);
+}
+
+p,
+ul,
+ol,
+blockquote,
+dl{
+    margin-bottom: calc(1em * var(--primary-line-height));
+}
+
+dt{
+    font: var(--font-headline-6);
+    letter-spacing: var(--primary-letter-spacing);
+    color: var(--title-color);
+}
+
+dd{
+    margin-bottom: 0;
+}
+
+.hidden{
+    display: none;
+}
+
+.sr-only{
+	position: absolute;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding: 0;
+}
+
+.sr-only:not(:focus){
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+}
+
+.default-template{
+    margin-top: var(--block-margin);
+    margin-bottom: var(--block-margin);
+}
+
+.breadcrumbs {
+    margin-top: var(--row-gap);
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0;
+}
+
+@media (max-width: 600px){
+    #wpadminbar{
+        position: fixed;
+    }
+}
+
+/* UTILITY CLASSES */
+.no-margins {
+    margin: 0 !important;
+}
+
+.margin-top-0 {
+    margin-top: 0 !important;
+}
+
+.margin-left-0 {
+    margin-left: 0 !important;
+}
+
+.margin-right-0 {
+    margin-right: 0 !important;
+}
+
+.margin-bottom-0 {
+    margin-bottom: 0 !important;
+}
+
+.no-paddings {
+    padding: 0 !important;
+}
+
+.padding-top-0 {
+    padding-top: 0 !important;
+}
+
+.padding-left-0 {
+    padding-left: 0 !important;
+}
+
+.padding-right-0 {
+    padding-right: 0 !important;
+}
+
+.padding-bottom-0 {
+    padding-bottom: 0 !important;
+}
+
+/* ANIMATION */
+.page-animation :is([data-animation], .animate):not(.animate__animated){
+    visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after{
+        transition-property: all!important;
+        transition-duration: 0s!important;
+        transition-delay: 0s!important;
+        animation-duration: 0s!important;
+        animation-name: unset!important;
+    }
+
+    .page-animation :is([data-animation], .animate):not(.animate__animated){
+        visibility: visible;
+    }
+}
+
+
+/* BUTTONS */
+:is(.primary-button, .secondary-button, .tertiary-button, button, .wp-element-button, .wpcf7-submit){
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    appearance: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    color: inherit;
+    text-decoration: none;
+}
+
+:is(.primary-button, .secondary-button, .tertiary-button, button, .wp-element-button, .wpcf7-submit):is(:hover, :focus, :active){
+    outline: none;
+}
+
+:is(.primary-button, .secondary-button, button, .wp-element-button, .wpcf7-submit):is(:hover, :focus, :active){
+    text-decoration: none;
+}
+
+:is(.primary-button, .wpcf7-submit, .wp-block-button:not(.is-style-outline) > .wp-element-button){
+    border-width: var(--primary-button-border-width);
+    border-style: var(--primary-button-border-style);
+    border-radius: var(--primary-button-border-radius);
+    padding: var(--primary-button-padding);
+    border-color: var(--primary-button-border-color);
+    background-color: var(--primary-button-background-color);
+    color: var(--primary-button-text-color);
+    box-shadow: var(--primary-button-box-shadow);
+}
+
+:is(.primary-button, .wpcf7-submit, .wp-block-button:not(.is-style-outline) > .wp-element-button):is(:hover, :focus, :active){
+    border-color: var(--primary-button-hover-border-color);
+    background-color: var(--primary-button-hover-background-color);
+    color: var(--primary-button-hover-text-color);
+    box-shadow: var(--primary-button-hover-box-shadow);    
+}
+
+:is(.secondary-button, .wp-block-button.is-style-outline > .wp-block-button__link.wp-element-button){
+    border-width: var(--secondary-button-border-width);
+    border-style: var(--secondary-button-border-style);
+    border-radius: var(--secondary-button-border-radius);
+    padding: var(--secondary-button-padding);
+    border-color: var(--secondary-button-border-color);
+    background-color: var(--secondary-button-background-color);
+    color: var(--secondary-button-text-color);
+    box-shadow: var(--secondary-button-box-shadow);
+}
+
+:is(.secondary-button, .wp-block-button.is-style-outline > .wp-block-button__link.wp-element-button):is(:hover, :focus, :active){
+    border-color: var(--secondary-button-hover-border-color);
+    background-color: var(--secondary-button-hover-background-color);
+    color: var(--secondary-button-hover-text-color);
+    box-shadow: var(--secondary-button-hover-box-shadow);    
+}
+
+
+/* FONTS */
+.h0{
+    font: var(--font-headline-0);
+	letter-spacing: var(--secondary-letter-spacing);
+    margin-bottom: calc(0.25em * var(--secondary-line-height));
+}
+
+h1,
+.h1{
+    font: var(--font-headline-1);
+	letter-spacing: var(--secondary-letter-spacing);
+    margin-bottom: calc(0.25em * var(--secondary-line-height));
+}
+
+h2,
+.h2{
+    font: var(--font-headline-2);
+	letter-spacing: var(--secondary-letter-spacing);
+    margin-bottom: calc(0.25em * var(--secondary-line-height));
+}
+
+h3,
+.h3{
+    font: var(--font-headline-3);
+	letter-spacing: var(--secondary-letter-spacing);
+    margin-bottom: calc(0.25em * var(--secondary-line-height));
+}
+
+h4,
+.h4{
+    font: var(--font-headline-4);
+	letter-spacing: var(--secondary-letter-spacing);
+    margin-bottom: calc(0.25em * var(--secondary-line-height));
+}
+
+h5,
+.h5{
+    font: var(--font-headline-5);
+	letter-spacing: var(--secondary-letter-spacing);
+    margin-bottom: calc(0.25em * var(--secondary-line-height));
+}
+
+h6,
+.h6{
+    font: var(--font-headline-6);
+	letter-spacing: var(--secondary-letter-spacing);
+    margin-bottom: calc(0.25em * var(--secondary-line-height));
+}
+
+.h7{
+    font: var(--font-headline-7);
+	letter-spacing: var(--secondary-letter-spacing);
+    margin-bottom: calc(0.25em * var(--secondary-line-height));
+}
+
+.h8{
+    font: var(--font-headline-8);
+	letter-spacing: var(--secondary-letter-spacing);
+    margin-bottom: calc(0.25em * var(--secondary-line-height));
+}
+
+:is(.h0, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .h7, .h8){
+    color: var(--title-color);
+}
+
+.elevated-1{
+    font: var(--font-elevated-1);
+    letter-spacing: var(--primary-letter-spacing);
+    margin-bottom: calc(1em * var(--primary-line-height));
+}
+
+.elevated-2{
+    font: var(--font-elevated-2);
+    letter-spacing: var(--primary-letter-spacing);
+    margin-bottom: calc(1em * var(--primary-line-height));
+}
+
+.body-small{
+    font: var(--font-body-small);
+    letter-spacing: var(--primary-letter-spacing);
+    margin-bottom: calc(1em * var(--primary-line-height));
+}
+
+.body-xsmall{
+    font: var(--font-body-xsmall);
+    letter-spacing: var(--primary-letter-spacing);
+    margin-bottom: calc(1em * var(--primary-line-height));
+}
+
+.eyebrow{
+    font-family: var(--eyebrow-font-family);
+    letter-spacing: var(--eyebrow-letter-spacing);
+    line-height: var(--eyebrow-line-height);
+    font-size: var(--eyebrow-font-size);
+    font-weight: var(--eyebrow-font-weight);
+    text-transform: var(--eyebrow-text-transform);
+    font-style: var(--eyebrow-font-style);
+    color: var(--eyebrow-color);
+}
+
+
+/* FORMS */
+body :is(.gform_wrapper.gravity-theme, *) :is(input:is([type="color"], [type="date"], [type="datetime-local"], [type="datetime"], [type="email"], [type="month"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="time"], [type="url"], [type="week"]), select, textarea){
+    border-style: var(--form-input-border-style);
+    border-width: var(--form-input-border-width);
+    border-radius: var(--form-input-border-radius);
+    transition: all 0.3s ease;
+    font: var(--font-body);
+    padding: 0.5em 1em;
+    width: 100%;
+}
+
+body :is(.gform_wrapper.gravity-theme, *) :is(input:is([type="color"], [type="date"], [type="datetime-local"], [type="datetime"], [type="email"], [type="month"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="time"], [type="url"], [type="week"]), select, textarea):hover:not(:focus){
+    border-color: var(--form-input-hover-border-color);
+}
+
+body :is(.gform_wrapper.gravity-theme, *) :is(input:is([type="color"], [type="date"], [type="datetime-local"], [type="datetime"], [type="email"], [type="month"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="time"], [type="url"], [type="week"]), select, textarea):focus{
+    outline: none;
+}
+
+body :is(.gform_wrapper.gravity-theme, *) select:not([data-chosen]){
+    color: var(--form-input-placeholder-text-color);
+}
+
+:is(input:is([type="color"], [type="date"], [type="datetime-local"], [type="datetime"], [type="email"], [type="month"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="time"], [type="url"], [type="week"]), select, textarea){
+    border-color: var(--form-input-border-color);
+    background-color: var(--form-input-background-color);
+    color: var(--form-input-text-color);    
+}
+
+:is(option, optgroup){
+    background-color: var(--form-input-option-background-color);
+    color: var(--form-input-text-color);    
+}
+
+:is(input:is([type="color"], [type="date"], [type="datetime-local"], [type="datetime"], [type="email"], [type="month"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="time"], [type="url"], [type="week"]), select, textarea):focus{
+    border-color: var(--form-input-focus-border-color);
+    background-color: var(--form-input-focus-background-color);
+    color: var(--form-input-focus-text-color);
+}
+
+:is(input:is([type="color"], [type="date"], [type="datetime-local"], [type="datetime"], [type="email"], [type="month"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="time"], [type="url"], [type="week"]), select, textarea)::placeholder{
+    color: var(--form-input-placeholder-text-color);
+}
+
+:is(input:is([type="color"], [type="date"], [type="datetime-local"], [type="datetime"], [type="email"], [type="month"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="time"], [type="url"], [type="week"]), select, textarea):autofill{
+    border-color: var(--form-input-autofill-border-color);
+    background-color: var(--form-input-autofill-background-color);
+    color: var(--form-input-autofill-text-color);
+}
+
+:is(input:is([type="color"], [type="date"], [type="datetime-local"], [type="datetime"], [type="email"], [type="month"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="time"], [type="url"], [type="week"]), select, textarea):-webkit-autofill{
+    border-color: var(--form-input-autofill-border-color);
+    background-color: var(--form-input-autofill-background-color);
+    color: var(--form-input-autofill-text-color);
+}
+
+.gform_wrapper.gravity-theme :is(.gfield_validation_message, .validation_message, .gform_validation_errors, .gform_validation_errors h2){
+    border: none;
+    padding: 0;
+    background: transparent;
+    font: var(--font-body-small);
+    box-shadow: none;
+    color: var(--form-input-notice-color);
+}
+
+.gfield--type-submit button{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+body .gform_wrapper.gravity-theme :is(.gfield_checkbox, .gfield_radio, .ginput_container_consent){
+    position: relative;
+}
+
+body .gform_wrapper.gravity-theme :is(.gfield_checkbox, .gfield_radio, .ginput_container_consent) input{
+    position: absolute;
+    opacity: 0;
+}
+
+body .gform_wrapper.gravity-theme :is(.gfield_checkbox, .gfield_radio, .ginput_container_consent) label{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+body .gform_wrapper.gravity-theme :is(.gfield_checkbox, .gfield_radio, .ginput_container_consent) label::before{
+    content: '';
+    display: block;
+    width: 1em;
+    height: 1em;
+    border: 0.1rem solid;
+    transition: all 0.3s ease;
+    margin-right: 0.5em;
+    border-color: var(--form-input-border-color);
+}
+
+body .gform_wrapper.gravity-theme .gfield_radio label::before{
+    border-radius: 50%;
+}
+
+body .gform_wrapper.gravity-theme :is(.gfield_checkbox, .gfield_radio, .ginput_container_consent) input:checked ~ label::before{
+    background-color: var(--form-input-border-color);
+}
+
+/* PAGE TEMPLATE - THUMBNAIL */
+.page-template-template-thumbnail .page-template-featured-image {
+    width: 100%;
+    height: 40rem;
+    margin-bottom: var(--block-margin);
+}
+
+.page-template-template-thumbnail .page-template-featured-image :is(img, .overlay) {
+    object-fit: cover;
+    width: 100%;
+    height: 40rem;
+    position: absolute;
+}
+
+.page-template-template-thumbnail .page-template-featured-image .overlay {
+    z-index: 1;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+}
+
+.page-template-template-thumbnail .blocks-container:is(.thumbnail-holder) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.page-template-template-thumbnail .blocks-container:is(.thumbnail-holder) h2 {
+    color: var(--color-white);
+}
+
+/* 404 PAGE NOT FOUND */
+.page-not-found{
+    margin: var(--block-margin) 0;
+}
+
+
+/* POST LOOP */
+.post-loop a {
+    display: block;
+    text-decoration: none;
+    transition: 0.3s ease all;
+}
+
+.post-loop a:is(:hover, :focus, :active) h3 {
+    color: var(--hover-link-color);
+}
+
+.post-loop-image{
+    margin-bottom: var(--page-padding);
+    overflow: hidden;
+    border-radius: var(--element-border-radius);
+}
+
+.post-loop-image img{
+    border-radius: var(--element-border-radius);
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center top;
+    box-shadow: var(--element-box-shadow);
+    transition: 0.3s ease all;
+}
+
+.post-loop-image:is(:hover, :active, :focus) img {
+   transform: scale(1.1);
+}
+
+.post-loop h3{
+    font: var(--font-headline-5);
+}
+
+/*
+** WP Block Gallery
+*/
+body:is(.page, .single) .blocks-container .wp-block-gallery .wp-block-image a {
+    overflow: hidden;
+    border-radius: var(--element-border-radius);
+}
+
+body:is(.page, .single) .blocks-container .wp-block-gallery .wp-block-image {
+    border-radius: var(--element-border-radius);
+}
+
+body:is(.page, .single) .blocks-container .wp-block-gallery .wp-block-image img {
+    transition: 0.3s ease all;
+}
+
+body:is(.page, .single) .blocks-container .wp-block-gallery .wp-block-image a:is(:active, :hover, :focus) img {
+    transform: scale(1.1);
+}
+
+body:is(.page, .single) .blocks-container .wp-block-gallery .wp-block-image figcaption {
+    font: var(--font-body-small);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, .5) 100%, transparent);
+    padding: var(--page-padding);
+    border-radius: 0 0rem var(--element-border-radius) var(--element-border-radius);
+}
+
+@media (min-width: 992px) {
+    body:is(.page, .single) .blocks-container .wp-block-gallery .wp-block-image figcaption {
+        font: var(--font-body);
+    }
+}
+
+/*
+** WP Table
+*/
+body figure.wp-block-table {
+    margin-bottom: var(--row-gap);
 }

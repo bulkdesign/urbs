@@ -32,7 +32,7 @@ $post_types = get_field( 'post_types' ) ? get_field( 'post_types' ) : apply_filt
         <h1>
             <?php 
                 if( is_search() ){
-                    $title = sprintf( esc_attr__( 'Você pesquisou por: "%s"', 'bulk' ), get_search_query() );
+                    $title = sprintf( esc_attr__( 'Search for: %s', 'bulk' ), get_search_query() );
                 }elseif( is_home() ){
                     $title = get_the_title( get_option( 'page_for_posts', true ) );
                 }else{

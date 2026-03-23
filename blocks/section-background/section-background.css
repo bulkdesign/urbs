@@ -1,0 +1,24 @@
+.section-background{
+    padding: var(--block-margin) 0;
+    background-repeat: no-repeat;
+}
+
+.section-background:is([data-remove-padding-top="1"]) {
+    padding-top: 0;
+}
+
+.section-background:is([data-remove-padding-bottom="1"]) {
+    padding-bottom: 0;
+}
+
+.section-background.alignfull{
+    max-width: 100%;
+}
+
+.section-background > .blocks-container > *:first-child{
+    margin-top: 0;
+}
+
+.section-background > .blocks-container > *:last-child{
+    margin-bottom: 0;
+}

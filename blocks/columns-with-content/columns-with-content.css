@@ -1,0 +1,77 @@
+.columns-with-content{
+    margin: var(--block-margin) auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: var(--column-gap);
+    row-gap: var(--row-gap);
+}
+
+.columns-with-content-column.animate__animated{
+    animation-name: fadeInUp;
+}
+
+.columns-with-content[data-vertical-align="middle"]{
+    align-items: center;
+}
+
+.columns-with-content[data-vertical-align="bottom"]{
+    align-items: end;
+}
+
+.columns-with-content-column-content[data-text-size="small"]{
+    font: var(--font-body-small);
+}
+
+.columns-with-content-column-content[data-text-size="large"]{
+    font: var(--font-elevated-2);
+}
+
+.columns-with-content-column-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--item-column-gap);
+    row-gap: var(--item-row-gap);
+    align-items: center;
+}
+
+.columns-with-content-column > *:last-child,
+.columns-with-content-column .columns-with-content-column-content:last-child > *:last-child{
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px){
+    .columns-with-content:is([data-layout="3070"], [data-layout="4060"]){
+        grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+    }
+
+    .columns-with-content[data-layout="5050"]{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .columns-with-content:is([data-layout="6040"], [data-layout="7030"]){
+        grid-template-columns: minmax(0, 6fr) minmax(0, 4fr);
+    }
+}
+
+@media (min-width: 992px){
+    .columns-with-content[data-layout="333333"]{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1200px){
+    .columns-with-content[data-layout="3070"]{
+        grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
+    }
+
+    .columns-with-content[data-layout="4060"]{
+        grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+    }
+
+    .columns-with-content[data-layout="6040"]{
+        grid-template-columns: minmax(0, 6fr) minmax(0, 4fr);
+    }
+
+    .columns-with-content[data-layout="7030"]{
+        grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+    }
+}

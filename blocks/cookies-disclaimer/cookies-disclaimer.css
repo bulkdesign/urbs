@@ -1,0 +1,32 @@
+.cookies-disclaimer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: none;
+}
+
+.cookies-disclaimer-inner{
+    margin: var(--page-padding) auto;
+}
+
+.cookies-disclaimer[data-content-width="wide"] .cookies-disclaimer-inner{
+    max-width: var(--wide-width);
+}
+
+.cookies-disclaimer[data-content-width="full"] .cookies-disclaimer-inner{
+    max-width: var(--full-width);
+}
+
+@media (min-width: 768px){
+    .cookies-disclaimer-inner{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .cookies-disclaimer-message > *:last-child{
+        margin-bottom: 0;
+    }
+}

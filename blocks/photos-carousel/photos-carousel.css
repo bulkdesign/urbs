@@ -1,0 +1,167 @@
+.photos-carousel{
+    width: 100%;
+    max-width: 100%;
+	margin: var(--block-margin) auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: var(--column-gap);
+    row-gap: var(--row-gap);
+    align-items: start;
+}
+
+.photos-carousel > *{
+    width: var(--wide-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photos-carousel-header.animate__animated{
+    animation-name: fadeInUp;
+}
+
+.photos-carousel:is([data-layout="1-center"], [data-layout="1-wide-center"]){
+    text-align: center;
+}
+
+.photos-carousel:is([data-layout="1-center"], [data-layout="1-wide-center"]) .photos-carousel-header{
+    width: 100%;
+    max-width: var(--wide-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photos-carousel-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--item-column-gap);
+    row-gap: var(--item-row-gap);
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.photos-carousel:is([data-layout="1-center"]) .photos-carousel-buttons{
+    justify-content: center;
+}
+
+.photos-carousel-list.animate__animated{
+    animation-name: fadeIn;
+}
+
+.photos-carousel-list-wrapper{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: var(--column-gap);
+    row-gap: var(--row-gap);
+}
+
+.photos-carousel:is([data-layout="1-wide-center"], [data-layout="1-wide-left"]) .photos-carousel-list-wrapper{
+    width: 100%;
+}
+
+.photos-carousel:is([data-layout="1-wide-left"]) .photos-carousel-list-wrapper {
+    padding-left: calc(50vw - (var(--wide-width) / 2));
+}
+
+.photos-carousel-list{
+    width: 100%;
+}
+
+.photos-carousel-list .swiper-wrapper{
+    align-items: center;
+    height: auto;
+}
+
+.photos-carousel-list .swiper-slide{
+    width: min(50%, 30rem);
+}
+
+.photos-carousel-list-item{
+    text-align: center;
+}
+
+.photos-carousel-list-item :is(svg, img){
+    display: block;
+    margin: auto;
+    height: 30rem;
+    object-fit: cover;
+}
+
+.photos-carousel .photos-carousel-list:is([data-caption="1"]) .photos-carousel-list-item-image-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, .5) 100%, transparent);
+    padding: var(--page-padding);
+}
+
+.photos-carousel .photos-carousel-list:is([data-caption="1"]) .photos-carousel-list-item-image-caption span {
+    font: var(--font-body);
+    color: var(--color-white);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 0 var(--page-padding);
+}
+
+.photos-carousel-pagination,
+.photos-carousel-navigation{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: var(--item-column-gap);
+    max-width: var(--wide-width);
+}
+
+.photos-carousel:is([data-layout="1-wide-left"]) .photos-carousel-navigation {
+    margin: 0;
+    justify-content: start;
+}
+
+.photos-carousel-pagination.animate__animated,
+.photos-carousel-navigation.animate__animated{
+    animation-name: fadeIn;
+}
+
+.photos-carousel-pagination .swiper-pagination-bullet{
+    opacity: 1;
+    background-color: var(--link-color);
+}
+
+.photos-carousel-pagination .swiper-pagination-bullet-active{
+    opacity: 1;
+    background-color: var(--accent-color);
+}
+
+:is(.photos-carousel-navigation-prev, .photos-carousel-navigation-next) svg{
+    width: 4.8rem;
+    height: auto;
+}
+
+:is(.photos-carousel-navigation-prev, .photos-carousel-navigation-next) svg *{
+    transition: all 0.3s ease;
+    stroke: var(--link-color);
+}
+
+:is(.photos-carousel-navigation-prev, .photos-carousel-navigation-next):is(:hover, :focus, :active) svg *{
+    transition: all 0.3s ease;
+    stroke: var(--hover-link-color);
+}
+
+@media (min-width: 768px) {
+    .photos-carousel-list .swiper-slide {
+        width: min(50%, 50rem);
+    }
+
+    .photos-carousel-list-item :is(svg, img) {
+        height: 50rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .photos-carousel .photos-carousel-list:is([data-caption="1"]) .photos-carousel-list-item-image-caption span {
+        font: var(--font-body-small);
+    }
+}

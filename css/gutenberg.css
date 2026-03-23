@@ -1,0 +1,33 @@
+.edit-post-post-preview-dropdown .components-menu-group:first-child {
+    display: none;
+}
+
+.edit-post-post-preview-dropdown .components-menu-group:last-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.editor-styles-wrapper {
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto!important;
+}
+
+.is-root-container {
+    width: 840px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.bulk-is-not-developing .block-editor-post-preview__dropdown,
+.bulk-is-developing .block-editor-post-preview__dropdown{
+    display: none;
+}
+
+.bulk-is-not-developing .block-editor-block-settings-menu__popover .components-menu-group:nth-last-child(2){
+    margin-bottom: -8px;
+}
+
+.bulk-is-not-developing .block-editor-block-settings-menu__popover .components-menu-group:last-child {
+    display: none;
+}
