@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted  # Direciona para o Runner que instalamos no Servidor 1
+    runs-on: self-hosted
 
     steps:
       - name: Checkout do código
@@ -16,17 +16,17 @@ jobs:
         run: |
           # Sincroniza o conteúdo do repositório com a pasta final do WordPress
           # O --delete garante que arquivos deletados no Git também sumam do servidor
-          sudo rsync -avz --delete ./ /var/www/html/wp-content/themes/urbs/
+          sudo rsync -avz --delete ./ /var/www/html/portal/wp-content/themes/urbs/
           
-      - name: Corrigir Permissões (Nginx/WWW-DATA)
+      - name:
         run: |
           # Garante que o servidor web continue sendo o dono dos arquivos
-          sudo chown -R www-data:www-data /var/www/html/wp-content/themes/urbs
+          sudo chown -R www-data:www-data /var/www/html/portal/wp-content/themes/urbs
           
           # Ajusta permissões padrão de segurança do WordPress
-          sudo find /var/www/html/wp-content/themes/urbs -type d -exec chmod 755 {} \;
-          sudo find /var/www/html/wp-content/themes/urbs -type f -exec chmod 644 {} \;
+          sudo find /var/www/html/portal/wp-content/themes/urbs -type d -exec chmod 755 {} \;
+          sudo find /var/www/html/portal/wp-content/themes/urbs -type f -exec chmod 644 {} \;
 
-      - name: Limpar Cache (Opcional)
+      - name:
         run: |
           echo "Deploy finalizado com sucesso no Servidor 1"
