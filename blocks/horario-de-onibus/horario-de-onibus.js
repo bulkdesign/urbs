@@ -12,7 +12,8 @@
             let linhasData = [];
 
             try {
-                const linhasEndpoint = await fetch('/wp-json/urbs/v1/linhas');
+                // Usando a URL dinâmica para as linhas
+                const linhasEndpoint = await fetch(UrbsAPI.linhasUrl);
                 if (!linhasEndpoint.ok) {
                     throw new Error(`HTTP error! status: ${linhasEndpoint.status}`);
                 }
@@ -57,7 +58,8 @@
                 linhaInfo.innerHTML = '<p>Carregando informações...</p>';
 
                 try {
-                    const infoLinhasCompletasEndpoint = await fetch(`/wp-json/urbs/v1/info-linhas-completas/${codigoLinha}`);
+                    // Usando a URL dinâmica para a info completa da linha
+                    const infoLinhasCompletasEndpoint = await fetch(`${UrbsAPI.infoLinhasBaseUrl}${codigoLinha}`);
 
                     if (!infoLinhasCompletasEndpoint.ok) {
                         throw new Error(`HTTP error! status: ${infoLinhasCompletasEndpoint.status}`);
@@ -152,7 +154,8 @@
 
                 // Fetch schedules
                 try {
-                    const horarioPontosEndpoint = await fetch(`/wp-json/urbs/v1/horarios-pontos?codigo_linha=${linhaSelecionada}`);
+                    // Usando a URL dinâmica para os horários
+                    const horarioPontosEndpoint = await fetch(`${UrbsAPI.horariosPontosUrl}?codigo_linha=${linhaSelecionada}`);
                     if (!horarioPontosEndpoint.ok) {
                         throw new Error(`HTTP error! status: ${horarioPontosEndpoint.status}`);
                     }
