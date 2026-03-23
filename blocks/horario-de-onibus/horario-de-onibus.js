@@ -12,7 +12,6 @@
             let linhasData = [];
 
             try {
-                // Usando a URL dinâmica para as linhas
                 const linhasEndpoint = await fetch(UrbsAPI.linhasUrl);
                 if (!linhasEndpoint.ok) {
                     throw new Error(`HTTP error! status: ${linhasEndpoint.status}`);
@@ -20,6 +19,9 @@
                 linhasData = await linhasEndpoint.json();
             } catch (error) {
                 console.error('Error fetching linhas:', error);
+                // FEEDBACK VISUAL DE ERRO
+                const containerInfo = horario.querySelector('.horario-de-onibus-linha-info') || horario;
+                containerInfo.innerHTML = '<p class="erro-api" style="color: #842029; background-color: #f8d7da; padding: 10px; border-radius: 4px; border: 1px solid #f5c2c7; text-align: center;">Não foi possível carregar as linhas de ônibus no momento. Por favor, recarregue a página ou tente novamente mais tarde.</p>';
                 return;
             }
 
@@ -58,7 +60,6 @@
                 linhaInfo.innerHTML = '<p>Carregando informações...</p>';
 
                 try {
-                    // Usando a URL dinâmica para a info completa da linha
                     const infoLinhasCompletasEndpoint = await fetch(`${UrbsAPI.infoLinhasBaseUrl}${codigoLinha}`);
 
                     if (!infoLinhasCompletasEndpoint.ok) {
@@ -70,7 +71,7 @@
                     linhaInfo.innerHTML = '';
 
                     if (!infoLinhasCompletas) {
-                        linhaInfo.innerHTML = '<p>Nenhuma informação disponível.</p>';
+                        linhaInfo.innerHTML = '<p>Nenhuma informação disponível para esta linha.</p>';
                         return;
                     }
 
@@ -129,7 +130,8 @@
                     }
                 } catch (error) {
                     console.error('Error fetching info linhas completas:', error);
-                    linhaInfo.innerHTML = '<p>Erro ao carregar informações da linha.</p>';
+                    // FEEDBACK VISUAL DE ERRO
+                    linhaInfo.innerHTML = '<p class="erro-api" style="color: #842029;">Erro ao carregar os detalhes desta linha. Tente novamente.</p>';
                 }
             };
 
@@ -154,7 +156,6 @@
 
                 // Fetch schedules
                 try {
-                    // Usando a URL dinâmica para os horários
                     const horarioPontosEndpoint = await fetch(`${UrbsAPI.horariosPontosUrl}?codigo_linha=${linhaSelecionada}`);
                     if (!horarioPontosEndpoint.ok) {
                         throw new Error(`HTTP error! status: ${horarioPontosEndpoint.status}`);
@@ -162,6 +163,8 @@
                     horarioData = await horarioPontosEndpoint.json();
                 } catch (error) {
                     console.error('Error fetching horarios:', error);
+                    // FEEDBACK VISUAL DE ERRO
+                    listaHorarios.innerHTML = '<li style="color: #842029; width: 100%;">Erro ao buscar os horários desta linha.</li>';
                     return;
                 }
 
