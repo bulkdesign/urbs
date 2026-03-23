@@ -45,15 +45,29 @@ function child_theme_block_horario_de_onibus() {
 
 add_action( 'theme_declare_block', 'child_theme_block_horario_de_onibus', 20 );
 
+/**
+ * Retorna os segundos até a próxima renovação do cache: 02:00 horário de Brasília (GMT-3).
+ */
+function urbs_seconds_until_next_reset() {
+    $tz         = new DateTimeZone( 'America/Sao_Paulo' );
+    $now        = new DateTime( 'now', $tz );
+    $next_reset = new DateTime( 'today 02:00', $tz );
+
+    if ( $now >= $next_reset ) {
+        $next_reset->modify( '+1 day' );
+    }
+
+    return $next_reset->getTimestamp() - $now->getTimestamp();
+}
+
 function get_horarios_linhas_urbs() {
     $cache_key = 'urbs_linhas_data';
-    $linhas = false; // TEMP: transient desabilitado para testes // get_transient( $cache_key );
+    $linhas = get_transient( $cache_key );
 
     try {
         if ( false === $linhas ) {
             
             try {
-                // URL atualizada e sslverify false
                 $url = 'https://scf-horario-onibus-api.dsv.urbs.curitiba.pr.gov.br/api/linhas';
                 $response = wp_remote_get( $url, array( 'sslverify' => false ) );
             } catch (Exception $e) {
@@ -73,7 +87,7 @@ function get_horarios_linhas_urbs() {
             }
 
             $linhas = $data->data;
-            // TEMP: set_transient( $cache_key, $linhas, YEAR_IN_SECONDS );
+            set_transient( $cache_key, $linhas, urbs_seconds_until_next_reset() );
         }
     } catch (Exception $e) {
         error_log( $e->getMessage() );
@@ -86,13 +100,12 @@ function get_horarios_linhas_urbs() {
 function get_info_linhas_completas_urbs( $request ) {
     $codigo_linha = $request->get_param( 'codigo_linha' );
     $cache_key = 'urbs_info_linhas_completas_data' . sanitize_key( $codigo_linha );
-    $infoLinhasCompletas = false; // TEMP: transient desabilitado para testes // get_transient( $cache_key );
+    $infoLinhasCompletas = get_transient( $cache_key );
 
     try {
         if ( false === $infoLinhasCompletas ) {
             
             try {
-                // URL atualizada e sslverify false
                 $url = 'https://scf-horario-onibus-api.dsv.urbs.curitiba.pr.gov.br/api/info-linhas-completas/' . urlencode( $codigo_linha );
                 $response = wp_remote_get( $url, array( 'sslverify' => false ) );
             } catch (Exception $e) {
@@ -112,7 +125,7 @@ function get_info_linhas_completas_urbs( $request ) {
             }
 
             $infoLinhasCompletas = $data->data;
-            // TEMP: set_transient( $cache_key, $infoLinhasCompletas, YEAR_IN_SECONDS );
+            set_transient( $cache_key, $infoLinhasCompletas, urbs_seconds_until_next_reset() );
         }
     } catch (Exception $e) {
         error_log( $e->getMessage() );
@@ -125,13 +138,12 @@ function get_info_linhas_completas_urbs( $request ) {
 function get_horarios_pontos_urbs( $request ) {
     $codigo_linha = $request->get_param( 'codigo_linha' );
     $cache_key = 'urbs_horarios_' . sanitize_key( $codigo_linha );
-    $horarios = false; // TEMP: transient desabilitado para testes // get_transient( $cache_key );
+    $horarios = get_transient( $cache_key );
 
     try {
         if ( false === $horarios ) {
             
             try {
-                // URL atualizada e sslverify false
                 $url = 'https://scf-horario-onibus-api.dsv.urbs.curitiba.pr.gov.br/api/horarios-pontos?codigo_linha=' . urlencode( $codigo_linha );
                 $response = wp_remote_get( $url, array( 'sslverify' => false ) );
             } catch (Exception $e) {
@@ -151,7 +163,7 @@ function get_horarios_pontos_urbs( $request ) {
             }
 
             $horarios = $data->data;
-            // TEMP: set_transient( $cache_key, $horarios, YEAR_IN_SECONDS );
+            set_transient( $cache_key, $horarios, urbs_seconds_until_next_reset() );
         }
     } catch (Exception $e) {
         error_log( $e->getMessage() );
