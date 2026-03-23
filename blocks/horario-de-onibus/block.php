@@ -38,6 +38,13 @@ function child_theme_block_horario_de_onibus() {
                     '10.2.0',
                     true
                 );
+
+                // Passa as URLs dinâmicas do WordPress para o JavaScript
+                wp_localize_script( 'choices-js', 'UrbsAPI', array(
+                    'linhasUrl'         => esc_url_raw( rest_url( 'urbs/v1/linhas' ) ),
+                    'infoLinhasBaseUrl' => esc_url_raw( rest_url( 'urbs/v1/info-linhas-completas/' ) ),
+                    'horariosPontosUrl' => esc_url_raw( rest_url( 'urbs/v1/horarios-pontos' ) ),
+                ) );
             },
         )
     );
