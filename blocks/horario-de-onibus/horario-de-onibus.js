@@ -12,8 +12,7 @@
             let linhasData = [];
 
             try {
-                // URL FIXA COM /portal
-                const linhasEndpoint = await fetch('/portal/wp-json/urbs/v1/linhas');
+                const linhasEndpoint = await fetch('/wp-json/urbs/v1/linhas');
                 if (!linhasEndpoint.ok) {
                     throw new Error(`HTTP error! status: ${linhasEndpoint.status}`);
                 }
@@ -60,8 +59,7 @@
                 linhaInfo.innerHTML = '<p>Carregando informações...</p>';
 
                 try {
-                    // URL FIXA COM /portal
-                    const infoLinhasCompletasEndpoint = await fetch(`/portal/wp-json/urbs/v1/info-linhas-completas/${codigoLinha}`);
+                    const infoLinhasCompletasEndpoint = await fetch(`/wp-json/urbs/v1/info-linhas-completas/${codigoLinha}`);
 
                     if (!infoLinhasCompletasEndpoint.ok) {
                         throw new Error(`HTTP error! status: ${infoLinhasCompletasEndpoint.status}`);
@@ -149,8 +147,7 @@
                 exibirLinhaInfo(linhaSelecionada);
 
                 try {
-                    // URL FIXA COM /portal
-                    const horarioPontosEndpoint = await fetch(`/portal/wp-json/urbs/v1/horarios-pontos?codigo_linha=${linhaSelecionada}`);
+                    const horarioPontosEndpoint = await fetch(`/wp-json/urbs/v1/horarios-pontos?codigo_linha=${linhaSelecionada}`);
                     if (!horarioPontosEndpoint.ok) {
                         throw new Error(`HTTP error! status: ${horarioPontosEndpoint.status}`);
                     }
