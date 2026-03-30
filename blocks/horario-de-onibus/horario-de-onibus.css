@@ -80,7 +80,7 @@
 }
 
 .horario-de-onibus .horario-de-onibus-resultados h4:not(:first-child) {
-    margin-top: var(--block-margin);
+    margin-top: var(--row-gap);
 }
 
 .horario-de-onibus .horario-de-onibus-lista {
@@ -88,7 +88,7 @@
     padding: 0;
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     gap: calc(var(--item-row-gap) / 2);
     text-align: center;
 }
