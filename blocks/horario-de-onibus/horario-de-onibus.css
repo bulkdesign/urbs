@@ -61,11 +61,21 @@
 
 .horario-de-onibus .horario-de-onibus-linha-info .linha-info-detalhes {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.horario-de-onibus .horario-de-onibus-linha-info .linha-info-detalhes h4 {
-    grid-column: 1 / span 3;
+.horario-de-onibus .horario-de-onibus-linha-info .linha-info-detalhes h3 {
+    color: var(--color-white);
+}
+
+.horario-de-onibus .horario-de-onibus-linha-info .linha-info-detalhes ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.horario-de-onibus .horario-de-onibus-linha-info .linha-info-detalhes li {
+    color: var(--color-white);
 }
 
 .horario-de-onibus .horario-de-onibus-lista {
