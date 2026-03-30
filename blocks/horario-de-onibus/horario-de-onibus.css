@@ -53,6 +53,7 @@
     background: var(--color-light-grey);
     padding: var(--item-column-gap);
     border-radius: var(--element-border-radius);
+    margin-bottom: var(--item-row-gap);
 }
 
 .horario-de-onibus .horario-de-onibus-linha-info p {
@@ -78,12 +79,16 @@
     color: var(--color-white);
 }
 
+.horario-de-onibus .horario-de-onibus-resultados h4:not(:first-child) {
+    margin-top: var(--block-margin);
+}
+
 .horario-de-onibus .horario-de-onibus-lista {
     margin: 0;
     padding: 0;
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(14, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     gap: calc(var(--item-row-gap) / 2);
     text-align: center;
 }
