@@ -23,10 +23,9 @@
             </select>
             <select name="horario-de-onibus-tipo-dia">
                 <option value="">Selecione o dia</option>
-                <option value="1">Dia Útil</option>
+                <option value="1" selected>Dia Útil</option>
                 <option value="2">Sábado</option>
-                <option value="3">Domingo</option>
-                <option value="4">Feriado</option>
+                <option value="3">Domingo/Feriado</option>
             </select>
         </div>
 
