@@ -149,7 +149,7 @@ window.addEventListener('load', () => {
 
             // --- B. CARREGANDO OS HORÁRIOS ESTÁTICOS ---
             try {
-                const cacheUrl = '/wp-content/cache/urbs_horarios/linha_${codigoLinha}.json';
+                const cacheUrl = `/wp-content/cache/urbs_horarios/linha_${codigoLinha}.json`;
                 
                 const response = await fetch(cacheUrl);
                 if (!response.ok) throw new Error('Arquivo de cache não encontrado para esta linha.');
