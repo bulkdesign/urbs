@@ -69,7 +69,7 @@ window.addEventListener('load', () => {
 
             try {
                 // FETCH TURBINADO: Busca direto do arquivo estático que geramos
-                const cacheUrlLinhas = '/wp-content/cache/urbs_horarios/linhas_ativas.json';
+                const cacheUrlLinhas = '/wp-content/urbs_data/urbs_horarios/linhas_ativas.json';
                 const linhasEndpoint = await fetch(cacheUrlLinhas);
                 
                 if (!linhasEndpoint.ok) throw new Error(`HTTP error! status: ${linhasEndpoint.status}`);
@@ -149,7 +149,7 @@ window.addEventListener('load', () => {
 
             // --- B. CARREGANDO OS HORÁRIOS ESTÁTICOS ---
             try {
-                const cacheUrl = `/wp-content/cache/urbs_horarios/linha_${codigoLinha}.json`;
+                const cacheUrl = `/wp-content/urbs_data/urbs_horarios/linha_${codigoLinha}.json`;
                 
                 const response = await fetch(cacheUrl);
                 if (!response.ok) throw new Error('Arquivo de cache não encontrado para esta linha.');
