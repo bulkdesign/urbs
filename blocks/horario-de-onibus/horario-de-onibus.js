@@ -1,4 +1,4 @@
-(() => {
+window.addEventListener('load', () => {
     if (!document.querySelectorAll('.horario-de-onibus').length) {
         return false;
     }
@@ -6,207 +6,199 @@
     const horarioWrapper = document.querySelectorAll('.horario-de-onibus');
 
     horarioWrapper.forEach((horario) => {
+        const themeUrl = horario.getAttribute('data-theme-url');
+        
+        // Variáveis globais do bloco
+        let horarioData = [];
+        let linhasGlobais = []; // Vai guardar todas as linhas na memória
 
-        // Linhas
-        const listaLinhas = async () => {
-            let linhasData = [];
-
-            try {
-                const linhasEndpoint = await fetch('/wp-json/urbs/v1/linhas');
-                if (!linhasEndpoint.ok) {
-                    throw new Error(`HTTP error! status: ${linhasEndpoint.status}`);
+        // ==========================================
+        // 1. Função para desenhar a Grelha de Horários
+        // ==========================================
+        const exibirHorarios = (dados) => {
+            let resultadosContainer = horario.querySelector('.horario-de-onibus-resultados');
+            
+            if (!resultadosContainer) {
+                const oldList = horario.querySelector('.horario-de-onibus-lista');
+                resultadosContainer = document.createElement('div');
+                resultadosContainer.className = 'horario-de-onibus-resultados';
+                if (oldList) {
+                    oldList.parentNode.replaceChild(resultadosContainer, oldList);
+                } else {
+                    horario.querySelector('.horario-de-onibus-content-wrapper').appendChild(resultadosContainer);
                 }
-                linhasData = await linhasEndpoint.json();
-            } catch (error) {
-                console.error('Error fetching linhas:', error);
-                const containerInfo = horario.querySelector('.horario-de-onibus-linha-info') || horario;
-                containerInfo.innerHTML = '<p class="erro-api" style="color: #842029; margin-bottom: 0; text-align: center;">Não foi possível carregar as linhas de ônibus no momento. Por favor, recarregue a página ou tente novamente mais tarde.</p>';
+            }
+
+            resultadosContainer.innerHTML = ''; 
+
+            if (!dados || dados.length === 0) {
+                resultadosContainer.innerHTML = '<p style="color: #666; padding: 15px; text-align: center; background: #f8f9fa; border-radius: 5px;">Nenhum horário encontrado para este dia.</p>';
                 return;
             }
 
-            // Dropdown das Linhas
+            const dadosAgrupados = dados.reduce((acc, item) => {
+                if (!acc[item.PONTO]) acc[item.PONTO] = []; 
+                acc[item.PONTO].push(item.HORA); 
+                return acc;
+            }, {});
+
+            for (const [ponto, horariosPonto] of Object.entries(dadosAgrupados)) {
+                const titulo = document.createElement('h4');
+                titulo.className = 'horario-ponto-titulo';
+                titulo.textContent = ponto;
+                resultadosContainer.appendChild(titulo);
+
+                const ul = document.createElement('ul');
+                ul.className = 'horario-de-onibus-lista';
+
+                horariosPonto.forEach(hora => {
+                    const li = document.createElement('li');
+                    li.textContent = hora;
+                    ul.appendChild(li);
+                });
+
+                resultadosContainer.appendChild(ul);
+            }
+        };
+
+        // ==========================================
+        // 2. Lógica para carregar as Linhas (Do JSON Estático!)
+        // ==========================================
+        const listaLinhas = async () => {
             const linhasSelect = horario.querySelector('select[name="horario-de-onibus-linhas"]');
 
-            linhasData.forEach((linha) => {
+            try {
+                // FETCH TURBINADO: Busca direto do arquivo estático que geramos
+                const cacheUrlLinhas = '/wp-content/cache/urbs_horarios/linhas_ativas.json';
+                const linhasEndpoint = await fetch(cacheUrlLinhas);
+                
+                if (!linhasEndpoint.ok) throw new Error(`HTTP error! status: ${linhasEndpoint.status}`);
+                linhasGlobais = await linhasEndpoint.json(); // Salva na memória
+            } catch (error) {
+                console.error('Error fetching linhas estáticas:', error);
+                const containerInfo = horario.querySelector('.horario-de-onibus-linha-info') || horario;
+                containerInfo.innerHTML = '<p class="erro-api" style="color: #842029; text-align: center;">Não foi possível carregar as linhas no momento.</p>';
+                return;
+            }
+
+            // Preenche o Select usando as chaves novas (COD e NOME)
+            linhasGlobais.forEach((linha) => {
                 const linhasOption = document.createElement('option');
-                linhasOption.value = linha.codigo;
-                linhasOption.textContent = linha.linha;
+                linhasOption.value = linha.COD;
+                linhasOption.textContent = `${linha.COD} - ${linha.NOME}`; // Fica mais legal mostrando o código junto!
                 linhasSelect.appendChild(linhasOption);
             });
 
-            // Initialize Choices.js
-            const linhasChoices = new Choices(linhasSelect, {
-                searchEnabled: true,
-                searchPlaceholderValue: 'DIGITE O NOME DE UMA LINHA...',
-                noResultsText: 'Nenhuma linha encontrada',
-                noChoicesText: 'Nenhuma opção disponível',
-                itemSelectText: 'Clique para selecionar',
-                shouldSort: false,
-                searchFields: ['label'],
-                fuseOptions: {
-                    threshold: 0.3,
-                    distance: 100
-                }
-            });
-
-            // Elements
-            const linhaInfo = horario.querySelector('.horario-de-onibus-linha-info');
-            const listaHorarios = horario.querySelector('.horario-de-onibus-lista');
-            let horarioData = [];
-
-            // Function to display line info
-            const exibirLinhaInfo = async (codigoLinha) => {
-                linhaInfo.innerHTML = '<p>Carregando informações...</p>';
-
-                try {
-                    const infoLinhasCompletasEndpoint = await fetch(`/wp-json/urbs/v1/info-linhas-completas/${codigoLinha}`);
-
-                    if (!infoLinhasCompletasEndpoint.ok) {
-                        throw new Error(`HTTP error! status: ${infoLinhasCompletasEndpoint.status}`);
-                    }
-
-                    const infoLinhasCompletas = await infoLinhasCompletasEndpoint.json();
-
-                    linhaInfo.innerHTML = '';
-
-                    if (!infoLinhasCompletas) {
-                        linhaInfo.innerHTML = '<p>Nenhuma informação disponível para esta linha.</p>';
-                        return;
-                    }
-
-                    const infoContainer = document.createElement('div');
-                    infoContainer.className = 'linha-info-detalhes';
-
-                    if (infoLinhasCompletas.cor) {
-                        const linhaCor = infoLinhasCompletas.nome_cor.toLowerCase().replace(' ', '-');
-                        linhaInfo.setAttribute('data-linha-cor', linhaCor);
-                    }
-
-                    const linhaHeader = document.createElement('h4');
-                    linhaHeader.textContent = `${infoLinhasCompletas.nome} - Linha ${infoLinhasCompletas.codigo}`;
-                    infoContainer.appendChild(linhaHeader);
-
-                    const detalhes = [
-                        { label: 'Categoria', value: infoLinhasCompletas.categoria_servico },
-                        { label: 'Tipo de Linha', value: infoLinhasCompletas.tipo_linha },
-                        { label: 'Abrangência', value: infoLinhasCompletas.abrangencia },
-                        { label: 'Data de Implantação', value: infoLinhasCompletas.data_implantacao },
-                        { label: 'Somente Cartão', value: infoLinhasCompletas.somente_cartao === 'S' ? 'Sim' : 'Não' },
-                    ];
-
-                    if (infoLinhasCompletas.observacoes) {
-                        detalhes.push({ label: 'Observações', value: infoLinhasCompletas.observacoes });
-                    }
-
-                    detalhes.forEach(({ label, value }) => {
-                        const detalheItem = document.createElement('p');
-                        detalheItem.innerHTML = `<strong>${label}:</strong> ${value}`;
-                        infoContainer.appendChild(detalheItem);
-                    });
-
-                    linhaInfo.appendChild(infoContainer);
-
-                    if (infoLinhasCompletas.pontos && infoLinhasCompletas.pontos.length > 0) {
-                        const pontosHeader = document.createElement('h5');
-                        pontosHeader.textContent = 'Pontos de Parada';
-                        linhaInfo.appendChild(pontosHeader);
-
-                        const pontosList = document.createElement('ul');
-                        pontosList.className = 'linha-pontos-lista';
-
-                        infoLinhasCompletas.pontos.forEach((ponto) => {
-                            const pontoItem = document.createElement('li');
-                            pontoItem.textContent = ponto.ponto;
-                            pontosList.appendChild(pontoItem);
-                        });
-
-                        linhaInfo.appendChild(pontosList);
-                    }
-                } catch (error) {
-                    console.error('Error fetching info linhas completas:', error);
-                    linhaInfo.innerHTML = '<p class="erro-api" style="color: #842029;">Erro ao carregar os detalhes desta linha. Tente novamente.</p>';
-                }
-            };
-
-            // Function to display schedules
-            const exibirHorarios = (filteredData) => {
-                listaHorarios.innerHTML = '';
-                filteredData.forEach((todosHorarios) => {
-                    const listaItem = document.createElement('li');
-                    listaItem.textContent = todosHorarios.horario_tela;
-                    listaHorarios.appendChild(listaItem);
+            if (typeof Choices !== 'undefined') {
+                new Choices(linhasSelect, {
+                    searchEnabled: true,
+                    searchPlaceholderValue: 'Digite para buscar...',
+                    noResultsText: 'Nenhuma opção encontrada',
+                    noChoicesText: 'Nenhuma opção disponível',
+                    itemSelectText: 'Clique para selecionar',
+                    shouldSort: false
                 });
-            };
+            }
+        };
 
-            // Horários dos Pontos
-            linhasSelect.addEventListener('change', async (linha) => {
-                const linhaSelecionada = linha.target.value;
+        listaLinhas();
 
-                if (!linhaSelecionada) return;
+        // ==========================================
+        // 3. Evento Principal: Mudança da Linha
+        // ==========================================
+        const linhasSelect = horario.querySelector('select[name="horario-de-onibus-linhas"]');
+        const diaSelect = horario.querySelector('select[name="horario-de-onibus-tipo-dia"]');
 
-                exibirLinhaInfo(linhaSelecionada);
+        linhasSelect.addEventListener('change', async (e) => {
+            const codigoLinha = e.target.value;
+            if (!codigoLinha) return;
 
-                try {
-                    const horarioPontosEndpoint = await fetch(`/wp-json/urbs/v1/horarios-pontos?codigo_linha=${linhaSelecionada}`);
-                    if (!horarioPontosEndpoint.ok) {
-                        throw new Error(`HTTP error! status: ${horarioPontosEndpoint.status}`);
-                    }
-                    horarioData = await horarioPontosEndpoint.json();
-                } catch (error) {
-                    console.error('Error fetching horarios:', error);
-                    listaHorarios.innerHTML = '<li style="color: #842029; width: 100%;">Erro ao buscar os horários desta linha.</li>';
-                    return;
+            const containerInfo = horario.querySelector('.horario-de-onibus-linha-info');
+            
+            // --- A. RECUPERANDO AS INFORMAÇÕES DA LINHA (Da memória, sem API!) ---
+            // Acha a linha selecionada dentro do array que já baixamos
+            const infoData = linhasGlobais.find(l => l.COD === codigoLinha);
+
+            if (infoData) {
+                if (infoData.NOME_COR) {
+                    const linhaCor = infoData.NOME_COR.toLowerCase().replace(/\s+/g, '-');
+                    containerInfo.setAttribute('data-linha-cor', linhaCor);
+                } else {
+                    containerInfo.removeAttribute('data-linha-cor');
                 }
 
-                const diaSelect = horario.querySelector('select[name="horario-de-onibus-tipo-dia"]');
-                const diaSelecionado = diaSelect.value;
+                const ehSomenteCartao = infoData.SOMENTE_CARTAO === 'S' ? '💳 Somente Cartão' : '💵 Dinheiro / Cartão';
+                const corLinha = infoData.NOME_COR || 'Indefinida';
+                const categoria = infoData.CATEGORIA_SERVICO || 'Convencional';
+                
+                containerInfo.innerHTML = `
+                    <div class="linha-info-detalhes">
+                        <h3>${infoData.NOME}</h3>
+                        <ul>
+                            <li><strong>Código:</strong> ${infoData.COD}</li>
+                            <li><strong>Categoria:</strong> ${categoria}</li>
+                            <li><strong>Cor:</strong> ${corLinha}</li>
+                            <li><strong>Pagamento:</strong> ${ehSomenteCartao}</li>
+                        </ul>
+                    </div>
+                `;
+            } else {
+                containerInfo.innerHTML = '';
+                containerInfo.removeAttribute('data-linha-cor');
+            }
 
+            // --- B. CARREGANDO OS HORÁRIOS ESTÁTICOS ---
+            try {
+                const cacheUrl = '/wp-content/cache/urbs_horarios/linha_${codigoLinha}.json';
+                
+                const response = await fetch(cacheUrl);
+                if (!response.ok) throw new Error('Arquivo de cache não encontrado para esta linha.');
+                
+                horarioData = await response.json();
+
+                const diaSelecionado = diaSelect.value;
                 if (diaSelecionado) {
-                    const filteredData = horarioData.filter((item) => item.codigo_tipo_dia === diaSelecionado);
+                    const filteredData = horarioData.filter((item) => item.DIA === diaSelecionado);
                     exibirHorarios(filteredData);
                 } else {
                     exibirHorarios(horarioData);
                 }
-            });
 
-            // Tipo de Dia
-            const diaSelect = horario.querySelector('select[name="horario-de-onibus-tipo-dia"]');
-
-            diaSelect.addEventListener('change', (dia) => {
-                const diaSelecionado = dia.target.value;
-
-                if (!horarioData.length) return;
-
-                if (!diaSelecionado) {
-                    exibirHorarios(horarioData);
-                    return;
+            } catch (error) {
+                console.error('Erro ao buscar o JSON estático:', error);
+                let resultadosContainer = horario.querySelector('.horario-de-onibus-resultados');
+                if (resultadosContainer) {
+                    resultadosContainer.innerHTML = '<p style="color: #dc3545; padding: 15px; text-align: center; background: #f8d7da; border-radius: 5px;">Os horários desta linha ainda não foram atualizados ou não estão disponíveis.</p>';
                 }
+            }
+        });
 
-                const filteredData = horarioData.filter((item) => item.codigo_tipo_dia === diaSelecionado);
-                exibirHorarios(filteredData);
-            });
+        // ==========================================
+        // 4. Lógica de Filtrar por Dia
+        // ==========================================
+        diaSelect.addEventListener('change', (e) => {
+            const diaSelecionado = e.target.value;
+            if (!horarioData.length) return;
 
-            const diasChoices = new Choices(diaSelect, {
+            if (!diaSelecionado) {
+                exibirHorarios(horarioData);
+                return;
+            }
+
+            const filteredData = horarioData.filter((item) => item.DIA === diaSelecionado);
+            exibirHorarios(filteredData);
+        });
+
+        if (typeof Choices !== 'undefined') {
+            new Choices(diaSelect, {
                 searchEnabled: true,
                 searchPlaceholderValue: 'Digite para buscar...',
                 noResultsText: 'Nenhuma opção encontrada',
                 noChoicesText: 'Nenhuma opção disponível',
                 itemSelectText: 'Clique para selecionar',
                 shouldSort: false,
-                searchFields: ['label'],
-                classNames: {
-                    containerOuter: ['choices', 'dia-choices']
-                },
-                fuseOptions: {
-                    threshold: 0.3,
-                    distance: 100
-                }
+                searchFields: ['label']
             });
-
-        };
-
-        listaLinhas();        
-
+        }
     });
-
-})();
+});
